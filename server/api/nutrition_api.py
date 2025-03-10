@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SPOONACULAR_API_KEY = "39d886d7dc594d7e91cfb2def05677bd"
+SPOONACULAR_API_KEY = "API_KEY"
 BASE_URL = "https://api.spoonacular.com"
 
 def get_recipe_nutrition(recipe_id):
