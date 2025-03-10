@@ -194,6 +194,83 @@
         .view-recipe-button:hover {
             background: #2980b9;
         }
+        
+        /* Workout Grid Layout */
+        .workout-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        /* Workout Card */
+        .workout-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: white;
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow 0.3s;
+        }
+        
+        .workout-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        /* Workout Header */
+        .workout-header {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .workout-title {
+            margin: 0;
+            color: #2c3e50;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .workout-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        
+        /* Workout Content */
+        .workout-content {
+            padding: 15px;
+        }
+        
+        .workout-details {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .workout-detail {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .detail-label {
+            color: #7f8c8d;
+        }
+        
+        .detail-value {
+            font-weight: 500;
+        }
+        
+        .workout-calories {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
     </style>
 </head>
 <body>
@@ -213,26 +290,21 @@
         </div>
 
         <div class="card">
-            <h2>Get Recipe Nutrition</h2>
-            <input type="text" id="recipeNameInput" placeholder="Enter recipe name">
-            <button onclick="getNutritionByName()">Get Nutrition Info</button>
-        </div>
-
-        <div class="card">
             <h2>Get Workout Suggestions</h2>
             <input type="number" id="caloriesInput" placeholder="Enter calories to burn" value="300">
             <button onclick="getWorkoutSuggestions()">Get Workouts</button>
         </div>
         
-        <div class="card">
+        <!-- <div class="card">
             <h2>Search Tasty Recipes</h2>
             <input type="text" id="tastyIngredientsInput" placeholder="Enter ingredients (comma separated)" value="chicken, rice">
             <button onclick="searchTastyRecipes()">Search Tasty</button>
-        </div>
+        </div> -->
 
         <div class="card">
             <h2>Results</h2>
             <div id="recipeDisplay"></div>
+            <div id="workoutDisplay"></div>
             <pre id="results" style="display: none;">Results will appear here...</pre>
         </div>
     </div>
@@ -346,7 +418,7 @@
             const buttonContainer = document.createElement('div');
             buttonContainer.className = 'button-container';
             buttonContainer.innerHTML = `
-                <a href="https://spoonacular.com/recipes/${title.toLowerCase().replace(/\s+/g, '-')}-${id}" 
+                <a href="https://spoonacular.com/recipes/${title ? title.toLowerCase().replace(/\s+/g, '-') : 'recipe'}-${id}"
                    target="_blank" class="view-recipe-button">
                    View Full Recipe
                 </a>
@@ -387,6 +459,130 @@
             return section;
         }
         
+        // Function to create and display workout cards
+        function displayWorkouts(workouts) {
+            // Store the raw JSON in the hidden pre element
+            const resultsElement = document.getElementById('results');
+            resultsElement.textContent = JSON.stringify(workouts, null, 2);
+            
+            const displayElement = document.getElementById('workoutDisplay');
+            const recipeDisplay = document.getElementById('recipeDisplay');
+            
+            // Clear previous results
+            displayElement.innerHTML = '';
+            recipeDisplay.innerHTML = '';
+            
+            if (!workouts || workouts.length === 0) {
+                displayElement.innerHTML = '<p>No workout recommendations found. Try a different calorie target.</p>';
+                return;
+            }
+            
+            // Create workout grid
+            const workoutGrid = document.createElement('div');
+            workoutGrid.className = 'workout-grid';
+            
+            // Activity icons map
+            const activityIcons = {
+                Run: '🏃',
+                Walk: '🚶',
+                Ride: '🚴',
+                Swim: '🏊',
+                Hike: '🥾',
+                WeightTraining: '🏋️',
+                Yoga: '🧘',
+                Running: '🏃',
+                Cycling: '🚴',
+                Swimming: '🏊',
+                Walking: '🚶',
+                Hiking: '🥾',
+                'Weight Training': '🏋️'
+            };
+            
+            // Add each workout as a card
+            workouts.forEach(workout => {
+                const card = document.createElement('div');
+                card.className = 'workout-card';
+                
+                // Create header with icon and activity title
+                const header = document.createElement('div');
+                header.className = 'workout-header';
+                
+                const title = document.createElement('h3');
+                title.className = 'workout-title';
+                title.innerHTML = `
+                    <span class="workout-icon">${activityIcons[workout.activity] || '💪'}</span>
+                    ${workout.activity}
+                `;
+                header.appendChild(title);
+                card.appendChild(header);
+                
+                // Create workout details content
+                const content = document.createElement('div');
+                content.className = 'workout-content';
+                
+                const detailsList = document.createElement('ul');
+                detailsList.className = 'workout-details';
+                
+                // Duration detail
+                const durationItem = document.createElement('li');
+                durationItem.className = 'workout-detail';
+                durationItem.innerHTML = `
+                    <span class="detail-label">Duration:</span>
+                    <span class="detail-value">${workout.duration_minutes} minutes</span>
+                `;
+                detailsList.appendChild(durationItem);
+                
+                // Distance detail (if available)
+                if (workout.distance_km !== undefined) {
+                    const distanceItem = document.createElement('li');
+                    distanceItem.className = 'workout-detail';
+                    distanceItem.innerHTML = `
+                        <span class="detail-label">Distance:</span>
+                        <span class="detail-value">${workout.distance_km} km</span>
+                    `;
+                    detailsList.appendChild(distanceItem);
+                }
+                
+                // Pace detail (if available)
+                if (workout.pace) {
+                    const paceItem = document.createElement('li');
+                    paceItem.className = 'workout-detail';
+                    paceItem.innerHTML = `
+                        <span class="detail-label">Pace:</span>
+                        <span class="detail-value">${workout.pace}</span>
+                    `;
+                    detailsList.appendChild(paceItem);
+                }
+                
+                // Steps detail (if available)
+                if (workout.steps) {
+                    const stepsItem = document.createElement('li');
+                    stepsItem.className = 'workout-detail';
+                    stepsItem.innerHTML = `
+                        <span class="detail-label">Steps:</span>
+                        <span class="detail-value">${workout.steps.toLocaleString()}</span>
+                    `;
+                    detailsList.appendChild(stepsItem);
+                }
+                
+                // Calories detail
+                const caloriesItem = document.createElement('li');
+                caloriesItem.className = 'workout-detail workout-calories';
+                caloriesItem.innerHTML = `
+                    <span class="detail-label">Calories:</span>
+                    <span class="detail-value">${workout.estimated_calories} cal</span>
+                `;
+                detailsList.appendChild(caloriesItem);
+                
+                content.appendChild(detailsList);
+                card.appendChild(content);
+                
+                workoutGrid.appendChild(card);
+            });
+            
+            displayElement.appendChild(workoutGrid);
+        }
+        
         // Helper function for API calls
         async function callApi(endpoint, params = {}) {
             try {
@@ -400,15 +596,16 @@
                 // Display loading message
                 document.getElementById('results').textContent = 'Loading...';
                 document.getElementById('recipeDisplay').innerHTML = '<p>Loading...</p>';
+                document.getElementById('workoutDisplay').innerHTML = '';
                 
                 const response = await fetch(url);
                 const data = await response.json();
                 
-                displayResults(data);
                 return data;
             } catch (error) {
                 document.getElementById('results').textContent = `Error: ${error.message}`;
                 document.getElementById('recipeDisplay').innerHTML = `<p>Error: ${error.message}</p>`;
+                document.getElementById('workoutDisplay').innerHTML = '';
                 console.error('API call failed:', error);
             }
         }
@@ -416,7 +613,8 @@
         // Function to search recipes by ingredients
         async function searchRecipes() {
             const ingredients = document.getElementById('ingredientsInput').value;
-            await callApi('/recipes', { ingredients });
+            const data = await callApi('/recipes', { ingredients });
+            displayResults(data);
         }
         
         // Function to get recipe details
@@ -426,106 +624,22 @@
                 alert('Please enter a recipe name');
                 return;
             }
-            await callApi(`/recipes/search?query=${encodeURIComponent(recipeName)}`);
+            const data = await callApi(`/recipes/search?query=${encodeURIComponent(recipeName)}`);
+            displayResults(data);
         }
 
-        // Function to get nutrition information by recipe name
-        // Function to get nutrition information for a recipe by name
-        async function getNutritionByName() {
-            const inputElement = document.getElementById('recipeNameInput');
-            console.log('Input element:', inputElement); // Check if the element exists
-            
-            const recipeName = inputElement ? inputElement.value : '';
-            console.log('Recipe name value:', recipeName); // See what value we're getting
-            
-            if (!recipeName) {
-                alert('Please enter a recipe name');
-                return;
-            }
-            
-            // Continue with the fetch request
-            fetch(`/api/recipes/${encodeURIComponent(recipeName)}/nutrition`)
-                .then(response => response.json())
-                .then(nutritionData => {
-                    console.log('Nutrition data:', nutritionData);
-                    displayNutritionInfo(nutritionData);
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('Failed to fetch nutrition information');
-                });
-        }
-
-        // Function to display nutrition information
-        function displayNutritionInfo(data) {
-            const resultsContainer = document.getElementById('resultsContainer');
-            resultsContainer.innerHTML = '';
-            
-            if (!data) {
-                resultsContainer.innerHTML = '<p>No nutrition data available</p>';
-                return;
-            }
-            
-            if (data.error) {
-                resultsContainer.innerHTML = `<p>Error: ${data.error}</p>`;
-                return;
-            }
-            
-            // Create a nutrition info card
-            const nutritionCard = document.createElement('div');
-            nutritionCard.className = 'nutrition-card';
-            
-            let nutritionHTML = `<h2>Nutrition Information</h2>`;
-            
-            // Check if we have nutrients array
-            if (data.nutrients && Array.isArray(data.nutrients)) {
-                nutritionHTML += `<ul class="nutrients-list">`;
-                
-                data.nutrients.forEach(nutrient => {
-                    nutritionHTML += `
-                        <li>
-                            <strong>${nutrient.name}:</strong> 
-                            ${nutrient.amount.toFixed(1)} ${nutrient.unit} 
-                            (${nutrient.percentOfDailyNeeds.toFixed(1)}% of daily needs)
-                        </li>
-                    `;
-                });
-                
-                nutritionHTML += `</ul>`;
-            } else {
-                // Fallback display if nutrients array is not available
-                nutritionHTML += `
-                    <p>Calories: ${data.calories || 'N/A'}</p>
-                    <p>Protein: ${data.protein || 'N/A'}</p>
-                    <p>Fat: ${data.fat || 'N/A'}</p>
-                    <p>Carbohydrates: ${data.carbs || 'N/A'}</p>
-                `;
-            }
-            
-            nutritionCard.innerHTML = nutritionHTML;
-            resultsContainer.appendChild(nutritionCard);
-        }
-        
-        // Function to get recipe nutrition
-        async function getRecipeNutrition() {
-            const recipeId = document.getElementById('nutritionRecipeIdInput').value;
-            if (!recipeId) {
-                alert('Please enter a recipe ID');
-                return;
-            }
-            await callApi(`/recipes/${recipeId}/nutrition`);
-        }
-        
         // Function to get workout suggestions
         async function getWorkoutSuggestions() {
             const calories = document.getElementById('caloriesInput').value;
-            await callApi('/workout', { calories });
+            const data = await callApi('/workout', { calories });
+            displayWorkouts(data);
         }
         
         // Function to search Tasty recipes
         async function searchTastyRecipes() {
             const ingredients = document.getElementById('tastyIngredientsInput').value;
-            await callApi('/tasty/search', { ingredients });
+            const data = await callApi('/tasty/search', { ingredients });
+            displayResults(data);
         }
     </script>
 </body>

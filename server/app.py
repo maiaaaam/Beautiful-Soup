@@ -15,6 +15,9 @@ from models.topic_model import RecipeTopicModel
 from models.sentiment_analyzer import ReviewSentimentAnalyzer
 from knowledge_base.flavor_graph import FlavorGraph
 from web_scraping.tasty_scraper import TastyScraper
+# from api.workout_recommendation import WorkoutRecommender
+from api.fitness_api import get_calories_burned
+import re 
 import requests
 
 # Initialize Flask app
@@ -26,8 +29,10 @@ topic_model = RecipeTopicModel()
 sentiment_analyzer = ReviewSentimentAnalyzer()
 flavor_graph = FlavorGraph()
 tasty_scraper = TastyScraper()
+# workout_recommender = WorkoutRecommender()
 
-# Try to load pre-trained models if available
+
+
 try:
     topic_model.load_model()
     print("Topic model loaded successfully")
@@ -82,16 +87,99 @@ def get_nutrition_by_path_name(recipe_name):
     return jsonify(nutrition_data)
 
 @app.route('/api/workout', methods=['GET'])
-def get_workout():
-    """Get workout suggestions based on calories"""
-    calories = request.args.get('calories', 0)
-    try:
-        calories = float(calories)
-    except ValueError:
-        return jsonify({"error": "Invalid calorie value"}), 400
+def get_workout_suggestions():
+    calories = request.args.get('calories', default=300, type=int)
+    tolerance = request.args.get('tolerance', default=50, type=int)
+    
+    # Use our API function to get workouts matching the calorie target
+    activities = ["running", "walking", "cycling", "swimming", "hiking", "yoga"]
+    all_workouts = []
+    
+    # Collect workout options from different activities
+    for activity in activities:
+        workouts = get_calories_burned(activity)
+        filtered_workouts = []
         
-    workout = get_workout_suggestions(calories)
-    return jsonify(workout)
+        for workout in workouts:
+            # Check if the workout's calories are within our target range
+            if calories - tolerance <= workout["total_calories"] <= calories + tolerance:
+                # Add some additional useful information
+                workout_data = {
+                    "activity": workout["name"].split(",")[0],  # Extract main activity name
+                    "duration_minutes": workout["duration_minutes"],
+                    "estimated_calories": workout["total_calories"]
+                }
+                
+                # Add activity-specific details when possible
+                if "running" in workout["name"].lower():
+                    pace_match = re.search(r'(\d+(\.\d+)?) mph', workout["name"])
+                    if pace_match:
+                        speed = float(pace_match.group(1))
+                        workout_data["pace"] = f"{speed} mph"
+                        # Estimate distance based on speed and time
+                        distance = (speed * workout["duration_minutes"]) / 60
+                        workout_data["distance_km"] = round(distance * 1.60934, 2)  # Convert miles to km
+                
+                elif "walking" in workout["name"].lower():
+                    # Estimate steps (average 1300 steps per km, ~2100 per mile)
+                    pace_match = re.search(r'(\d+(\.\d+)?) mph', workout["name"])
+                    if pace_match:
+                        speed = float(pace_match.group(1))
+                        distance_miles = (speed * workout["duration_minutes"]) / 60
+                        workout_data["steps"] = int(distance_miles * 2100)
+                        workout_data["distance_km"] = round(distance_miles * 1.60934, 2)
+                
+                filtered_workouts.append(workout_data)
+        
+        all_workouts.extend(filtered_workouts)
+    
+    # Sort by how close they are to the target calories
+    all_workouts.sort(key=lambda x: abs(x["estimated_calories"] - calories))
+    
+    # Return top results
+    return jsonify(all_workouts[:12])
+
+# Endpoint to integrate with your recipe search/details flow
+@app.route('/api/recipes/with-workouts', methods=['GET'])
+def get_recipes_with_workouts():
+    """Get recipes with workout recommendations"""
+    ingredients = request.args.get('ingredients', '')
+    if not ingredients:
+        return jsonify({"error": "No ingredients provided"}), 400
+        
+    ingredients_list = [ing.strip() for ing in ingredients.split(',')]
+    recipes = get_recipes_by_ingredients(ingredients_list)
+    
+    # Enhance recipes with workout recommendations
+    enhanced_recipes = []
+    for recipe in recipes:
+        recipe_id = recipe.get("id")
+        nutrition = get_recipe_nutrition(recipe_id)
+        
+        recipe_with_workout = recipe.copy()
+        
+        if nutrition and "calories" in nutrition:
+            calories = nutrition.get("calories", 0)
+            workout = workout_recommender.get_recommendation_for_meal(calories)
+            recipe_with_workout["nutrition"] = nutrition
+            recipe_with_workout["workout_recommendation"] = workout
+        
+        enhanced_recipes.append(recipe_with_workout)
+    
+    return jsonify(enhanced_recipes)
+
+@app.route('/api/workout', methods=['GET'])
+def workout_suggestions():
+    """API endpoint to get workout suggestions based on calorie target"""
+    try:
+        calories = request.args.get('calories', 300)
+        
+        suggestions = get_workout_suggestions(calories)
+        
+        return jsonify(suggestions)
+    except Exception as e:
+        print(f"Error getting workout suggestions: {str(e)}")
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/api/recipes/similar', methods=['GET'])
 def get_similar_recipes():
