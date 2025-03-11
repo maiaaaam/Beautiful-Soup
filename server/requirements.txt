@@ -1,0 +1,4 @@
+dotenv
+Flask
+flask-cors
+textblob
