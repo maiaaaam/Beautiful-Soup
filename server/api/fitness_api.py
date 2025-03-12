@@ -2,7 +2,7 @@ import requests
 import re
 
 # API credentials
-CALORIESBURNED_API_KEY = "API_KEY"
+CALORIESBURNED_API_KEY = "boJKzaMmlnmBxVsHsWs7kA==CTIsE9cu29CZLqPD"
 BASE_URL = "https://api.api-ninjas.com/v1/caloriesburned"
 
 def get_calories_burned(activity):

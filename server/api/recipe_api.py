@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SPOONACULAR_API_KEY = "API_KEY"
+SPOONACULAR_API_KEY = "e7e5ce1476434b7fb6c496fc1f552ef3"
 BASE_URL = "https://api.spoonacular.com"
 
 def get_recipes_by_ingredients(ingredients, number=10):

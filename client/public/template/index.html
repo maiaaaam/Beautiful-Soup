@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make me a Beautiful Soup</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Custom styles for the new components */
+        .card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            padding: 20px;
+            margin-bottom: 30px;
+            background-color: #fff;
+        }
+        
+        .card h2 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .card input[type="text"],
+        .card input[type="number"] {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .card button {
+            background-color: #FF4533;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .card button:hover {
+            background-color: #e63e2e;
+        }
+        
+        /* Recipe grid styles */
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .recipe-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .recipe-image-container {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .recipe-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .recipe-likes {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            color: #e74c3c;
+        }
+        
+        .recipe-likes svg {
+            margin-right: 5px;
+        }
+        
+        .recipe-title {
+            padding: 15px;
+            margin: 0;
+            color: #2c3e50;
+            font-size: 18px;
+            font-weight: 700;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .ingredients-section {
+            padding: 15px;
+        }
+        
+        .ingredient-section {
+            margin-bottom: 15px;
+        }
+        
+        .ingredient-heading {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .ingredient-heading svg {
+            margin-right: 5px;
+        }
+        
+        .used-ingredients .ingredient-heading {
+            color: #27ae60;
+        }
+        
+        .missed-ingredients .ingredient-heading {
+            color: #e74c3c;
+        }
+        
+        .unused-ingredients .ingredient-heading {
+            color: #3498db;
+        }
+        
+        .ingredient-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .ingredient-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .ingredient-image {
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+        
+        .button-container {
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .view-recipe-button {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: #FF4533;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .view-recipe-button:hover {
+            background-color: #e63e2e;
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* Workout grid styles */
+        .workout-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .workout-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .workout-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .workout-header {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .workout-title {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+        }
+        
+        .workout-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        
+        .workout-content {
+            padding: 15px;
+        }
+        
+        .workout-details {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .workout-detail {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .detail-label {
+            font-weight: 500;
+            color: #7f8c8d;
+        }
+        
+        .detail-value {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .workout-calories {
+            margin-top: 15px;
+            border-bottom: none;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        
+        .workout-calories .detail-label {
+            color: #e74c3c;
+        }
+        
+        .workout-calories .detail-value {
+            color: #e74c3c;
+            font-weight: 700;
+        }
+        
+        /* Custom alignment for title */
+        .align_head {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+        
+        /* Additional responsive adjustments */
+        @media (max-width: 767px) {
+            .recipe-grid, .workout-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area ">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-2">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="img/logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-7">
+                            <div class="main-menu d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="index.html">home</a></li>
+                                        <li><a href="about.html">about</a></li>
+                                        <li><a href="Recipes.html">Recipes</a></li>
+                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="blog.html">blog</a></li>
+                                                <li><a href="single-blog.html">single-blog</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="recipes_details.html">Recipes Details</a></li>
+                                                <li><a href="elements.html">elements</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="search_icon">
+                                <a href="#">
+                                    <i class="ti-search"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="single_slider d-flex align-items-center slider_bg_1">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-8">
+                        <div class="slider_text text-center">
+                            <div class="text">
+                                <h3>
+                                    Make me a Beautiful Soup
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+
+    <!-- search_recipe_area_start -->
+    <div class="recepie_area">
+        <h1 class="align_head">Find the Perfect Recipe and Workout Plan</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <h2>Search Recipes by Ingredients</h2>
+                        <input type="text" id="ingredientsInput" placeholder="Enter ingredients (comma separated)" value="chicken, pasta, tomato">
+                        <button onclick="searchRecipes()" class="line_btn">Search Recipes</button>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card">
+                        <h2>Get Recipe Details</h2>
+                        <input type="text" id="recipeNameInput" placeholder="Enter recipe name">
+                        <button onclick="getRecipeDetails()" class="line_btn">Get Recipe Details</button>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card">
+                        <h2>Get Workout Suggestions</h2>
+                        <input type="number" id="caloriesInput" placeholder="Enter calories to burn" value="300">
+                        <button onclick="getWorkoutSuggestions()" class="line_btn">Get Workouts</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div id="recipeDisplay"></div>
+                        <div id="workoutDisplay"></div>
+                        <pre id="results" style="display: none;">Results will appear here...</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- search_recipe_area_end -->
+
+    <!-- recepie_area_start  -->
+    <div class="recepie_area">
+        <h1 class="align_head">Don't know what to cook? Get inspired by some of our curated recipes</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single_recepie text-center">
+                        <div class="recepie_thumb">
+                            <img src="img/recepie/recpie_1.png" alt="">
+                        </div>
+                        <h3>Egg Manchurian</h3>
+                        <span>Appetizer</span>
+                        <p>Time Needs: 30 Mins</p>
+                        <a href="#" class="line_btn">View Full Recipe</a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single_recepie text-center">
+                        <div class="recepie_thumb">
+                            <img src="img/recepie/recpie_2.png" alt="">
+                        </div>
+                        <h3>Pure Vegetable Bowl</h3>
+                        <span>Appetizer</span>
+                        <p>Time Needs: 30 Mins</p>
+                        <a href="#" class="line_btn">View Full Recipe</a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single_recepie text-center">
+                        <div class="recepie_thumb">
+                            <img src="img/recepie/recpie_3.png" alt="">
+                        </div>
+                        <h3>Egg Masala Ramen</h3>
+                        <span>Appetizer</span>
+                        <p>Time Needs: 30 Mins</p>
+                        <a href="#" class="line_btn">View Full Recipe</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /recepie_area_end  -->
+
+    <!-- recepie_videos   -->
+    <div class="recepie_videoes_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="recepie_info">
+                        <h3>Know what to cook but don't know how? check out recipe videos</h3>
+                        <p>inappropriate behavior is often laughed off as "boys will be boys," women face higher conduct standards especially in the workplace. That's why it's crucial that, as women.</p>
+                        <div class="video_watch d-flex align-items-center">
+                            <a class="popup-video" href="https://www.youtube.com/watch?v=lr6AMBsjxrY"> <i class="ti-control-play"></i> </a>
+                            <div class="watch_text">
+                                <h4>Watch Video</h4>
+                                <p>You will love our execution</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="videos_thumb">
+                        <div class="big_img">
+                            <img src="img/video/big.png" alt="">
+                        </div>
+                        <div class="small_thumb">
+                            <img src="img/video/small_1.png" alt="">
+                        </div>
+                        <div class="small_thumb_2">
+                            <img src="img/video/2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ recepie_videos   -->
+
+    <!-- latest_trand     -->
+    <div class="latest_trand_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="trand_info text-center">
+                        <p>Thousands of recipes are waiting to be cooked</p>
+                        <h3>Find out how to burn those calories and stay healthy</h3>
+                        <a href="#" class="boxed-btn3">View all Recipes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ latest_trand     -->
+
+    <!-- footer  -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Top Products
+                            </h3>
+                            <ul>
+                                <li><a href="#">Managed Website</a></li>
+                                <li><a href="#"> Manage Reputation</a></li>
+                                <li><a href="#">Power Tools</a></li>
+                                <li><a href="#">Marketing Service</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Quick Links
+                            </h3>
+                            <ul>
+                                <li><a href="#">Jobs</a></li>
+                                <li><a href="#">Brand Assets</a></li>
+                                <li><a href="#">Investor Relations</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Features
+                            </h3>
+                            <ul>
+                                <li><a href="#">Jobs</a></li>
+                                <li><a href="#">Brand Assets</a></li>
+                                <li><a href="#">Investor Relations</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Resources
+                            </h3>
+                            <ul>
+                                <li><a href="#">Guides</a></li>
+                                <li><a href="#">Research</a></li>
+                                <li><a href="#">Experts</a></li>
+                                <li><a href="#">Agencies</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Subscribe
+                            </h3>
+                            <p class="newsletter_text">You can trust us. we only send promo offers,</p>
+                            <form action="#" class="newsletter_form">
+                                <input type="text" placeholder="Enter your mail">
+                                <button type="submit"> <i class="ti-arrow-right"></i> </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row align-items-center">
+                    <div class="col-xl-8 col-md-8">
+                        <p class="copy_right">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                    <div class="col-xl-4 col-md-4">
+                        <div class="socail_links">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="ti-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="ti-twitter-alt"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-dribbble"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-behance"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/ footer  -->
+
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+
+    <!--contact js-->
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+
+    <script src="js/main.js"></script>
+    
+    <!-- API functionality -->
+    <script>
+        const API_BASE_URL = 'http://localhost:5000/api';
+        
+        // Helper function to display results
+        function displayResults(data) {
+            // Store the raw JSON in the hidden pre element
+            const resultsElement = document.getElementById('results');
+            resultsElement.textContent = JSON.stringify(data, null, 2);
+            
+            // Generate the beautiful UI
+            createRecipeCards(data);
+        }
+        
+        function createRecipeCards(recipes) {
+            const displayElement = document.getElementById('recipeDisplay');
+            
+            // Clear previous results
+            displayElement.innerHTML = '';
+            
+            if (!recipes || recipes.length === 0) {
+                displayElement.innerHTML = '<p>No recipes found. Try different ingredients.</p>';
+                return;
+            }
+            
+            // Create recipe grid
+            const recipeGrid = document.createElement('div');
+            recipeGrid.className = 'recipe-grid';
+            
+            // Add each recipe as a card
+            recipes.forEach(recipe => {
+                const card = createRecipeCard(recipe);
+                recipeGrid.appendChild(card);
+            });
+            
+            displayElement.appendChild(recipeGrid);
+        }
+        
+        function createRecipeCard(recipe) {
+            const {
+                id,
+                title,
+                image,
+                likes,
+                usedIngredients = [],
+                missedIngredients = [],
+                unusedIngredients = []
+            } = recipe;
+            
+            // Create card container
+            const card = document.createElement('div');
+            card.className = 'recipe-card';
+            
+            // Add recipe image and likes
+            card.innerHTML = `
+                <div class="recipe-image-container">
+                    <img src="${image}" alt="${title}" class="recipe-image">
+                    <div class="recipe-likes">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                        <span>${likes || 0}</span>
+                    </div>
+                </div>
+                <h3 class="recipe-title">${title}</h3>
+            `;
+            
+            // Create ingredients section
+            const ingredientsSection = document.createElement('div');
+            ingredientsSection.className = 'ingredients-section';
+            
+            // Used ingredients
+            if (usedIngredients.length > 0) {
+                const usedSection = createIngredientSection(
+                    'Ingredients You Have', 
+                    usedIngredients,
+                    'used-ingredients',
+                    '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>'
+                );
+                ingredientsSection.appendChild(usedSection);
+            }
+            
+            // Missed ingredients
+            if (missedIngredients.length > 0) {
+                const missedSection = createIngredientSection(
+                    'Ingredients You Need', 
+                    missedIngredients,
+                    'missed-ingredients',
+                    '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>'
+                );
+                ingredientsSection.appendChild(missedSection);
+            }
+            
+            // Unused ingredients
+            if (unusedIngredients.length > 0) {
+                const unusedSection = createIngredientSection(
+                    'Unused Ingredients', 
+                    unusedIngredients,
+                    'unused-ingredients',
+                    '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>'
+                );
+                ingredientsSection.appendChild(unusedSection);
+            }
+            
+            card.appendChild(ingredientsSection);
+            
+            // Add view recipe button
+            const buttonContainer = document.createElement('div');
+            buttonContainer.className = 'button-container';
+            buttonContainer.innerHTML = `
+                <a href="https://spoonacular.com/recipes/${title ? title.toLowerCase().replace(/\s+/g, '-') : 'recipe'}-${id}"
+                   target="_blank" class="view-recipe-button">
+                   View Full Recipe
+                </a>
+            `;
+            card.appendChild(buttonContainer);
+            
+            return card;
+        }
+        
+        function createIngredientSection(title, ingredients, className, icon) {
+            const section = document.createElement('div');
+            section.className = `ingredient-section ${className}`;
+            
+            const heading = document.createElement('h4');
+            heading.className = 'ingredient-heading';
+            heading.innerHTML = `${icon} ${title}`;
+            section.appendChild(heading);
+            
+            const list = document.createElement('ul');
+            list.className = 'ingredient-list';
+            
+            ingredients.forEach(ingredient => {
+                const listItem = document.createElement('li');
+                listItem.className = 'ingredient-item';
+                
+                // Get the image filename from the URL
+                const imageName = ingredient.image.split('/').pop();
+                const imageUrl = `https://img.spoonacular.com/ingredients_100x100/${imageName}`;
+                
+                listItem.innerHTML = `
+                    <img src="${imageUrl}" alt="${ingredient.name}" class="ingredient-image">
+                    <span>${ingredient.amount || ''} ${ingredient.unit || ''} ${ingredient.name}</span>
+                `;
+                list.appendChild(listItem);
+            });
+            
+            section.appendChild(list);
+            return section;
+        }
+        
+        function displayWorkouts(workouts) {
+            // Store the raw JSON in the hidden pre element
+            const resultsElement = document.getElementById('results');
+            resultsElement.textContent = JSON.stringify(workouts, null, 2);
+            
+            const displayElement = document.getElementById('workoutDisplay');
+            const recipeDisplay = document.getElementById('recipeDisplay');
+            
+            // Clear previous results
+            displayElement.innerHTML = '';
+            recipeDisplay.innerHTML = '';
+            
+            if (!workouts || workouts.length === 0) {
+                displayElement.innerHTML = '<p>No workout recommendations found. Try a different calorie target.</p>';
+                return;
+            }
+            
+            // Create workout grid
+            const workoutGrid = document.createElement('div');
+            workoutGrid.className = 'workout-grid';
+            
+            // Activity icons map
+            const activityIcons = {
+                Run: '🏃',
+                Walk: '🚶',
+                Ride: '🚴',
+                Swim: '🏊',
+                Hike: '🥾',
+                WeightTraining: '🏋️',
+                Yoga: '🧘',
+                Running: '🏃',
+                Cycling: '🚴',
+                Swimming: '🏊',
+                Walking: '🚶',
+                Hiking: '🥾',
+                'Weight Training': '🏋️'
+            };
+            
+            // Add each workout as a card
+            workouts.forEach(workout => {
+                const card = document.createElement('div');
+                card.className = 'workout-card';
+                
+                // Create header with icon and activity title
+                const header = document.createElement('div');
+                header.className = 'workout-header';
+                
+                const title = document.createElement('h3');
+                title.className = 'workout-title';
+                title.innerHTML = `
+                    <span class="workout-icon">${activityIcons[workout.activity] || '💪'}</span>
+                    ${workout.activity}
+                `;
+                header.appendChild(title);
+                card.appendChild(header);
+                
+                // Create workout details content
+                const content = document.createElement('div');
+                content.className = 'workout-content';
+                
+                const detailsList = document.createElement('ul');
+                detailsList.className = 'workout-details';
+                
+                // Duration detail
+                const durationItem = document.createElement('li');
+                durationItem.className = 'workout-detail';
+                durationItem.innerHTML = `
+                    <span class="detail-label">Duration:</span>
+                    <span class="detail-value">${workout.duration_minutes} minutes</span>
+                `;
+                detailsList.appendChild(durationItem);
+                
+                // Distance detail (if available)
+                if (workout.distance_km !== undefined) {
+                    const distanceItem = document.createElement('li');
+                    distanceItem.className = 'workout-detail';
+                    distanceItem.innerHTML = `
+                        <span class="detail-label">Distance:</span>
+                        <span class="detail-value">${workout.distance_km} km</span>
+                    `;
+                    detailsList.appendChild(distanceItem);
+                }
+                
+                // Pace detail (if available)
+                if (workout.pace) {
+                    const paceItem = document.createElement('li');
+                    paceItem.className = 'workout-detail';
+                    paceItem.innerHTML = `
+                        <span class="detail-label">Pace:</span>
+                        <span class="detail-value">${workout.pace}</span>
+                    `;
+                    detailsList.appendChild(paceItem);
+                }
+                
+                // Steps detail (if available)
+                if (workout.steps) {
+                    const stepsItem = document.createElement('li');
+                    stepsItem.className = 'workout-detail';
+                    stepsItem.innerHTML = `
+                        <span class="detail-label">Steps:</span>
+                        <span class="detail-value">${workout.steps.toLocaleString()}</span>
+                    `;
+                    detailsList.appendChild(stepsItem);
+                }
+                
+                // Calories detail
+                const caloriesItem = document.createElement('li');
+                caloriesItem.className = 'workout-detail workout-calories';
+                caloriesItem.innerHTML = `
+                    <span class="detail-label">Calories:</span>
+                    <span class="detail-value">${workout.estimated_calories} cal</span>
+                `;
+                detailsList.appendChild(caloriesItem);
+                
+                content.appendChild(detailsList);
+                card.appendChild(content);
+                
+                workoutGrid.appendChild(card);
+            });
+            
+            displayElement.appendChild(workoutGrid);
+        }
+        
+        // Helper function for API calls
+        async function callApi(endpoint, params = {}) {
+            try {
+                // Build query string from params
+                const queryString = Object.keys(params)
+                    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+                    .join('&');
+                
+                const url = queryString ? `${API_BASE_URL}${endpoint}?${queryString}` : `${API_BASE_URL}${endpoint}`;
+                
+                // Display loading message
+                document.getElementById('results').textContent = 'Loading...';
+                document.getElementById('recipeDisplay').innerHTML = '<p>Loading...</p>';
+                document.getElementById('workoutDisplay').innerHTML = '';
+                
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                return data;
+            } catch (error) {
+                document.getElementById('results').textContent = `Error: ${error.message}`;
+                document.getElementById('recipeDisplay').innerHTML = `<p>Error: ${error.message}</p>`;
+                document.getElementById('workoutDisplay').innerHTML = '';
+                console.error('API call failed:', error);
+            }
+        }
+        
+        // Function to search recipes by ingredients
+        async function searchRecipes() {
+            const ingredients = document.getElementById('ingredientsInput').value;
+            const data = await callApi('/recipes', { ingredients });
+            displayResults(data);
+        }
+        
+        // Function to get recipe details
+        async function getRecipeDetails() {
+            const recipeName = document.getElementById('recipeNameInput').value;
+            if (!recipeName) {
+                alert('Please enter a recipe name');
+                return;
+            }
+            const data = await callApi(`/recipes/search?query=${encodeURIComponent(recipeName)}`);
+            displayResults(data);
+        }
+
+        // Function to get workout suggestions
+        async function getWorkoutSuggestions() {
+            const calories = document.getElementById('caloriesInput').value;
+            const data = await callApi('/workout', { calories });
+            displayWorkouts(data);
+        }
+        
+        // Function to search Tasty recipes
+        async function searchTastyRecipes() {
+            const ingredients = document.getElementById('tastyIngredientsInput').value;
+            const data = await callApi('/tasty/search', { ingredients });
+            displayResults(data);
+        }
+    </script>
+</body>
+</html>
