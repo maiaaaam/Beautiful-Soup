@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced Nutrition Data Visualization</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+      body {
+        font-family: "Inter", "Segoe UI", -apple-system, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f8f9fa;
+        color: #212529;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+      .chart-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: space-between;
+      }
+      .chart-wrapper {
+        flex: 1 1 450px;
+        min-height: 340px;
+        margin-bottom: 25px;
+        border-radius: 8px;
+        padding: 15px;
+        background-color: #fdfdfd;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      }
+      h1 {
+        color: #2d3748;
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: 600;
+      }
+      .calories-display {
+        text-align: center;
+        margin: 20px auto 40px;
+        padding: 20px;
+        max-width: 300px;
+        background: linear-gradient(135deg, #6366f1 0%, #2d3a8c 100%);
+        color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+      }
+      .calories-value {
+        font-size: 3rem;
+        font-weight: 700;
+        margin: 0;
+      }
+      .calories-label {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Nutritional Analysis</h1>
+
+      <div class="calories-display">
+        <p class="calories-label">Total Energy</p>
+        <p class="calories-value" id="caloriesValue">0</p>
+        <p class="calories-label">kilocalories</p>
+      </div>
+
+      <div class="chart-container">
+        <div class="chart-wrapper">
+          <canvas id="macronutrients"></canvas>
+        </div>
+        <div class="chart-wrapper">
+          <canvas id="fatBreakdown"></canvas>
+        </div>
+        <div class="chart-wrapper">
+          <canvas id="minerals"></canvas>
+        </div>
+        <div class="chart-wrapper">
+          <canvas id="vitamins"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Nutrition data
+      const nutritionData = {
+        Calories: { name: "Calories", amount: 3057, unit: "kcal" },
+        Protein: { name: "Protein", amount: 170.98, unit: "g" },
+        Carbohydrates: { name: "Carbohydrates", amount: 53.41, unit: "g" },
+        Fat: { name: "Fat", amount: 245.9, unit: "g" },
+        "Saturated Fat": { name: "Saturated Fat", amount: 102.13, unit: "g" },
+        "Mono Unsaturated Fat": {
+          name: "Mono Unsaturated Fat",
+          amount: 87.34,
+          unit: "g",
+        },
+        "Poly Unsaturated Fat": {
+          name: "Poly Unsaturated Fat",
+          amount: 36.55,
+          unit: "g",
+        },
+        Cholesterol: { name: "Cholesterol", amount: 1098.32, unit: "mg" },
+        Fiber: { name: "Fiber", amount: 0.42, unit: "g" },
+        Sugar: { name: "Sugar", amount: 50.74, unit: "g" },
+        Sodium: { name: "Sodium", amount: 699.72, unit: "mg" },
+        Potassium: { name: "Potassium", amount: 2026.63, unit: "mg" },
+        Calcium: { name: "Calcium", amount: 139.05, unit: "mg" },
+        Iron: { name: "Iron", amount: 14.12, unit: "mg" },
+        "Vitamin A": { name: "Vitamin A", amount: 11433.63, unit: "IU" },
+        "Vitamin C": { name: "Vitamin C", amount: 40.65, unit: "mg" },
+        "Vitamin D": { name: "Vitamin D", amount: 1.7, unit: "µg" },
+        "Vitamin B12": { name: "Vitamin B12", amount: 10.02, unit: "µg" },
+      };
+
+      // Set calories value
+      document.getElementById("caloriesValue").textContent =
+        nutritionData.Calories.amount;
+
+      // Modern color palettes
+      const colors = {
+        macros: [
+          "#3B82F6", // Blue
+          "#10B981", // Green
+          "#F59E0B", // Amber
+          "#8B5CF6", // Purple
+          "#EC4899", // Pink
+        ],
+        fats: [
+          "#F97316", // Orange
+          "#F59E0B", // Amber
+          "#EAB308", // Yellow
+        ],
+        minerals: [
+          "#06B6D4", // Cyan
+          "#0EA5E9", // Light Blue
+          "#3B82F6", // Blue
+          "#6366F1", // Indigo
+        ],
+        vitamins: [
+          "#8B5CF6", // Violet
+          "#A855F7", // Purple
+          "#D946EF", // Fuchsia
+          "#EC4899", // Pink
+        ],
+      };
+
+      // Chart 1: Macronutrients with calorie percentage
+      new Chart(document.getElementById("macronutrients"), {
+        type: "doughnut",
+        data: {
+          labels: ["Protein", "Carbohydrates", "Fat", "Fiber", "Sugar"],
+          datasets: [
+            {
+              data: [
+                nutritionData["Protein"].amount,
+                nutritionData["Carbohydrates"].amount,
+                nutritionData["Fat"].amount,
+                nutritionData["Fiber"].amount,
+                nutritionData["Sugar"].amount,
+              ],
+              backgroundColor: colors.macros,
+              borderWidth: 1,
+              borderColor: "#ffffff",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "right",
+              labels: {
+                font: {
+                  family: "'Inter', sans-serif",
+                },
+              },
+            },
+            title: {
+              display: true,
+              text: "Macronutrients Distribution (g)",
+              font: {
+                size: 16,
+                family: "'Inter', sans-serif",
+                weight: "500",
+              },
+              color: "#2D3748",
+              padding: {
+                bottom: 15,
+              },
+            },
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  const label = context.label || "";
+                  const value = context.raw || 0;
+                  let calories = 0;
+                  if (label === "Protein" || label === "Carbohydrates") {
+                    calories = value * 4; // 4 calories per gram
+                  } else if (label === "Fat") {
+                    calories = value * 9; // 9 calories per gram
+                  } else if (label === "Fiber" || label === "Sugar") {
+                    calories = value * 4; // 4 calories per gram
+                  }
+                  const percentage = (
+                    (calories / nutritionData.Calories.amount) *
+                    100
+                  ).toFixed(1);
+                  return `${label}: ${value.toFixed(1)}g (${calories.toFixed(
+                    0
+                  )} kcal, ${percentage}%)`;
+                },
+              },
+            },
+          },
+        },
+      });
+
+      // Chart 2: Fat Breakdown
+      new Chart(document.getElementById("fatBreakdown"), {
+        type: "pie",
+        data: {
+          labels: [
+            "Saturated Fat",
+            "Mono Unsaturated Fat",
+            "Poly Unsaturated Fat",
+          ],
+          datasets: [
+            {
+              data: [
+                nutritionData["Saturated Fat"].amount,
+                nutritionData["Mono Unsaturated Fat"].amount,
+                nutritionData["Poly Unsaturated Fat"].amount,
+              ],
+              backgroundColor: colors.fats,
+              borderWidth: 1,
+              borderColor: "#ffffff",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "right",
+              labels: {
+                font: {
+                  family: "'Inter', sans-serif",
+                },
+              },
+            },
+            title: {
+              display: true,
+              text: "Fat Distribution (g)",
+              font: {
+                size: 16,
+                family: "'Inter', sans-serif",
+                weight: "500",
+              },
+              color: "#2D3748",
+              padding: {
+                bottom: 15,
+              },
+            },
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  const label = context.label || "";
+                  const value = context.raw || 0;
+                  const calories = value * 9; // 9 calories per gram for fat
+                  const percentage = (
+                    (calories / nutritionData.Calories.amount) *
+                    100
+                  ).toFixed(1);
+                  return `${label}: ${value.toFixed(1)}g (${calories.toFixed(
+                    0
+                  )} kcal, ${percentage}%)`;
+                },
+              },
+            },
+          },
+        },
+      });
+
+      // Chart 3: Minerals
+      new Chart(document.getElementById("minerals"), {
+        type: "bar",
+        data: {
+          labels: ["Sodium", "Potassium", "Calcium", "Iron"],
+          datasets: [
+            {
+              label: "Amount",
+              data: [
+                nutritionData["Sodium"].amount,
+                nutritionData["Potassium"].amount,
+                nutritionData["Calcium"].amount,
+                nutritionData["Iron"].amount,
+              ],
+              backgroundColor: colors.minerals,
+              borderWidth: 0,
+              borderRadius: 4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false,
+            },
+            title: {
+              display: true,
+              text: "Minerals (mg)",
+              font: {
+                size: 16,
+                family: "'Inter', sans-serif",
+                weight: "500",
+              },
+              color: "#2D3748",
+              padding: {
+                bottom: 15,
+              },
+            },
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  const label = context.dataset.label || "";
+                  const value = context.raw || 0;
+                  const unit = context.label === "Iron" ? "mg" : "mg";
+                  return `${label}: ${value.toFixed(1)} ${unit}`;
+                },
+              },
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: "Amount (mg)",
+                font: {
+                  family: "'Inter', sans-serif",
+                },
+              },
+              grid: {
+                color: "rgba(0, 0, 0, 0.05)",
+              },
+            },
+            x: {
+              grid: {
+                display: false,
+              },
+              ticks: {
+                font: {
+                  family: "'Inter', sans-serif",
+                },
+              },
+            },
+          },
+        },
+      });
+
+      // Chart 4: Vitamins
+      new Chart(document.getElementById("vitamins"), {
+        type: "polarArea",
+        data: {
+          labels: [
+            "Vitamin A (IU/100)",
+            "Vitamin C",
+            "Vitamin D",
+            "Vitamin B12",
+          ],
+          datasets: [
+            {
+              label: "Amount",
+              data: [
+                nutritionData["Vitamin A"].amount / 100, // Scaled down for better visualization
+                nutritionData["Vitamin C"].amount,
+                nutritionData["Vitamin D"].amount,
+                nutritionData["Vitamin B12"].amount,
+              ],
+              backgroundColor: colors.vitamins.map((color) => color + "B3"), // Adding transparency
+              borderWidth: 1,
+              borderColor: colors.vitamins.map((color) =>
+                color.replace("99", "")
+              ),
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "right",
+              labels: {
+                font: {
+                  family: "'Inter', sans-serif",
+                },
+              },
+            },
+            title: {
+              display: true,
+              text: "Vitamins (varied units)",
+              font: {
+                size: 16,
+                family: "'Inter', sans-serif",
+                weight: "500",
+              },
+              color: "#2D3748",
+              padding: {
+                bottom: 15,
+              },
+            },
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  const label = context.label || "";
+                  let value = context.raw || 0;
+                  let unit = "";
+
+                  if (label.includes("A")) {
+                    value = value * 100; // Restore original value
+                    unit = "IU";
+                  } else if (label.includes("C")) {
+                    unit = "mg";
+                  } else if (label.includes("D")) {
+                    unit = "µg";
+                  } else if (label.includes("B12")) {
+                    unit = "µg";
+                  }
+
+                  return `${label}: ${value.toFixed(1)} ${unit}`;
+                },
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
