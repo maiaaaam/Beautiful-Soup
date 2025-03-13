@@ -2,20 +2,39 @@ import json
 from langchain_ollama import ChatOllama
 from langchain_core.messages import SystemMessage, HumanMessage
 
-model = ChatOllama(model="qwen2.5:3b", temperature=0)
+
+model = ChatOllama(model="gemma3:1b-it-fp16", temperature=0)
+
+# SYSTEM_PROMPT = """You are an expert chef. Using only the ingredient list given to you, create a detailed recipe with servings, quantities and instructions. You may use standard ingredients such as salt, pepper, sugar etc. as well if you need to.
+# Important: Provide the response in a JSON format with the following keys: recipe_name, servings, ingredients(key=ingredient name, value=quantity), instructions."""
+SYSTEM_PROMPT = """You are an expert chef. Using only the ingredient list given to you, create a detailed recipe with servings, quantities and instructions. You may use standard ingredients such as salt, pepper, sugar etc. as well if you need to.
+Important: Provide only a JSON response of similar to the following sample example:
+{
+    "recipe_name": "Name for the recipe",
+    "servings": serving size (int),
+    "ingredients": {
+        "ingredient 1": "quantity with units",
+        "ingredient 2": "quantity with units",
+        ...
+    }
+    "instructions": [
+        "Step 1: ...",
+        "Step 2: ...",
+        ...
+    ]
+}"""
 
 
 def main():
-    ingredients = ["chocolate", "butter", "sugar",
-                   "vanilla", "orange", "milk"]
+    ingredients = ["tomatoes", "onions", "garlic",
+                   "olive oil", "basil", "parmesan"]
+    ingredients = [ing.replace("_", " ") for ing in ingredients]
     ingredients_str = ', '.join(ingredients)
     prompt = f"Ingredients: {ingredients_str}."
 
     recipe_str = ""
     for chunk in model.stream([
-        SystemMessage(
-            """You are an expert chef. Using only the ingredient list given to you, create a detailed recipe with servings, quantities and instructions. You may use standard ingredients such as salt, pepper, sugar etc. as well if you need to.
-            Important: Provide the response in a JSON format with the following keys: recipe_name, servings, ingredients(key=ingredient name, value=quantity), instructions."""),
+        SystemMessage(SYSTEM_PROMPT),
         HumanMessage(prompt)
     ]):
         print(chunk.content, end="")
