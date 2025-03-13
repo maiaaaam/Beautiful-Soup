@@ -6,7 +6,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, ElementClickInterceptedException
 import time
 
-#for reviews given a recipe.
+# for reviews given a recipe.
+
 
 def setup_chrome_driver():
     chrome_options = Options()
@@ -84,13 +85,14 @@ def scrape_tasty_tips_with_pagination(url):
         driver.quit()
 
 
-# URL of the recipe
-url = 'https://tasty.co/recipe/creamy-lemon-garlic-chicken'
+if __name__ == "__main__":
+    # URL of the recipe
+    url = 'https://tasty.co/recipe/creamy-lemon-garlic-chicken'
 
-# Scrape the tips
-tips = scrape_tasty_tips_with_pagination(url)
+    # Scrape the tips
+    tips = scrape_tasty_tips_with_pagination(url)
 
-# Print the results
-print(f"\nFound a total of {len(tips)} tips across all pages:")
-for i, tip in enumerate(tips, 1):
-    print(f"Tip {i}: {tip}")
+    # Print the results
+    print(f"\nFound a total of {len(tips)} tips across all pages:")
+    for i, tip in enumerate(tips, 1):
+        print(f"Tip {i}: {tip}")

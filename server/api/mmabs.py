@@ -201,4 +201,7 @@ def build_recipe(ingredients):
     final_ingredients, _ = build_ingredient_list(
         ingredients, nodes_df, edges_df, k=6, top_n=10)
 
-    return generate_recipe(final_ingredients)
+    recipe = generate_recipe(final_ingredients)
+    ingredients_list = [f"{k} {v}" for k, v in recipe["ingredients"].items()]
+    recipe["ingredients"] = ingredients_list
+    return recipe

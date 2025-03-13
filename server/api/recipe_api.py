@@ -1,7 +1,7 @@
 import requests
 import os
 from dotenv import load_dotenv
-from api.utils import parse_spoonacular_response
+from api.utils import parse_spoonacular_response, get_recipe_nutrition
 from api.env import SPOONACULAR_API_KEY, SPOONACULAR_BASE_URL
 from api.tasty_recipe_list import scrape_recipes_tasty
 from api.mmabs import build_recipe
@@ -34,15 +34,37 @@ def get_recipe_spoonacular(ingredients, number=2):
     }
     response = requests.get(endpoint, params=params)
 
-    return parse_spoonacular_response(response.json()) if response.status_code == 200 else []
+    recipes = parse_spoonacular_response(
+        response.json()) if response.status_code == 200 else []
+    final_response = [{
+        "recipe": recipe,
+        "nutrients": get_recipe_nutrition(recipe)
+    } for recipe in recipes]
+    return final_response
 
 
 def get_recipe_tasty(ingredients, number=2):
-    return scrape_recipes_tasty(ingredients, num_recipes=number)
+    tasty_response = scrape_recipes_tasty(ingredients, num_recipes=number)
+    recipes = tasty_response["recipes"]
+    urls = tasty_response["urls"]
+    modified_recipes = [{
+        "recipe": recipe,
+        "nutrients": get_recipe_nutrition(recipe)
+    } for recipe in recipes]
+    final_response = {
+        "urls": urls,
+        "recipes": modified_recipes
+    }
+    return final_response
 
 
 def get_recipe_mmabs(ingredients):
-    return build_recipe(ingredients)
+    recipe = build_recipe(ingredients)
+    final_response = {
+        "recipe": recipe,
+        "nutrients": get_recipe_nutrition(recipe)
+    }
+    return final_response
 
 
 def get_recipe_information(recipe_id):
