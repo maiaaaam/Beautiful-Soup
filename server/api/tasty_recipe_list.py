@@ -10,6 +10,7 @@ import json
 
 # given a list of ingredients, go to tasty and get the recipes of the first 3 igredients
 
+
 def setup_chrome_driver():
     chrome_options = Options()
     chrome_options.add_argument('--headless')
@@ -69,7 +70,7 @@ def scrape_recipe_details(url, driver, wait):
         "name": "",
         "servings": "",
         "ingredients": [],
-        "preparation_steps": []
+        "instructions": []
     }
 
     try:
@@ -104,7 +105,7 @@ def scrape_recipe_details(url, driver, wait):
         prep_steps_ol = driver.find_element(By.CSS_SELECTOR, "ol.prep-steps")
         step_elements = prep_steps_ol.find_elements(By.TAG_NAME, "li")
         steps = [element.text for element in step_elements]
-        recipe_details["preparation_steps"] = steps
+        recipe_details["instructions"] = steps
         print(f"Found {len(steps)} preparation steps")
     except Exception as e:
         print(f"Error getting preparation steps: {e}")
@@ -112,7 +113,7 @@ def scrape_recipe_details(url, driver, wait):
     return recipe_details
 
 
-def scrape_recipes(ingredients, num_recipes=3):
+def scrape_recipes_tasty(ingredients, num_recipes=3):
     # get the recipe links
     recipe_links = scrape_tasty_links(ingredients)
 
@@ -143,7 +144,9 @@ def scrape_recipes(ingredients, num_recipes=3):
         driver.quit()
 
 
-available_ingredients = ['lemon', 'butter', 'sugar']
-recipe_links, recipes = scrape_recipes(available_ingredients, num_recipes=3)
+if __name__ == "__main__":
+    available_ingredients = ['lemon', 'butter', 'sugar']
+    recipe_links, recipes = scrape_recipes_tasty(
+        available_ingredients, num_recipes=2)
 
-print(json.dumps(recipes, indent=2))
+    print(json.dumps(recipes, indent=2))

@@ -26,8 +26,8 @@ Important: Provide only a JSON response of similar to the following sample examp
 
 
 def main():
-    ingredients = ["tomatoes", "onions", "garlic",
-                   "olive oil", "basil", "parmesan"]
+    ingredients = ["strawberries", "avocado",
+                   "honey", "lime", "black pepper", "yogurt"]
     ingredients = [ing.replace("_", " ") for ing in ingredients]
     ingredients_str = ', '.join(ingredients)
     prompt = f"Ingredients: {ingredients_str}."
