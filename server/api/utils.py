@@ -64,13 +64,18 @@ def get_recipe_nutrition(recipe):
     NUTRITION_URL = f"{SPOONACULAR_BASE_URL}/recipes/parseIngredients?apiKey={SPOONACULAR_API_KEY}"
 
     recipe_ingredients = "\n".join(recipe["ingredients"])
-    params = {"servings": extract_number(recipe["servings"]),
+    servings = extract_number(recipe["servings"])
+    params = {"servings": servings,
               "ingredientList": recipe_ingredients, "includeNutrition": True}
     payload = urlencode(params)
     headers = {"Content-Type": "application/x-www-form-urlencoded"}
     response = requests.post(NUTRITION_URL, headers=headers, data=payload)
     macros = get_macros([ing['nutrition']['nutrients']
                          for ing in json.loads(response.text) if "nutrition" in ing])
+
+    for k in macros.keys():
+        macros[k]["amount"] = round(macros[k]["amount"] / servings, 3)
+
     important_macro_types = [
         'Protein', 'Carbohydrates', 'Fat',
         'Saturated Fat', 'Mono Unsaturated Fat', 'Poly Unsaturated Fat',
@@ -82,6 +87,39 @@ def get_recipe_nutrition(recipe):
     important_macros = {macro: macros[macro]
                         for macro in important_macro_types}
     return important_macros
+
+
+def get_workouts(calories):
+    CALORIES_BURNED_API_KEY = "boJKzaMmlnmBxVsHsWs7kA==CTIsE9cu29CZLqPD"
+    activities = ["running", "badminton", "walking",
+                  "cycling", "swimming", "hiking", "yoga"]
+
+    WORKOUTS_URL = "https://api.api-ninjas.com/v1/caloriesburned?activity={activity}"
+    headers = {"X-Api-Key": CALORIES_BURNED_API_KEY}
+
+    workouts = {}
+
+    for activity in activities:
+        response = requests.get(WORKOUTS_URL.format(
+            activity=activity), headers=headers)
+        workout_dict = json.loads(response.text)
+        for workout in workout_dict:
+            workout_mins = calories / workout["calories_per_hour"] * 60
+            workouts[workout["name"]] = round(workout_mins, 3)
+
+    selected_workouts = [
+        "Running, 5 mph (12 minute mile)",
+        "Running, 7 mph (8.5 min mile)",
+        "Running, 10 mph (6 min mile)",
+        "Badminton",
+        "Walking 2.0 mph, slow",
+        "Cycling, 12-13.9 mph, moderate",
+        "Swimming laps, freestyle, slow",
+        "Backpacking, Hiking with pack",
+        "Stretching, hatha yoga"
+    ]
+
+    return {k: v for k, v in workouts.items() if k in selected_workouts}
 
 
 if __name__ == "__main__":

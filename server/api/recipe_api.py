@@ -1,7 +1,7 @@
 import requests
 import os
 from dotenv import load_dotenv
-from api.utils import parse_spoonacular_response, get_recipe_nutrition
+from api.utils import parse_spoonacular_response, get_recipe_nutrition, get_workouts
 from api.env import SPOONACULAR_API_KEY, SPOONACULAR_BASE_URL
 from api.tasty_recipe_list import scrape_recipes_tasty
 from api.mmabs import build_recipe
@@ -36,10 +36,15 @@ def get_recipe_spoonacular(ingredients, number=2):
 
     recipes = parse_spoonacular_response(
         response.json()) if response.status_code == 200 else []
+    nutrients = [get_recipe_nutrition(recipe) for recipe in recipes]
+    workouts = [get_workouts(nutrient["Calories"]["amount"])
+                for nutrient in nutrients]
+
     final_response = [{
-        "recipe": recipe,
-        "nutrients": get_recipe_nutrition(recipe)
-    } for recipe in recipes]
+        "recipe": recipes[i],
+        "nutrients": nutrients[i],
+        "workouts": workouts[i]
+    } for i in range(len(recipes))]
     return final_response
 
 
@@ -47,10 +52,17 @@ def get_recipe_tasty(ingredients, number=2):
     tasty_response = scrape_recipes_tasty(ingredients, num_recipes=number)
     recipes = tasty_response["recipes"]
     urls = tasty_response["urls"]
+
+    nutrients = [get_recipe_nutrition(recipe) for recipe in recipes]
+    workouts = [get_workouts(nutrient["Calories"]["amount"])
+                for nutrient in nutrients]
+
     modified_recipes = [{
-        "recipe": recipe,
-        "nutrients": get_recipe_nutrition(recipe)
-    } for recipe in recipes]
+        "recipe": recipes[i],
+        "nutrients": nutrients[i],
+        "workouts": workouts[i]
+    } for i in range(len(recipes))]
+
     final_response = {
         "urls": urls,
         "recipes": modified_recipes
@@ -60,9 +72,11 @@ def get_recipe_tasty(ingredients, number=2):
 
 def get_recipe_mmabs(ingredients):
     recipe = build_recipe(ingredients)
+    nutrients = get_recipe_nutrition(recipe)
     final_response = {
         "recipe": recipe,
-        "nutrients": get_recipe_nutrition(recipe)
+        "nutrients": nutrients,
+        "workouts": get_workouts(nutrients["Calories"]["amount"])
     }
     return final_response
 
