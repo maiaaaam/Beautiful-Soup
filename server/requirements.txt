@@ -2,4 +2,6 @@ dotenv
 Flask
 flask-cors
 textblob
-pip install langchain langchain-ollama
+langchain
+langchain-ollama
+liwc

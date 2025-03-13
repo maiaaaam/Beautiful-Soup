@@ -5,8 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, ElementClickInterceptedException
 import time
-
-# for reviews given a recipe.
+from api.sentiment_analysis import perform_sentiment_analysis
 
 
 def setup_chrome_driver():
@@ -72,7 +71,7 @@ def scrape_tasty_tips_with_pagination(url):
                     if page_num == 10:
                         break
 
-                    time.sleep(2)
+                    time.sleep(1)
 
                 except NoSuchElementException:
                     print("No next button found. Stopping.")
@@ -83,6 +82,12 @@ def scrape_tasty_tips_with_pagination(url):
         return all_tips
     finally:
         driver.quit()
+
+
+def get_reviews(recipe):
+    url = f"https://tasty.co/recipe/{recipe}"
+    tips = scrape_tasty_tips_with_pagination(url)
+    return perform_sentiment_analysis(tips)
 
 
 if __name__ == "__main__":

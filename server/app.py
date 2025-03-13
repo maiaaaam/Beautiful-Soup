@@ -6,6 +6,7 @@ from knowledge_base.flavor_graph import FlavorGraph
 from models.sentiment_analyzer import ReviewSentimentAnalyzer
 from models.topic_model import RecipeTopicModel
 from api.fitness_api import get_workout_suggestions
+from api.tasty_reviews import get_reviews
 from api.nutrition_api import get_recipe_nutrition, get_nutrition_by_recipe_name
 from api.recipe_api import get_recipe_spoonacular, get_recipe_tasty, get_recipe_mmabs, get_recipe_information, extract_ingredients, search_recipes_by_name
 from flask import Flask, request, jsonify
@@ -82,6 +83,13 @@ def get_recipes_mmabs():
     recipes = get_recipe_mmabs(ingredients_list)
 
     return jsonify(recipes)
+
+
+@app.route('/api/reviews', methods=['GET'])
+def get_reviews_api():
+    recipe = request.args.get('recipe')
+    reviews = get_reviews(recipe)
+    return jsonify(reviews)
 
 
 @app.route('/api/recipes/search', methods=['GET'])
