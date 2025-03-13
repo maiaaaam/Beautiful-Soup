@@ -25,9 +25,7 @@ Important: Provide only a JSON response of similar to the following sample examp
 }"""
 
 
-def main():
-    ingredients = ["strawberries", "avocado",
-                   "honey", "lime", "black pepper", "yogurt"]
+def generate_recipe(ingredients):
     ingredients = [ing.replace("_", " ") for ing in ingredients]
     ingredients_str = ', '.join(ingredients)
     prompt = f"Ingredients: {ingredients_str}."
@@ -47,4 +45,6 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    ingredients = ["strawberries", "avocado",
+                   "honey", "lime", "black pepper", "yogurt"]
+    generate_recipe(ingredients)

@@ -1,5 +1,5 @@
 import requests
-from env import SPOONACULAR_API_KEY, SPOONACULAR_BASE_URL
+from api.env import SPOONACULAR_API_KEY, SPOONACULAR_BASE_URL
 
 
 def parse_spoonacular_response(response):

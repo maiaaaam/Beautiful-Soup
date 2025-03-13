@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from api.utils import parse_spoonacular_response
 from api.env import SPOONACULAR_API_KEY, SPOONACULAR_BASE_URL
 from api.tasty_recipe_list import scrape_recipes_tasty
+from api.mmabs import build_recipe
 
 load_dotenv()
 
@@ -41,7 +42,7 @@ def get_recipe_tasty(ingredients, number=2):
 
 
 def get_recipe_mmabs(ingredients):
-    pass
+    return build_recipe(ingredients)
 
 
 def get_recipe_information(recipe_id):

@@ -66,7 +66,6 @@ def scrape_recipe_details(url, driver, wait):
     time.sleep(2)
 
     recipe_details = {
-        "url": url,
         "name": "",
         "servings": "",
         "ingredients": [],
@@ -138,7 +137,10 @@ def scrape_recipes_tasty(ingredients, num_recipes=3):
             # add a delay between requests
             time.sleep(2)
 
-        return recipe_links, recipes
+        return {
+            "urls": recipe_links,
+            "recipes": recipes
+        }
 
     finally:
         driver.quit()

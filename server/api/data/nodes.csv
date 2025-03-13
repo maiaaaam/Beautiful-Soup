@@ -1,0 +1,1140 @@
+node_id,name,flavours
+51,acorn_squash,"['sweet', 'neutral']"
+54,adobo_sauce,"['spicy', 'salty', 'sour']"
+61,agave,['sweet']
+67,ahi_tuna_steak,['umami']
+70,ajwain,['bitter']
+74,alcohol,['neutral']
+79,alfredo_sauce,"['fatty', 'salty']"
+86,allspice,['sweet']
+88,almonds,['fatty']
+94,almond_extract,['sweet']
+102,almond_meal,['neutral']
+103,almond_milk,['neutral']
+105,almond_paste,['sweet']
+111,alum,['bitter']
+113,aluminum_free_baking_powder,['neutral']
+114,amaranth,['neutral']
+120,amaretto_liqueur,['sweet']
+137,anchovy_paste,"['salty', 'umami']"
+139,andouille_sausage,"['spicy', 'salty', 'fatty']"
+144,angel_hair_pasta,['neutral']
+155,anjou_pear,['sweet']
+157,annatto_seeds,['neutral']
+158,apple,"['sweet', 'sour']"
+160,apple_butter,['sweet']
+162,apple_cider,"['sweet', 'sour']"
+163,apple_cider_vinegar,['sour']
+165,apple_juice,['sweet']
+169,apple_pie_filling,"['sweet', 'spicy']"
+172,applewood_smoked_bacon,"['salty', 'fatty']"
+174,applesauce,['sweet']
+175,apricot,"['sweet', 'sour']"
+182,apricot_jam,['sweet']
+185,apricot_nectar,['sweet']
+196,arrowroot,['neutral']
+197,artichoke,['bitter']
+199,artichoke_hearts,['bitter']
+202,arugula,['bitter']
+207,asiago_cheese,"['salty', 'fatty']"
+213,asparagus,['bitter']
+223,avocado,"['fatty', 'neutral']"
+228,baby_arugula,['bitter']
+229,baby_back_ribs,"['umami', 'fatty']"
+231,baby_beets,['sweet']
+233,baby_bok_choy,['bitter']
+235,baby_carrots,['sweet']
+238,baby_corn,['sweet']
+254,baby_shrimp,['umami']
+255,baby_spinach,['bitter']
+268,bacon_bits,"['salty', 'fatty', 'umami']"
+269,bacon_drippings,"['salty', 'fatty', 'umami']"
+276,baharat,['spicy']
+290,baking_mix,['neutral']
+292,baking_powder,['neutral']
+294,baking_soda,['neutral']
+296,balsamic_glaze,"['sweet', 'sour']"
+298,balsamic_vinaigrette,"['sweet', 'sour']"
+299,balsamic_vinegar,['sour']
+300,bamboo_shoots,['neutral']
+302,banana,['sweet']
+311,banana_liqueur,['sweet']
+312,banana_pepper,['spicy']
+316,barbecue_sauce,"['sweet', 'sour', 'spicy']"
+321,barley,['neutral']
+322,barley_flour,['neutral']
+326,bartlett_pear,['sweet']
+331,basil_oil,['bitter']
+333,basil_pesto,['bitter']
+336,basmati_rice,['neutral']
+351,bean_sprouts,['neutral']
+361,beef,['umami']
+363,beef_base,"['salty', 'umami']"
+366,beef_bouillon,"['salty', 'umami']"
+367,beef_bouillon_cube,"['salty', 'umami']"
+370,beef_brisket,['umami']
+371,beef_broth,"['salty', 'umami']"
+383,beef_gravy,"['umami', 'salty']"
+385,beef_hearts,['umami']
+410,beef_stock,"['umami', 'salty']"
+422,beefsteak_tomato,"['sweet', 'sour']"
+423,beer,"['bitter', 'sour']"
+432,belgian_endive,['bitter']
+433,bell_pepper,['sweet']
+461,bitters,['bitter']
+470,black_beans,['umami']
+473,black_bean_sauce,"['umami', 'salty']"
+483,black_currants,"['sweet', 'sour']"
+485,blackeyed_peas,['neutral']
+487,black_forest_ham,"['salty', 'umami']"
+492,black_lentils,['neutral']
+496,black_mustard_seeds,"['bitter', 'spicy']"
+497,black_olives,"['salty', 'umami']"
+499,black_pepper,['spicy']
+500,black_peppercorns,['spicy']
+507,black_sesame_seeds,"['nutty', 'neutral']"
+511,black_tea_bag,['bitter']
+520,blackberry_jam,['sweet']
+528,blanched_almonds,['nutty']
+531,unbleached_all_purpose_flour,['neutral']
+537,blue_cheese,"['salty', 'umami', 'fatty']"
+538,blue_cheese_dressing,"['salty', 'umami', 'fatty']"
+548,blueberry_jam,['sweet']
+551,blueberry_pie_filling,['sweet']
+569,bok_choy,['bitter']
+582,boneless_beef_short_ribs,"['umami', 'fatty']"
+611,boneless_pork_roast,"['umami', 'fatty']"
+621,boneless_skinless_chicken_breast,['umami']
+628,boneless_turkey_breast,['umami']
+635,bosc_pear,['sweet']
+636,boston_butt,"['umami', 'fatty']"
+649,bouillon_cube,"['salty', 'umami']"
+651,bouquet_garni,['neutral']
+652,bourbon,['sweet']
+659,braggs_liquid_aminos,"['salty', 'umami']"
+661,bran_flakes,['neutral']
+662,brandy,['sweet']
+665,bratwurst,"['salty', 'umami', 'fatty']"
+668,bread,['neutral']
+673,bread_flour,['neutral']
+680,breadcrumbs,['neutral']
+686,breakfast_sausage,"['salty', 'umami', 'fatty']"
+709,broccoli,['bitter']
+712,broccoli_florets,['bitter']
+714,broccoli_rabe,['bitter']
+719,broccolini,['bitter']
+736,brown_mustard_seeds,"['spicy', 'bitter']"
+739,brown_rice,['neutral']
+740,brown_rice_flour,['neutral']
+742,brown_rice_syrup,['sweet']
+754,brussels_sprouts,['bitter']
+757,buckwheat_flour,['neutral']
+770,bulgur,['neutral']
+781,butter,['fatty']
+787,butter_flavored_shortening,['fatty']
+791,butter_lettuce,['neutral']
+792,butter_lettuce_leaves,['neutral']
+805,buttermilk,"['sour', 'fatty']"
+807,buttermilk_biscuits,"['neutral', 'salty']"
+814,butternut_squash,['sweet']
+815,butterscotch_chips,['sweet']
+816,butterscotch_pudding,['sweet']
+823,cabbage,['bitter']
+834,caesar_salad_dressing,"['salty', 'umami']"
+835,cajun_seasoning,['spicy']
+841,cake_flour,['neutral']
+842,cake_mix,['sweet']
+867,canadian_bacon,"['salty', 'umami', 'fatty']"
+872,candied_ginger,"['sweet', 'spicy']"
+876,candied_orange_peel,"['sweet', 'sour']"
+883,candlenuts,['fatty']
+886,candy_cane,['sweet']
+889,candy_corn,['sweet']
+900,canned_black_beans,"['salty', 'umami']"
+902,canned_chickpeas,"['neutral', 'umami']"
+903,canned_chicken,"['salty', 'umami']"
+906,canned_chipotle_chile,"['spicy', 'umami']"
+920,canned_kidney_beans,['neutral']
+924,canned_mushrooms,['umami']
+927,canned_peas,['sweet']
+935,canned_pinto_beans,['neutral']
+937,canned_pumpkin,['sweet']
+940,canned_red_kidney_beans,['neutral']
+941,canned_salmon,"['umami', 'salty']"
+947,canned_tomatoes,"['umami', 'sour']"
+948,canned_tomato_sauce,"['umami', 'sour']"
+949,canned_tuna,"['umami', 'salty']"
+952,canned_white_beans,['neutral']
+954,canned_whole_tomatoes,"['umami', 'sour']"
+956,cannellini_beans,['neutral']
+960,canola_oil,['fatty']
+966,capers,"['salty', 'sour']"
+982,caramel_sauce,['sweet']
+987,caramelized_onions,['sweet']
+988,caraway_seeds,['bitter']
+991,cardamom,['sweet']
+992,cardamom_pods,['sweet']
+993,cardamom_powder,['sweet']
+1002,carob_powder,['sweet']
+1005,carrot,['sweet']
+1011,cashews,"['sweet', 'fatty']"
+1017,cassava,"['neutral', 'starchy']"
+1023,catfish,['umami']
+1027,cauliflower,['neutral']
+1028,cauliflower_florets,['neutral']
+1031,cavatelli,['neutral']
+1033,caviar,"['salty', 'umami']"
+1039,cedar_plank,['neutral']
+1040,celeriac,['bitter']
+1041,celery,['bitter']
+1049,celery_salt,['salty']
+1050,celery_seed,['bitter']
+1065,challah,['sweet']
+1071,champagne_vinegar,['sour']
+1073,chana_dal,['neutral']
+1074,chanterelle_mushrooms,"['umami', 'neutral']"
+1083,cheddar_cheese,"['salty', 'umami', 'fatty']"
+1089,cheese,"['salty', 'umami', 'fatty']"
+1120,cherry_juice,['sweet']
+1122,cherry_pie_filling,['sweet']
+1125,cherry_tomato,"['sweet', 'sour']"
+1136,chia_seeds,['neutral']
+1142,chicken_base,"['salty', 'umami']"
+1144,chicken_bouillon,"['salty', 'umami']"
+1146,chicken_bouillon_granules,"['salty', 'umami']"
+1147,chicken_bouillon_powder,"['salty', 'umami']"
+1148,chicken_breast,['umami']
+1151,chicken_breast_halves,['umami']
+1153,chicken_broth,"['salty', 'umami']"
+1158,chicken_cutlet,['umami']
+1159,chicken_drumettes,['umami']
+1160,chicken_drumsticks,['umami']
+1161,chicken_fat,['fatty']
+1168,chicken_gravy,"['salty', 'umami']"
+1172,chicken_leg,['umami']
+1176,chicken_liver,"['umami', 'bitter']"
+1182,chicken_pieces,"['umami', 'fatty']"
+1187,chicken_sausage,"['umami', 'salty', 'fatty']"
+1188,chicken_seasoning,"['salty', 'umami']"
+1193,chicken_stock,"['umami', 'salty']"
+1202,chicken_wings,"['umami', 'fatty']"
+1204,chickpeas,"['neutral', 'umami']"
+1205,chickpea_flour,"['neutral', 'umami']"
+1213,chili_beans,"['spicy', 'umami']"
+1217,chili_garlic_sauce,"['spicy', 'umami']"
+1219,chili_oil,"['spicy', 'fatty']"
+1220,chili_paste,['spicy']
+1222,chili_pepper,['spicy']
+1225,chili_powder,['spicy']
+1226,chili_sauce,"['spicy', 'umami']"
+1227,chili_seasoning_mix,"['spicy', 'salty']"
+1239,chinese_egg_noodles,['neutral']
+1254,chipotle_chiles,['spicy']
+1263,chives,['neutral']
+1274,chocolate_cake_mix,['sweet']
+1276,chocolate_chips,['sweet']
+1277,chocolate_chip_cookies,['sweet']
+1284,chocolate_covered_caramel_candy,['sweet']
+1311,chocolate_hazelnut_spread,"['sweet', 'fatty']"
+1312,chocolate_ice_cream,['sweet']
+1325,chocolate_shavings,['sweet']
+1331,chocolate_syrup,['sweet']
+1345,chorizo_sausages,"['spicy', 'salty']"
+1346,chow_mein_noodles,['salty']
+1347,choy_sum,['bitter']
+1363,cilantro,['bitter']
+1368,cinnamon,['sweet']
+1381,cinnamon_stick,['sweet']
+1401,clarified_butter,['fatty']
+1403,clear_honey,['sweet']
+1411,clove,['spicy']
+1428,cocoa_nibs,['bitter']
+1430,coconut,"['sweet', 'fatty']"
+1431,coconut_aminos,"['sweet', 'salty']"
+1432,coconut_butter,"['sweet', 'fatty']"
+1435,coconut_extract,['sweet']
+1438,coconut_flour,['neutral']
+1443,coconut_meat,"['sweet', 'fatty']"
+1444,coconut_milk,"['sweet', 'fatty']"
+1446,coconut_oil,['fatty']
+1453,coconut_water,"['sweet', 'neutral']"
+1458,coffee,['bitter']
+1461,coffee_extract,['bitter']
+1465,coffee_liqueur,"['sweet', 'bitter']"
+1467,cognac,['sweet']
+1470,cola,['sweet']
+1479,coleslaw_dressing,"['sweet', 'sour']"
+1481,collard_greens,['bitter']
+1497,condensed_cream_of_chicken_soup,"['salty', 'umami', 'fatty']"
+1499,condensed_cream_of_mushroom_soup,"['salty', 'umami', 'fatty']"
+1514,cooked_bacon,"['salty', 'umami', 'fatty']"
+1516,cooked_basmati_rice,['neutral']
+1522,cooked_brown_rice,['neutral']
+1523,cooked_chicken,['umami']
+1528,cooked_couscous,['neutral']
+1533,cooked_grits,['neutral']
+1535,cooked_ham,"['salty', 'umami']"
+1539,cooked_lasagne_noodles,['neutral']
+1540,cooked_lentils,['umami']
+1550,cooked_pasta,['neutral']
+1551,cooked_penne,['neutral']
+1554,cooked_quinoa,['neutral']
+1555,cooked_rice,['neutral']
+1560,cooked_spaghetti,['neutral']
+1569,cookies,['sweet']
+1570,cookie_crumbs,['sweet']
+1576,cooking_oil,['fatty']
+1595,corn,"['sweet', 'neutral']"
+1601,corn_flake_crumbs,['sweet']
+1602,corn_husks,['neutral']
+1603,corn_kernels,"['sweet', 'neutral']"
+1608,corn_oil,['fatty']
+1610,corn_on_the_cob,"['sweet', 'neutral']"
+1611,corn_syrup,['sweet']
+1613,corn_tortilla_chips,"['salty', 'fatty']"
+1615,cornbread,['sweet']
+1618,corned_beef,['salty']
+1619,corned_beef_brisket,['salty']
+1620,corn_flour,['neutral']
+1622,cornish_hens,['neutral']
+1623,cornmeal,['neutral']
+1625,corn_starch,['neutral']
+1630,cotija_cheese,['salty']
+1631,cottage_cheese,['salty']
+1644,couscous,['neutral']
+1645,crab,"['salty', 'sweet']"
+1652,crabmeat,"['salty', 'umami']"
+1658,cracked_wheat,['neutral']
+1659,crackers,['salty']
+1663,craisins,['sweet']
+1669,cranberry_juice,"['sweet', 'sour']"
+1676,crawfish,"['salty', 'umami']"
+1681,cream,['fatty']
+1682,cream_cheese,"['salty', 'fatty']"
+1701,cream_of_tartar,['sour']
+1711,creamed_corn,['sweet']
+1715,creamy_peanut_butter,"['sweet', 'fatty']"
+1719,creme_de_cacao,['sweet']
+1721,creme_de_menthe,['sweet']
+1723,creme_fraiche,"['sour', 'fatty']"
+1724,crimini_mushrooms,['umami']
+1725,creole_mustard,"['spicy', 'sour']"
+1726,creole_seasoning,"['spicy', 'salty']"
+1727,crepes,['neutral']
+1741,croissant,['neutral']
+1745,croutons,['salty']
+1749,crunchy_peanut_butter,"['sweet', 'fatty']"
+1750,crushed_pineapple,['sweet']
+1756,crushed_tomatoes,"['sweet', 'sour', 'umami']"
+1759,crusty_bread,"['salty', 'neutral']"
+1768,cucumber,['neutral']
+1773,cumin,['bitter']
+1775,cumin_seeds,['bitter']
+1776,cupcakes,['sweet']
+1788,curry_powder,"['spicy', 'bitter']"
+1795,daikon_radish,['bitter']
+1801,dandelion_greens,['bitter']
+1806,dark_brown_sugar,['sweet']
+1810,dark_chocolate,"['bitter', 'sweet']"
+1811,dark_chocolate_bar,"['bitter', 'sweet']"
+1813,dark_chocolate_chips,"['bitter', 'sweet']"
+1819,dark_corn_syrup,['sweet']
+1835,dark_sesame_oil,['fatty']
+1861,deli_turkey,"['umami', 'salty']"
+1862,delicata_squash,['sweet']
+1863,demerara_sugar,['sweet']
+1864,demi_glace,"['umami', 'salty']"
+1874,diced_green_chiles,['spicy']
+1881,diced_tomatoes_with_green_chilies,"['umami', 'sour', 'spicy']"
+1891,digestive_biscuits,['sweet']
+1892,dijon_mustard,"['spicy', 'sour']"
+1895,dill,['bitter']
+1897,dill_pickles,"['sour', 'salty']"
+1916,ditalini,['neutral']
+1919,double_cream,"['fatty', 'neutral']"
+1927,drambuie,['sweet']
+1934,dried_apples,['sweet']
+1936,dried_apricots,['sweet']
+1938,dried_arbol_chile,['spicy']
+1941,dried_basil,['bitter']
+1946,dried_black_beans,['neutral']
+1954,dried_brown_lentils,['neutral']
+1969,dried_cilantro,"['bitter', 'herbaceous']"
+1974,dried_currants,"['sweet', 'tart']"
+1977,dried_dill,"['bitter', 'herbaceous']"
+1983,dried_fenugreek_leaves,['bitter']
+1984,dried_figs,['sweet']
+1985,dried_fruit,['sweet']
+1994,dried_herbs,"['bitter', 'herbaceous']"
+2007,dried_kidney_beans,['neutral']
+2022,dried_marjoram,['bitter']
+2024,dried_mint,"['sweet', 'bitter']"
+2031,dried_navy_beans,['neutral']
+2033,dried_onion,"['sweet', 'umami']"
+2046,dried_pineapple,['sweet']
+2050,dried_porcini_mushrooms,['umami']
+2056,dried_red_kidney_beans,['neutral']
+2057,dried_red_lentils,['neutral']
+2065,dried_sage,['bitter']
+2081,dried_tarragon,"['sweet', 'bitter']"
+2085,dried_thyme,['bitter']
+2088,dried_white_beans,['neutral']
+2104,dry_cider,['sour']
+2133,dry_ranch_dressing_mix,"['salty', 'umami']"
+2135,dry_red_wine,"['sour', 'bitter']"
+2142,dry_sherry,"['sour', 'bitter']"
+2152,dry_white_wine,"['sour', 'bitter']"
+2154,dry_yeast,['neutral']
+2156,duck_breast,"['umami', 'fatty']"
+2164,dulce_de_leche,['sweet']
+2170,dungeness_crab,['umami']
+2175,dutch_processed_cocoa_powder,['bitter']
+2184,edamame,['umami']
+2188,egg,"['umami', 'fatty']"
+2191,egg_noodles,['neutral']
+2193,egg_substitute,['neutral']
+2196,egg_whites,['neutral']
+2198,egg_yolk,"['umami', 'fatty']"
+2199,eggnog,"['sweet', 'fatty']"
+2200,eggplant,['bitter']
+2201,elbow_macaroni,['neutral']
+2204,elderflower_liqueur,['sweet']
+2212,english_cucumber,['neutral']
+2213,english_muffin,['neutral']
+2221,enoki_mushrooms,['umami']
+2229,escarole,['bitter']
+2230,espresso,['bitter']
+2239,evaporated_milk,"['sweet', 'fatty']"
+2240,evaporated_skim_milk,['sweet']
+2251,extra_sharp_cheddar_cheese,"['umami', 'salty']"
+2253,extra_virgin_olive_oil,['fatty']
+2261,farmer_cheese,"['umami', 'salty']"
+2271,fat_free_chicken_broth,"['umami', 'salty']"
+2274,fat_free_cottage_cheese,"['umami', 'salty']"
+2281,fat_free_greek_yogurt,['sour']
+2282,fat_free_half_and_half,['neutral']
+2286,fat_free_less_sodium_beef_broth,['umami']
+2307,fat_free_whipped_topping,['sweet']
+2309,fava_beans,['neutral']
+2310,fennel,['sweet']
+2315,fennel_seeds,['sweet']
+2317,fenugreek_seeds,['bitter']
+2320,feta_cheese,"['salty', 'umami']"
+2322,fettuccine,['neutral']
+2333,fig_jam,['sweet']
+2336,file_powder,['neutral']
+2354,fingerling_potato,['neutral']
+2355,fire_roasted_tomatoes,"['umami', 'sweet', 'sour']"
+2362,firm_tofu,['neutral']
+2364,fish,['umami']
+2372,fish_sauce,"['salty', 'umami']"
+2374,fish_stock,"['umami', 'salty']"
+2381,flank_steak,['umami']
+2382,flatbread,['neutral']
+2383,flat_iron_steak,['umami']
+2385,flat_leaf_parsley,['bitter']
+2390,flaxseed,['neutral']
+2393,fleur_de_sel,['salty']
+2397,flour_tortilla,['neutral']
+2405,fontina_cheese,"['salty', 'umami', 'fatty']"
+2424,french_bread,['neutral']
+2432,french_lentils,['neutral']
+2449,fresh_basil,['neutral']
+2492,fresh_flat_leaf_parsley,['neutral']
+2497,fresh_ginger,['spicy']
+2506,fresh_herbs,['neutral']
+2529,fresh_marjoram,['bitter']
+2542,fresh_parsley,['neutral']
+2545,fresh_pasta,['neutral']
+2562,fresh_rosemary,['bitter']
+2588,fresh_thyme,['bitter']
+2601,fresh_yeast,['umami']
+2624,frozen_artichoke_hearts,['bitter']
+2725,frozen_spinach,['bitter']
+2774,fudge,['sweet']
+2779,fuji_apple,['sweet']
+2785,gala_apple,"['sweet', 'sour']"
+2786,galangal,['spicy']
+2789,garam_masala,['spicy']
+2793,garlic,['spicy']
+2794,garlic_herb_spreadable_cheese,"['salty', 'fatty']"
+2811,garlic_paste,['spicy']
+2813,garlic_powder,['spicy']
+2814,garlic_salt,['salty']
+2818,garlic_scapes,['spicy']
+2821,gelatin,['neutral']
+2833,gherkins,"['sour', 'salty']"
+2836,gin,['bitter']
+2837,ginger,['spicy']
+2839,ginger_beer,"['sweet', 'spicy']"
+2841,ginger_garlic_paste,['spicy']
+2846,ginger_paste,['spicy']
+2847,ginger_powder,['spicy']
+2859,gingersnap_crumbs,"['sweet', 'spicy']"
+2883,glutinous_rice,['neutral']
+2887,gnocchi,['neutral']
+2889,goat_milk,"['sweet', 'fatty']"
+2890,goat_cheese,"['salty', 'umami']"
+2892,gochujang,"['spicy', 'sweet', 'umami']"
+2899,golden_beet,['sweet']
+2900,golden_brown_sugar,['sweet']
+2904,golden_raisins,['sweet']
+2907,golden_syrup,['sweet']
+2915,gorgonzola,"['salty', 'umami']"
+2919,graham_crackers,['sweet']
+2920,graham_cracker_crumbs,['sweet']
+2935,grana_padano,"['salty', 'umami']"
+2936,grand_marnier,['sweet']
+2937,granny_smith_apple,"['sweet', 'sour']"
+2942,granulated_garlic,"['salty', 'umami']"
+2945,granulated_sugar,['sweet']
+2947,grapes,['sweet']
+2949,grape_jam,['sweet']
+2954,grape_tomato,"['sweet', 'umami']"
+2955,grapefruit,"['sour', 'bitter']"
+2961,grape_seed_oil,['neutral']
+2969,great_northern_beans,['neutral']
+2975,greek_yogurt,['sour']
+2977,green_apple,"['sweet', 'sour']"
+2980,green_beans,['bitter']
+2985,green_cardamoms,['sweet']
+2992,green_chili_pepper,['spicy']
+3000,green_curry_paste,"['spicy', 'umami']"
+3001,green_enchilada_sauce,"['spicy', 'sour']"
+3002,green_food_color,['neutral']
+3020,green_pepper,['neutral']
+3035,green_tea,['bitter']
+3036,green_tea_bag,['bitter']
+3052,ground_allspice,"['sweet', 'spicy']"
+3064,ground_cayenne_pepper,['spicy']
+3066,ground_chicken,['umami']
+3068,ground_chipotle_chile_pepper,['spicy']
+3069,ground_chuck,"['umami', 'fatty']"
+3071,ground_cinnamon,['sweet']
+3072,ground_clove,"['bitter', 'spicy']"
+3073,ground_coffee,['bitter']
+3074,ground_coriander,['bitter']
+3075,ground_cumin,['bitter']
+3078,ground_elk,['umami']
+3079,ground_espresso,['bitter']
+3080,ground_fennel,['sweet']
+3082,ground_flaxseed,['neutral']
+3088,ground_lamb,"['umami', 'fatty']"
+3090,ground_mace,['spicy']
+3103,ground_pork,"['umami', 'fatty']"
+3111,ground_sage,['bitter']
+3113,ground_savory,['bitter']
+3118,ground_thyme,['bitter']
+3119,ground_turkey,['umami']
+3122,ground_veal,['umami']
+3127,gruyere,"['umami', 'salty']"
+3129,guacamole,"['fatty', 'umami']"
+3132,guar_gum,['neutral']
+3133,guava,['sweet']
+3148,haddock,['umami']
+3153,half_and_half,"['fatty', 'neutral']"
+3157,halibut_fillets,"['umami', 'salty']"
+3161,ham,"['salty', 'umami']"
+3165,ham_slices,"['salty', 'umami']"
+3167,ham_steak,"['salty', 'umami']"
+3170,hamburger_bun,"['neutral', 'slightly sweet']"
+3178,hard_boiled_egg,"['umami', 'neutral']"
+3189,harissa,"['spicy', 'umami']"
+3190,hash_browns,"['salty', 'fatty']"
+3193,hass_avocado,"['fatty', 'umami']"
+3199,hawaiian_roll,['sweet']
+3201,hazelnuts,"['fatty', 'umami']"
+3231,heirloom_tomato,"['sweet', 'sour']"
+3234,hemp_milk,['neutral']
+3235,hemp_seeds,['nutty']
+3250,herbes_de_provence,['bitter']
+3278,hoisin_sauce,"['sweet', 'umami']"
+3280,hollandaise_sauce,"['fatty', 'umami']"
+3281,hollandaise_sauce_mix,"['fatty', 'umami']"
+3290,honey,['sweet']
+3298,honey_mustard,"['sweet', 'spicy']"
+3312,horseradish,['spicy']
+3315,horseradish_root,['spicy']
+3332,hot_cocoa_mix,['sweet']
+3362,hot_sauce,"['spicy', 'sour', 'salty']"
+3376,ice,['neutral']
+3386,icing,['sweet']
+3407,instant_chocolate_pudding_mix,['sweet']
+3409,instant_coffee,['bitter']
+3417,instant_espresso,['bitter']
+3422,instant_lemon_pudding_mix,"['sweet', 'sour']"
+3436,instant_potatoes_flakes,['neutral']
+3442,instant_vanilla_pudding_mix,['sweet']
+3444,instant_yeast,['neutral']
+3446,irish_cream,['sweet']
+3451,italian_bread,['neutral']
+3468,italian_sausage,"['salty', 'umami', 'spicy']"
+3470,italian_seasoning,"['salty', 'umami']"
+3482,italian_tomato,"['sweet', 'sour', 'umami']"
+3484,italian_turkey_sausage,"['salty', 'umami']"
+3489,jackfruit,['sweet']
+3491,jaggery,['sweet']
+3497,jalapeno_pepper,['spicy']
+3502,jam,['sweet']
+3506,japanese_eggplant,['neutral']
+3511,jarlsberg_cheese,"['salty', 'umami']"
+3526,jerusalem_artichoke,"['sweet', 'neutral']"
+3527,jicama,"['sweet', 'neutral']"
+3535,juice,"['sweet', 'sour']"
+3539,jumbo_shrimp,"['salty', 'umami']"
+3541,kabocha_squash,"['sweet', 'neutral']"
+3545,kalamata_olives,"['salty', 'bitter']"
+3546,kale,['bitter']
+3562,kelp,"['salty', 'umami']"
+3565,ketchup,"['sweet', 'sour']"
+3572,kidney_beans,['neutral']
+3573,kielbasa,"['salty', 'fatty']"
+3587,kiwi,"['sweet', 'sour']"
+3591,knackwurst,"['salty', 'umami']"
+3596,kohlrabi,['neutral']
+3605,kosher_salt,['salty']
+3634,ladyfingers,['sweet']
+3636,lamb,"['umami', 'fatty']"
+3645,lamb_loin_chop,"['umami', 'fatty']"
+3652,lamb_shoulder,"['umami', 'fatty']"
+3654,lamb_stew_meat,"['umami', 'fatty']"
+3655,lamb_stock,['umami']
+3685,lean_bacon,"['salty', 'umami']"
+3715,lebanese_cucumber,['neutral']
+3717,leek,"['umami', 'neutral']"
+3719,leg_of_lamb,"['umami', 'fatty']"
+3720,lemon,['sour']
+3729,lemon_basil,"['sour', 'sweet']"
+3731,lemon_cake_mix,"['sweet', 'sour']"
+3732,lemon_curd,"['sweet', 'sour', 'fatty']"
+3734,lemon_extract,['sour']
+3743,lemon_juice,['sour']
+3750,lemon_peel,['bitter']
+3752,lemon_pepper,"['sour', 'spicy']"
+3769,lemon_wedge,['sour']
+3772,lemonade,"['sweet', 'sour']"
+3773,lemonade_concentrate,"['sweet', 'sour']"
+3775,lemon_grass,['bitter']
+3781,lentils,['neutral']
+3782,lettuce,['neutral']
+3785,lettuce_leaf,['neutral']
+3789,licorice_twists,['sweet']
+3791,light_beer,['bitter']
+3801,light_coconut_milk,"['sweet', 'fatty']"
+3803,light_cream,"['fatty', 'neutral']"
+3811,light_mayonnaise,"['fatty', 'salty']"
+3817,light_olive_oil,['fatty']
+3826,light_soy_sauce,"['salty', 'umami']"
+3839,lima_beans,['neutral']
+3840,lime,['sour']
+3847,lime_juice,['sour']
+3848,lime_peel,['sour']
+3853,lime_wedge,['sour']
+3855,limeade,"['sweet', 'sour']"
+3859,limoncello,"['sweet', 'sour']"
+3864,linguine,['neutral']
+3883,liquid_smoke,['umami']
+3888,liquor,"['bitter', 'sweet']"
+3891,littleneck_clams,"['salty', 'umami']"
+3899,lobster,"['salty', 'umami']"
+3903,lobster_tails,"['umami', 'sweet']"
+3913,long_grain_brown_rice,['neutral']
+3914,long_grain_rice,['neutral']
+3959,low_fat_plain_yogurt,"['sour', 'fatty']"
+3962,low_fat_ricotta_cheese,"['neutral', 'fatty']"
+3973,low_fat_vanilla_yogurt,"['sweet', 'sour', 'fatty']"
+3981,low_sodium_chicken_broth,"['umami', 'salty']"
+3988,lower_sodium_soy_sauce,"['umami', 'salty']"
+3997,low_sodium_vegetable_broth,"['umami', 'neutral']"
+4005,lump_crabmeat,"['sweet', 'umami']"
+4013,macadamia_nuts,"['sweet', 'fatty']"
+4023,mache,['neutral']
+4024,mackerel,"['umami', 'fatty']"
+4031,mahi_mahi,['umami']
+4044,manchego_cheese,"['salty', 'umami', 'fatty']"
+4045,mandarin_oranges,"['sweet', 'sour']"
+4047,mandarin_orange_sections,"['sweet', 'sour']"
+4052,mango,['sweet']
+4057,mango_pulp,['sweet']
+4058,mango_puree,['sweet']
+4065,manzanilla_olives,"['salty', 'bitter']"
+4067,maple_extract,['sweet']
+4068,maple_flavoring,['sweet']
+4071,maple_syrup,['sweet']
+4076,margarine,"['fatty', 'salty']"
+4078,marie_biscuits,['sweet']
+4080,marinara_sauce,"['sour', 'umami']"
+4084,marjoram,['bitter']
+4090,marsala,['sweet']
+4092,marshmallows,['sweet']
+4094,marshmallow_cream,['sweet']
+4096,marzipan,['sweet']
+4098,masa_harina,['neutral']
+4101,mascarpone,['fatty']
+4103,mashed_banana,['sweet']
+4113,matzo_meal,['neutral']
+4115,maui_onion,['sweet']
+4116,mayonnaise,['fatty']
+4123,meat,"['umami', 'fatty']"
+4158,mesclun,['bitter']
+4166,mexican_cheese,"['umami', 'salty', 'fatty']"
+4184,meyer_lemon,['sour']
+4189,mild_cheddar_cheese,"['salty', 'umami', 'fatty']"
+4204,milk,"['sweet', 'fatty']"
+4205,milk_chocolate,"['sweet', 'fatty']"
+4207,milk_chocolate_chips,"['sweet', 'fatty']"
+4224,mineral_water,['neutral']
+4226,mini_chocolate_chips,"['sweet', 'fatty']"
+4227,mini_marshmallows,['sweet']
+4238,miniature_peanut_butter_cups,"['sweet', 'fatty']"
+4243,mint,['fresh']
+4261,mirepoix,['umami']
+4262,mirin,['sweet']
+4264,miso,"['umami', 'salty']"
+4274,mixed_fruit,['sweet']
+4285,mixed_spice,"['spicy', 'bitter', 'neutral']"
+4287,mixed_vegetables,"['sweet', 'bitter', 'neutral']"
+4292,molasses,['sweet']
+4297,monterey_jack_cheese,"['salty', 'fatty']"
+4324,mung_beans,['neutral']
+4326,mung_bean_sprouts,['neutral']
+4329,muscovado_sugar,['sweet']
+4342,mussels,"['umami', 'salty']"
+4343,mustard,"['spicy', 'sour']"
+4344,mustard_greens,"['bitter', 'spicy']"
+4347,mustard_powder,['spicy']
+4360,napa_cabbage,['bitter']
+4368,navel_orange,"['sweet', 'sour']"
+4380,new_potato,['neutral']
+4434,nut_butter,"['fatty', 'umami']"
+4438,nutmeg,['sweet']
+4440,nutritional_yeast_flakes,['umami']
+4445,oat_bran,['neutral']
+4446,oat_flour,['neutral']
+4456,oil_cured_black_olives,"['salty', 'fatty']"
+4460,okra,['neutral']
+4462,old_bay_seasoning,"['salty', 'spicy']"
+4469,olives,"['salty', 'fatty']"
+4472,olive_oil,['fatty']
+4478,onion,['umami']
+4485,onion_powder,['umami']
+4488,onion_salt,"['salty', 'umami']"
+4494,orange,"['sweet', 'sour']"
+4506,orange_extract,['sweet']
+4516,orange_juice,"['sweet', 'sour']"
+4519,orange_liqueur,['sweet']
+4520,orange_marmalade,"['sweet', 'bitter']"
+4524,orange_pepper,['spicy']
+4540,orange_zest,['bitter']
+4545,oregano,['bitter']
+4571,oxtail,"['umami', 'fatty']"
+4572,oysters,"['salty', 'umami']"
+4575,oyster_mushrooms,['umami']
+4576,oyster_sauce,"['salty', 'umami', 'sweet']"
+4581,palm_oil,['fatty']
+4582,palm_sugar,['sweet']
+4590,pancake_mix,['sweet']
+4592,pancetta,"['salty', 'umami', 'fatty']"
+4608,paprika,['spicy']
+4620,parsley,['bitter']
+4625,parsnip,['sweet']
+4626,part_skim_mozzarella_cheese,"['salty', 'umami']"
+4635,pasta,['neutral']
+4638,pasta_sauce,"['sweet', 'sour']"
+4640,pasta_shells,['neutral']
+4645,pastry_cream,['sweet']
+4663,peach,['sweet']
+4675,peach_preserves,['sweet']
+4677,peach_schnapps,"['sweet', 'bitter']"
+4687,peanuts,"['fatty', 'neutral']"
+4689,peanut_butter,"['fatty', 'salty']"
+4695,peanut_butter_cups,"['sweet', 'fatty']"
+4699,peanut_oil,['fatty']
+4700,peanut_sauce,"['salty', 'spicy', 'fatty']"
+4701,pear,['sweet']
+4706,pear_liqueur,"['sweet', 'bitter']"
+4713,peas_and_carrots,"['sweet', 'neutral']"
+4716,pecans,"['fatty', 'sweet']"
+4720,pecan_pieces,"['fatty', 'sweet']"
+4727,penne,['neutral']
+4733,peppers,['spicy']
+4745,peppermint_candy,['sweet']
+4746,peppermint_extract,['sweet']
+4754,pepperoni,"['salty', 'umami', 'spicy']"
+4755,pepperoni_slices,"['salty', 'umami', 'spicy']"
+4757,perch,['umami']
+4761,pernod,['sweet']
+4762,persian_cucumber,['neutral']
+4763,persimmon,['sweet']
+4780,picante_sauce,"['spicy', 'sour', 'umami']"
+4782,pickles,"['sour', 'salty']"
+4783,pickle_juice,"['sour', 'salty']"
+4788,pickled_daikon,"['sour', 'salty']"
+4806,pico_de_gallo,"['spicy', 'sour', 'umami']"
+4839,pimento_stuffed_green_olives,"['salty', 'umami']"
+4841,pimiento,['sweet']
+4845,pine_nuts,['fatty']
+4846,pineapple,"['sweet', 'sour']"
+4848,pineapple_chunks,"['sweet', 'sour']"
+4853,pineapple_jam,['sweet']
+4855,pineapple_juice,"['sweet', 'sour']"
+4860,pineapple_rings,"['sweet', 'sour']"
+4867,pineapple_tidbits,"['sweet', 'sour']"
+4878,pinto_beans,['neutral']
+4887,pistachio_nuts,"['fatty', 'umami']"
+4903,pizza_dough,['neutral']
+4920,plain_yogurt,['sour']
+4921,plantain,['sweet']
+4935,plum_tomato,['sour']
+4940,poblano_pepper,['spicy']
+4942,polenta,['neutral']
+4948,pomegranate,"['sweet', 'sour']"
+4950,pomegranate_juice,"['sweet', 'sour']"
+4952,pomegranate_molasses,"['sweet', 'sour']"
+4953,pomegranate_seeds,"['sweet', 'sour']"
+4957,ponzu_sauce,"['sour', 'salty', 'umami']"
+4961,poppy_seeds,['neutral']
+4966,pork,"['umami', 'fatty']"
+4972,pork_belly,"['umami', 'fatty']"
+4977,pork_chops,"['umami', 'fatty']"
+4979,pork_fat,['fatty']
+4985,pork_liver,"['umami', 'bitter']"
+4993,pork_ribs,"['umami', 'fatty']"
+4998,pork_roast,"['umami', 'fatty']"
+4999,pork_sausage,"['umami', 'fatty', 'salty', 'spicy']"
+5003,pork_shoulder,"['umami', 'fatty']"
+5010,pork_steaks,"['umami', 'fatty']"
+5014,pork_tenderloin,"['umami', 'fatty']"
+5016,port_wine,"['sweet', 'bitter']"
+5020,porterhouse_steak,"['umami', 'fatty']"
+5026,pot_roast,"['umami', 'fatty']"
+5027,potato,['neutral']
+5035,potato_starch,['neutral']
+5039,poultry_seasoning,"['salty', 'spicy']"
+5040,pound_cake,"['sweet', 'fatty']"
+5053,powdered_milk,['sweet']
+5057,powdered_sugar,['sweet']
+5077,prepared_pizza_crust,['neutral']
+5079,prepared_polenta,['neutral']
+5103,prosciutto,"['salty', 'umami', 'fatty']"
+5107,protein_powder,['neutral']
+5109,prunes,['sweet']
+5114,psyllium_husks,['neutral']
+5121,puffed_rice_cereal,['neutral']
+5130,pumpkin_pie_mix,['sweet']
+5131,pumpkin_pie_spice,['sweet']
+5133,pumpkin_seeds,['neutral']
+5145,purple_plum,"['sweet', 'sour']"
+5152,quark,['sour']
+5156,queso_fresco,['salty']
+5161,quick_cooking_oats,['neutral']
+5166,quick_cooking_tapioca,['neutral']
+5171,quince,['sour']
+5173,quinoa,['neutral']
+5174,quinoa_flour,['neutral']
+5177,rack_of_lamb,['neutral']
+5182,radicchio,['bitter']
+5183,radish,['spicy']
+5190,raisins,['sweet']
+5194,ramen_noodles,['salty']
+5198,ranch_dressing,"['salty', 'umami', 'fatty']"
+5211,raspberry_jam,['sweet']
+5239,raw_honey,['sweet']
+5244,raw_shrimp,['umami']
+5262,red_apple,['sweet']
+5266,red_beet,['sweet']
+5271,red_cabbage,['bitter']
+5279,dried_chili_pepper,['spicy']
+5287,red_curry_paste,['spicy']
+5290,red_delicious_apple,['sweet']
+5292,red_food_color,['neutral']
+5303,red_kidney_beans,['neutral']
+5310,red_onion,"['sweet', 'bitter']"
+5317,red_pepper,['spicy']
+5318,red_pepper_flakes,['spicy']
+5326,red_potato,['neutral']
+5345,red_wine,"['sour', 'bitter']"
+5348,red_wine_vinegar,['sour']
+5367,reduced_fat_feta_cheese,"['salty', 'umami']"
+5404,refried_beans,"['salty', 'umami']"
+5409,refrigerated_cheese_tortellini,"['salty', 'umami']"
+5412,refrigerated_pie_crust,['neutral']
+5424,rhubarb,['sour']
+5427,ribeye_steak,"['umami', 'fatty']"
+5431,rice,['neutral']
+5439,rice_flour,['neutral']
+5441,rice_milk,"['neutral', 'sweet']"
+5448,rice_vermicelli,['neutral']
+5449,rice_vinegar,['sour']
+5454,ricotta_cheese,"['neutral', 'salty']"
+5460,risotto_rice,['neutral']
+5466,roast_beef,"['umami', 'fatty']"
+5476,roasted_garlic,"['umami', 'sweet', 'bitter']"
+5479,roasted_peanuts,"['umami', 'fatty', 'salty']"
+5484,roasted_red_peppers,"['umami', 'sweet']"
+5495,roasting_chicken,"['umami', 'salty']"
+5500,rock_salt,['salty']
+5533,rose_water,['neutral']
+5535,rosemary,"['bitter', 'umami']"
+5551,round_steak,['umami']
+5554,rubbed_sage,"['bitter', 'umami']"
+5558,rum,['sweet']
+5559,rum_extract,['sweet']
+5561,rump_roast,['umami']
+5565,russet_potato,['neutral']
+5567,rutabaga,['sweet']
+5575,rye_meal,['bitter']
+5578,safflower_oil,['neutral']
+5579,saffron,"['bitter', 'umami']"
+5582,sage,['bitter']
+5588,salad_dressing,"['sour', 'salty', 'umami']"
+5593,salad_oil,['fatty']
+5597,salami,"['salty', 'umami']"
+5598,salmon,"['umami', 'fatty']"
+5600,salmon_fillets,"['umami', 'fatty']"
+5601,salmon_roe,"['salty', 'umami']"
+5602,salmon_steak,"['umami', 'fatty']"
+5603,salsa,"['spicy', 'sour']"
+5606,salsa_verde,"['spicy', 'sour']"
+5614,salt_and_pepper,"['salty', 'spicy']"
+5620,salt_pork,"['salty', 'umami']"
+5625,salted_butter,"['salty', 'fatty']"
+5647,sardines,"['salty', 'umami']"
+5652,sauerkraut,['sour']
+5653,sausage,"['salty', 'umami', 'fatty']"
+5662,savoy_cabbage,['bitter']
+5668,scallops,"['sweet', 'umami']"
+5676,scotch_whiskey,['bitter']
+5681,sea_bream,['umami']
+5687,seafood_seasoning,"['salty', 'spicy']"
+5690,seasoned_salt,['salty']
+5691,seasoned_breadcrumbs,['salty']
+5699,seasoning,"['salty', 'spicy']"
+5715,seedless_watermelon,['sweet']
+5721,self_rising_flour,['neutral']
+5727,semisweet_chocolate,['sweet']
+5729,semisweet_chocolate_chips,['sweet']
+5735,semolina,['neutral']
+5741,serrano_pepper,['spicy']
+5747,sesame_oil,"['nutty', 'fatty']"
+5750,sesame_seeds,"['nutty', 'fatty']"
+5759,shallot,"['sweet', 'umami']"
+5760,shaoxing_wine,"['sweet', 'umami']"
+5763,sharp_cheddar_cheese,"['salty', 'umami']"
+5777,shiitake_mushrooms,['umami']
+5788,short_grain_brown_rice,['neutral']
+5789,short_grain_rice,['neutral']
+5798,shortcrust_pastry,"['neutral', 'fatty']"
+5800,shortening,['fatty']
+5803,shredded_cheddar_cheese,"['salty', 'umami', 'fatty']"
+5809,shrimp,"['umami', 'salty']"
+5816,silken_tofu,"['neutral', 'umami']"
+5818,simple_syrup,['sweet']
+5840,skinless_chicken_drumsticks,['umami']
+5846,skirt_steak,"['umami', 'neutral']"
+5849,sliced_almonds,"['nutty', 'fatty']"
+5855,slivered_almonds,"['nutty', 'fatty']"
+5887,cooked_chicken_breast,"['salty', 'umami']"
+5892,smoked_ham_hock,"['salty', 'umami']"
+5899,smoked_paprika,['spicy']
+5905,smoked_salmon,"['salty', 'umami']"
+5906,smoked_sausage,"['salty', 'umami', 'spicy']"
+5925,snow_peas,['sweet']
+5928,soba_noodles,['neutral']
+5957,sorghum_flour,['neutral']
+5968,sour_cream,"['sour', 'fatty']"
+5970,soured_milk,['sour']
+5975,sourdough_bread,['sour']
+5986,soy_cheese,['salty']
+5991,soy_flour,['neutral']
+5996,soy_protein_powder,['neutral']
+5997,soy_sauce,"['salty', 'umami']"
+6007,soymilk,['neutral']
+6010,spaghetti,['neutral']
+6015,spaghetti_squash,['neutral']
+6018,spanish_chorizo,"['spicy', 'salty', 'umami']"
+6029,sparkling_water,['neutral']
+6035,spelt,['neutral']
+6036,spelt_flour,['neutral']
+6037,spices,['spicy']
+6042,spicy_brown_mustard,"['spicy', 'sour']"
+6051,spinach,['bitter']
+6052,spinach_fettuccine,['neutral']
+6069,sponge_cake,['sweet']
+6075,spring_onions,['bitter']
+6077,spring_roll_wrappers,['neutral']
+6081,squash_blossoms,['neutral']
+6083,squid,['umami']
+6091,star_anise,['sweet']
+6095,steak,['umami']
+6097,steak_sauce,"['salty', 'sweet']"
+6104,steel_cut_oats,['neutral']
+6105,stevia,['sweet']
+6110,stewed_tomatoes,"['umami', 'sour']"
+6121,stock,"['umami', 'salty']"
+6138,strawberry_ice_cream,"['sweet', 'fatty']"
+6140,strawberry_jam,['sweet']
+6162,strong_coffee,['bitter']
+6172,sugar,['sweet']
+6202,sugar_pumpkin,['sweet']
+6203,sugar_snap_peas,['sweet']
+6204,sugar_substitute,['sweet']
+6209,sumac,['sour']
+6214,sun_dried_tomatoes,"['umami', 'sweet']"
+6218,sundried_tomato_pesto,"['umami', 'sweet', 'fatty']"
+6220,sunflower_oil,['fatty']
+6221,sunflower_seeds,"['nutty', 'fatty']"
+6224,superfine_sugar,['sweet']
+6241,sweet_chili_sauce,"['sweet', 'spicy']"
+6243,sweet_corn,['sweet']
+6252,sweet_italian_sausage,"['sweet', 'umami']"
+6260,sweet_paprika,"['sweet', 'spicy']"
+6263,sweet_pickles,"['sweet', 'sour']"
+6266,sweet_potato,['sweet']
+6273,sweet_rice_flour,['sweet']
+6291,sweetened_condensed_milk,['sweet']
+6297,swiss_chard,['bitter']
+6299,swiss_cheese,"['salty', 'umami', 'fatty']"
+6300,swordfish,['umami']
+6310,tabasco_sauce,"['spicy', 'sour']"
+6319,taco_seasoning_mix,"['spicy', 'salty']"
+6322,tahini,"['fatty', 'bitter']"
+6327,tamari,"['salty', 'umami']"
+6331,tamarind_paste,['sour']
+6333,tamarind_pulp,['sour']
+6337,tangerine,"['sweet', 'sour']"
+6343,tapioca,['neutral']
+6346,tapioca_starch,['neutral']
+6349,tarragon,['bitter']
+6351,tarragon_vinegar,['sour']
+6352,tart_apple,['sour']
+6360,tartar_sauce,"['salty', 'sour', 'umami']"
+6364,tater_tots,"['salty', 'fatty']"
+6367,tea,['bitter']
+6372,teff_flour,['neutral']
+6380,teriyaki_sauce,"['sweet', 'salty', 'umami']"
+6385,thai_basil,['bitter']
+6386,thai_chili,['spicy']
+6389,thai_fish_sauce,"['salty', 'umami']"
+6409,thyme,['bitter']
+6415,tiger_shrimp,"['umami', 'salty']"
+6433,toffee_pieces,['sweet']
+6434,tofu,['neutral']
+6439,tomatillos,['sour']
+6441,tomato,"['umami', 'sour']"
+6448,tomato_juice,"['umami', 'sour']"
+6450,tomato_paste,"['umami', 'sour']"
+6451,tomato_puree,"['umami', 'sour']"
+6454,tomato_soup,"['umami', 'sour']"
+6472,top_sirloin_steak,"['umami', 'fatty']"
+6475,tortilla,['neutral']
+6486,triple_sec,['sweet']
+6489,trout_fillets,"['umami', 'fatty']"
+6492,truffle_oil,"['umami', 'fatty']"
+6497,tuna,"['umami', 'fatty']"
+6501,tuna_in_olive_oil,"['umami', 'fatty']"
+6506,turbinado_sugar,['sweet']
+6526,turkey_kielbasa,"['umami', 'salty']"
+6535,turkey_sausage,"['umami', 'salty', 'spicy']"
+6537,turkey_stock,"['umami', 'salty']"
+6545,turmeric,['bitter']
+6547,turnip,"['sweet', 'bitter']"
+6549,tzatziki,"['sour', 'salty']"
+6574,unsalted_butter,"['fatty', 'neutral']"
+6582,unsalted_peanuts,"['neutral', 'fatty']"
+6599,unsweetened_baking_chocolate,['bitter']
+6605,unsweetened_coconut,['neutral']
+6611,unsweetened_shredded_coconut,['neutral']
+6625,unsweetened_soymilk,"['neutral', 'fatty']"
+6631,vanilla,['sweet']
+6633,vanilla_bean,['sweet']
+6644,vanilla_extract,['sweet']
+6649,vanilla_frosting,['sweet']
+6650,vanilla_frozen_yogurt,['sweet']
+6653,vanilla_ice_cream,['sweet']
+6659,vanilla_powder,['sweet']
+6660,vanilla_protein_powder,['sweet']
+6663,vanilla_sugar,['sweet']
+6666,vanilla_wafer_cookies,['sweet']
+6669,vanilla_yogurt,['sweet']
+6673,veal_cutlet,"['umami', 'fatty']"
+6683,veal_shank,"['umami', 'fatty']"
+6692,vegan_cheddar_cheese,"['umami', 'salty']"
+6694,vegan_cream_cheese,"['umami', 'salty']"
+6697,vegan_mayonnaise,"['fatty', 'salty']"
+6699,vegan_sour_cream,"['sour', 'salty']"
+6706,vegetable_bouillon_cube,"['umami', 'salty']"
+6711,vegetable_oil,['fatty']
+6717,vegetable_stock,"['umami', 'salty']"
+6733,veggie_burger,"['salty', 'umami']"
+6759,vital_wheat_gluten,['neutral']
+6763,vodka,['neutral']
+6775,walnuts,['fatty']
+6779,walnut_oil,['fatty']
+6780,walnut_pieces,['fatty']
+6783,wasabi_paste,['spicy']
+6785,wasabi_powder,['spicy']
+6787,water,['neutral']
+6791,watercress,['bitter']
+6793,watermelon,['sweet']
+6799,wax_beans,['neutral']
+6806,wheat_bran,['neutral']
+6812,wheat_flour,['neutral']
+6814,wheat_germ,['neutral']
+6824,whey_protein_powder,['neutral']
+6825,whipped_butter,"['fatty', 'salty']"
+6826,whipped_cream,"['sweet', 'fatty']"
+6829,whipped_topping,"['sweet', 'fatty']"
+6830,whipping_cream,"['sweet', 'fatty']"
+6833,white_asparagus,['bitter']
+6836,white_balsamic_vinegar,['sour']
+6838,white_bread,['neutral']
+6845,white_cake_mix,['sweet']
+6848,white_cheddar_cheese,"['salty', 'umami']"
+6855,white_chocolate_chips,"['sweet', 'fatty']"
+6864,white_corn_tortilla,['neutral']
+6866,white_cornmeal,['neutral']
+6874,white_fish_fillets,['umami']
+6880,white_grape_juice,['sweet']
+6887,white_miso,"['umami', 'salty']"
+6890,white_onion,"['sweet', 'umami']"
+6894,white_pepper,['spicy']
+6896,white_peppercorns,['spicy']
+6908,white_shoepeg_corn,['sweet']
+6917,white_whole_wheat_flour,['neutral']
+6919,white_wine_vinegar,['sour']
+6933,whole_chicken,"['umami', 'salty']"
+6936,whole_coriander_seeds,"['spicy', 'citrusy']"
+6945,whole_grain_mustard,"['spicy', 'sour']"
+6952,whole_kernel_corn,"['sweet', 'neutral']"
+6956,whole_milk,"['sweet', 'fatty']"
+6968,whole_tomato,"['sweet', 'sour']"
+6970,whole_turkey,['umami']
+6976,whole_wheat_bread,['neutral']
+6979,whole_wheat_breadcrumbs,['neutral']
+6981,whole_wheat_couscous,['neutral']
+6988,whole_wheat_flour,['neutral']
+6990,whole_wheat_hamburger_bun,['neutral']
+6996,whole_wheat_pastry_flour,['neutral']
+6997,whole_wheat_penne,['neutral']
+7013,wild_rice,['neutral']
+7017,wine,"['sour', 'bitter']"
+7018,wine_vinegar,['sour']
+7029,wonton_wrappers,['neutral']
+7035,worcestershire_sauce,"['umami', 'salty', 'sour']"
+7036,wrap,['neutral']
+7038,xanthan_gum,['neutral']
+7043,yam,['sweet']
+7052,yellow_cake_mix,['sweet']
+7062,yellow_food_color,['neutral']
+7065,yellow_miso,"['umami', 'salty']"
+7067,yellow_mustard,"['spicy', 'sour']"
+7068,yellow_mustard_seeds,['spicy']
+7069,yellow_onion,['sweet']
+7071,yellow_pepper,['sweet']
+7077,yellow_squash,['neutral']
+7087,yogurt,['sour']
+7094,yukon_gold_potato,['neutral']
+7096,yuzu_juice,['sour']
+7098,zinfandel,"['sweet', 'bitter']"
+7101,zucchini,"['neutral', 'bitter']"
