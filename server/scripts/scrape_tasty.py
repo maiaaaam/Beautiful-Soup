@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, ElementClickInterceptedException
 import time
 
+#for reviews given a recipe.
 
 def setup_chrome_driver():
     chrome_options = Options()

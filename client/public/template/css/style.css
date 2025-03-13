@@ -976,7 +976,7 @@ h3 {
 .header-area .main-header-area {
   padding: 25px 0px;
   background: #fff;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 767px) {
@@ -1457,7 +1457,7 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_slider.scss */
 .slider_bg_1 {
-  background-image: url(../img/banner/banner.png);
+  background-image: url(../img/banner/logo3.jpeg);
 }
 
 /* line 4, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_slider.scss */
@@ -4792,7 +4792,7 @@ h3 {
 
 /* line 330, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recepie.scss */
 .latest_trand_area {
-  background-image: url(../img/recepie/banner.png);
+  background-image: url(../img/recepie/logo3.jpeg);
   padding: 150px 0;
   background-size: cover;
   background-position: center;
@@ -4881,7 +4881,7 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_case_study.scss */
 .case_bg_1 {
-  background-image: url(../img/banner/study_banner.png);
+  background-image: url(../img/banner/study_logo3.jpeg);
   background-size: 100% 100%;
 }
 

@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SPOONACULAR_API_KEY = "API_KEY"
+SPOONACULAR_API_KEY = "39d886d7dc594d7e91cfb2def05677bd"
 BASE_URL = "https://api.spoonacular.com"
 
 def get_recipes_by_ingredients(ingredients, number=10):
@@ -14,13 +14,14 @@ def get_recipes_by_ingredients(ingredients, number=10):
     endpoint = f"{BASE_URL}/recipes/findByIngredients"
     params = {
         "apiKey": SPOONACULAR_API_KEY,
-        "ingredients": ",".join(ingredients),
+        "ingredients": ",+".join(ingredients),
         "number": number,
-        "ranking": 2 
     }
-    
+    # print(endpoint)
+    # print(params)
     response = requests.get(endpoint, params=params)
     return response.json() if response.status_code == 200 else []
+
 
 def get_recipe_information(recipe_id):
     """

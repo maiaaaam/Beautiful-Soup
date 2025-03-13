@@ -8,6 +8,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 import json
 
+# given a list of ingredients, go to tasty and get the recipes of the first 3 igredients
 
 def setup_chrome_driver():
     chrome_options = Options()
