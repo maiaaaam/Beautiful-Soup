@@ -1,0 +1,2333 @@
+[
+  { "node_id": 51, "name": "acorn squash", "flavours": "['sweet', 'neutral']" },
+  {
+    "node_id": 54,
+    "name": "adobo sauce",
+    "flavours": "['spicy', 'salty', 'sour']"
+  },
+  { "node_id": 61, "name": "agave", "flavours": "['sweet']" },
+  { "node_id": 67, "name": "ahi tuna steak", "flavours": "['umami']" },
+  { "node_id": 70, "name": "ajwain", "flavours": "['bitter']" },
+  { "node_id": 74, "name": "alcohol", "flavours": "['neutral']" },
+  { "node_id": 79, "name": "alfredo sauce", "flavours": "['fatty', 'salty']" },
+  { "node_id": 86, "name": "allspice", "flavours": "['sweet']" },
+  { "node_id": 88, "name": "almonds", "flavours": "['fatty']" },
+  { "node_id": 94, "name": "almond extract", "flavours": "['sweet']" },
+  { "node_id": 102, "name": "almond meal", "flavours": "['neutral']" },
+  { "node_id": 103, "name": "almond milk", "flavours": "['neutral']" },
+  { "node_id": 105, "name": "almond paste", "flavours": "['sweet']" },
+  { "node_id": 111, "name": "alum", "flavours": "['bitter']" },
+  {
+    "node_id": 113,
+    "name": "aluminum free baking powder",
+    "flavours": "['neutral']"
+  },
+  { "node_id": 114, "name": "amaranth", "flavours": "['neutral']" },
+  { "node_id": 120, "name": "amaretto liqueur", "flavours": "['sweet']" },
+  { "node_id": 137, "name": "anchovy paste", "flavours": "['salty', 'umami']" },
+  {
+    "node_id": 139,
+    "name": "andouille sausage",
+    "flavours": "['spicy', 'salty', 'fatty']"
+  },
+  { "node_id": 144, "name": "angel hair pasta", "flavours": "['neutral']" },
+  { "node_id": 155, "name": "anjou pear", "flavours": "['sweet']" },
+  { "node_id": 157, "name": "annatto seeds", "flavours": "['neutral']" },
+  { "node_id": 158, "name": "apple", "flavours": "['sweet', 'sour']" },
+  { "node_id": 160, "name": "apple butter", "flavours": "['sweet']" },
+  { "node_id": 162, "name": "apple cider", "flavours": "['sweet', 'sour']" },
+  { "node_id": 163, "name": "apple cider vinegar", "flavours": "['sour']" },
+  { "node_id": 165, "name": "apple juice", "flavours": "['sweet']" },
+  {
+    "node_id": 169,
+    "name": "apple pie filling",
+    "flavours": "['sweet', 'spicy']"
+  },
+  {
+    "node_id": 172,
+    "name": "applewood smoked bacon",
+    "flavours": "['salty', 'fatty']"
+  },
+  { "node_id": 174, "name": "applesauce", "flavours": "['sweet']" },
+  { "node_id": 175, "name": "apricot", "flavours": "['sweet', 'sour']" },
+  { "node_id": 182, "name": "apricot jam", "flavours": "['sweet']" },
+  { "node_id": 185, "name": "apricot nectar", "flavours": "['sweet']" },
+  { "node_id": 196, "name": "arrowroot", "flavours": "['neutral']" },
+  { "node_id": 197, "name": "artichoke", "flavours": "['bitter']" },
+  { "node_id": 199, "name": "artichoke hearts", "flavours": "['bitter']" },
+  { "node_id": 202, "name": "arugula", "flavours": "['bitter']" },
+  { "node_id": 207, "name": "asiago cheese", "flavours": "['salty', 'fatty']" },
+  { "node_id": 213, "name": "asparagus", "flavours": "['bitter']" },
+  { "node_id": 223, "name": "avocado", "flavours": "['fatty', 'neutral']" },
+  { "node_id": 228, "name": "baby arugula", "flavours": "['bitter']" },
+  {
+    "node_id": 229,
+    "name": "baby back ribs",
+    "flavours": "['umami', 'fatty']"
+  },
+  { "node_id": 231, "name": "baby beets", "flavours": "['sweet']" },
+  { "node_id": 233, "name": "baby bok choy", "flavours": "['bitter']" },
+  { "node_id": 235, "name": "baby carrots", "flavours": "['sweet']" },
+  { "node_id": 238, "name": "baby corn", "flavours": "['sweet']" },
+  { "node_id": 254, "name": "baby shrimp", "flavours": "['umami']" },
+  { "node_id": 255, "name": "baby spinach", "flavours": "['bitter']" },
+  {
+    "node_id": 268,
+    "name": "bacon bits",
+    "flavours": "['salty', 'fatty', 'umami']"
+  },
+  {
+    "node_id": 269,
+    "name": "bacon drippings",
+    "flavours": "['salty', 'fatty', 'umami']"
+  },
+  { "node_id": 276, "name": "baharat", "flavours": "['spicy']" },
+  { "node_id": 290, "name": "baking mix", "flavours": "['neutral']" },
+  { "node_id": 292, "name": "baking powder", "flavours": "['neutral']" },
+  { "node_id": 294, "name": "baking soda", "flavours": "['neutral']" },
+  { "node_id": 296, "name": "balsamic glaze", "flavours": "['sweet', 'sour']" },
+  {
+    "node_id": 298,
+    "name": "balsamic vinaigrette",
+    "flavours": "['sweet', 'sour']"
+  },
+  { "node_id": 299, "name": "balsamic vinegar", "flavours": "['sour']" },
+  { "node_id": 300, "name": "bamboo shoots", "flavours": "['neutral']" },
+  { "node_id": 302, "name": "banana", "flavours": "['sweet']" },
+  { "node_id": 311, "name": "banana liqueur", "flavours": "['sweet']" },
+  { "node_id": 312, "name": "banana pepper", "flavours": "['spicy']" },
+  {
+    "node_id": 316,
+    "name": "barbecue sauce",
+    "flavours": "['sweet', 'sour', 'spicy']"
+  },
+  { "node_id": 321, "name": "barley", "flavours": "['neutral']" },
+  { "node_id": 322, "name": "barley flour", "flavours": "['neutral']" },
+  { "node_id": 326, "name": "bartlett pear", "flavours": "['sweet']" },
+  { "node_id": 331, "name": "basil oil", "flavours": "['bitter']" },
+  { "node_id": 333, "name": "basil pesto", "flavours": "['bitter']" },
+  { "node_id": 336, "name": "basmati rice", "flavours": "['neutral']" },
+  { "node_id": 351, "name": "bean sprouts", "flavours": "['neutral']" },
+  { "node_id": 361, "name": "beef", "flavours": "['umami']" },
+  { "node_id": 363, "name": "beef base", "flavours": "['salty', 'umami']" },
+  { "node_id": 366, "name": "beef bouillon", "flavours": "['salty', 'umami']" },
+  {
+    "node_id": 367,
+    "name": "beef bouillon cube",
+    "flavours": "['salty', 'umami']"
+  },
+  { "node_id": 370, "name": "beef brisket", "flavours": "['umami']" },
+  { "node_id": 371, "name": "beef broth", "flavours": "['salty', 'umami']" },
+  { "node_id": 383, "name": "beef gravy", "flavours": "['umami', 'salty']" },
+  { "node_id": 385, "name": "beef hearts", "flavours": "['umami']" },
+  { "node_id": 410, "name": "beef stock", "flavours": "['umami', 'salty']" },
+  {
+    "node_id": 422,
+    "name": "beefsteak tomato",
+    "flavours": "['sweet', 'sour']"
+  },
+  { "node_id": 423, "name": "beer", "flavours": "['bitter', 'sour']" },
+  { "node_id": 432, "name": "belgian endive", "flavours": "['bitter']" },
+  { "node_id": 433, "name": "bell pepper", "flavours": "['sweet']" },
+  { "node_id": 461, "name": "bitters", "flavours": "['bitter']" },
+  { "node_id": 470, "name": "black beans", "flavours": "['umami']" },
+  {
+    "node_id": 473,
+    "name": "black bean sauce",
+    "flavours": "['umami', 'salty']"
+  },
+  { "node_id": 483, "name": "black currants", "flavours": "['sweet', 'sour']" },
+  { "node_id": 485, "name": "blackeyed peas", "flavours": "['neutral']" },
+  {
+    "node_id": 487,
+    "name": "black forest ham",
+    "flavours": "['salty', 'umami']"
+  },
+  { "node_id": 492, "name": "black lentils", "flavours": "['neutral']" },
+  {
+    "node_id": 496,
+    "name": "black mustard seeds",
+    "flavours": "['bitter', 'spicy']"
+  },
+  { "node_id": 497, "name": "black olives", "flavours": "['salty', 'umami']" },
+  { "node_id": 499, "name": "black pepper", "flavours": "['spicy']" },
+  { "node_id": 500, "name": "black peppercorns", "flavours": "['spicy']" },
+  {
+    "node_id": 507,
+    "name": "black sesame seeds",
+    "flavours": "['nutty', 'neutral']"
+  },
+  { "node_id": 511, "name": "black tea bag", "flavours": "['bitter']" },
+  { "node_id": 520, "name": "blackberry jam", "flavours": "['sweet']" },
+  { "node_id": 528, "name": "blanched almonds", "flavours": "['nutty']" },
+  {
+    "node_id": 531,
+    "name": "unbleached all purpose flour",
+    "flavours": "['neutral']"
+  },
+  {
+    "node_id": 537,
+    "name": "blue cheese",
+    "flavours": "['salty', 'umami', 'fatty']"
+  },
+  {
+    "node_id": 538,
+    "name": "blue cheese dressing",
+    "flavours": "['salty', 'umami', 'fatty']"
+  },
+  { "node_id": 548, "name": "blueberry jam", "flavours": "['sweet']" },
+  { "node_id": 551, "name": "blueberry pie filling", "flavours": "['sweet']" },
+  { "node_id": 569, "name": "bok choy", "flavours": "['bitter']" },
+  {
+    "node_id": 582,
+    "name": "boneless beef short ribs",
+    "flavours": "['umami', 'fatty']"
+  },
+  {
+    "node_id": 611,
+    "name": "boneless pork roast",
+    "flavours": "['umami', 'fatty']"
+  },
+  {
+    "node_id": 621,
+    "name": "boneless skinless chicken breast",
+    "flavours": "['umami']"
+  },
+  { "node_id": 628, "name": "boneless turkey breast", "flavours": "['umami']" },
+  { "node_id": 635, "name": "bosc pear", "flavours": "['sweet']" },
+  { "node_id": 636, "name": "boston butt", "flavours": "['umami', 'fatty']" },
+  { "node_id": 649, "name": "bouillon cube", "flavours": "['salty', 'umami']" },
+  { "node_id": 651, "name": "bouquet garni", "flavours": "['neutral']" },
+  { "node_id": 652, "name": "bourbon", "flavours": "['sweet']" },
+  {
+    "node_id": 659,
+    "name": "braggs liquid aminos",
+    "flavours": "['salty', 'umami']"
+  },
+  { "node_id": 661, "name": "bran flakes", "flavours": "['neutral']" },
+  { "node_id": 662, "name": "brandy", "flavours": "['sweet']" },
+  {
+    "node_id": 665,
+    "name": "bratwurst",
+    "flavours": "['salty', 'umami', 'fatty']"
+  },
+  { "node_id": 668, "name": "bread", "flavours": "['neutral']" },
+  { "node_id": 673, "name": "bread flour", "flavours": "['neutral']" },
+  { "node_id": 680, "name": "breadcrumbs", "flavours": "['neutral']" },
+  {
+    "node_id": 686,
+    "name": "breakfast sausage",
+    "flavours": "['salty', 'umami', 'fatty']"
+  },
+  { "node_id": 709, "name": "broccoli", "flavours": "['bitter']" },
+  { "node_id": 712, "name": "broccoli florets", "flavours": "['bitter']" },
+  { "node_id": 714, "name": "broccoli rabe", "flavours": "['bitter']" },
+  { "node_id": 719, "name": "broccolini", "flavours": "['bitter']" },
+  {
+    "node_id": 736,
+    "name": "brown mustard seeds",
+    "flavours": "['spicy', 'bitter']"
+  },
+  { "node_id": 739, "name": "brown rice", "flavours": "['neutral']" },
+  { "node_id": 740, "name": "brown rice flour", "flavours": "['neutral']" },
+  { "node_id": 742, "name": "brown rice syrup", "flavours": "['sweet']" },
+  { "node_id": 754, "name": "brussels sprouts", "flavours": "['bitter']" },
+  { "node_id": 757, "name": "buckwheat flour", "flavours": "['neutral']" },
+  { "node_id": 770, "name": "bulgur", "flavours": "['neutral']" },
+  { "node_id": 781, "name": "butter", "flavours": "['fatty']" },
+  {
+    "node_id": 787,
+    "name": "butter flavored shortening",
+    "flavours": "['fatty']"
+  },
+  { "node_id": 791, "name": "butter lettuce", "flavours": "['neutral']" },
+  {
+    "node_id": 792,
+    "name": "butter lettuce leaves",
+    "flavours": "['neutral']"
+  },
+  { "node_id": 805, "name": "buttermilk", "flavours": "['sour', 'fatty']" },
+  {
+    "node_id": 807,
+    "name": "buttermilk biscuits",
+    "flavours": "['neutral', 'salty']"
+  },
+  { "node_id": 814, "name": "butternut squash", "flavours": "['sweet']" },
+  { "node_id": 815, "name": "butterscotch chips", "flavours": "['sweet']" },
+  { "node_id": 816, "name": "butterscotch pudding", "flavours": "['sweet']" },
+  { "node_id": 823, "name": "cabbage", "flavours": "['bitter']" },
+  {
+    "node_id": 834,
+    "name": "caesar salad dressing",
+    "flavours": "['salty', 'umami']"
+  },
+  { "node_id": 835, "name": "cajun seasoning", "flavours": "['spicy']" },
+  { "node_id": 841, "name": "cake flour", "flavours": "['neutral']" },
+  { "node_id": 842, "name": "cake mix", "flavours": "['sweet']" },
+  {
+    "node_id": 867,
+    "name": "canadian bacon",
+    "flavours": "['salty', 'umami', 'fatty']"
+  },
+  {
+    "node_id": 872,
+    "name": "candied ginger",
+    "flavours": "['sweet', 'spicy']"
+  },
+  {
+    "node_id": 876,
+    "name": "candied orange peel",
+    "flavours": "['sweet', 'sour']"
+  },
+  { "node_id": 883, "name": "candlenuts", "flavours": "['fatty']" },
+  { "node_id": 886, "name": "candy cane", "flavours": "['sweet']" },
+  { "node_id": 889, "name": "candy corn", "flavours": "['sweet']" },
+  {
+    "node_id": 900,
+    "name": "canned black beans",
+    "flavours": "['salty', 'umami']"
+  },
+  {
+    "node_id": 902,
+    "name": "canned chickpeas",
+    "flavours": "['neutral', 'umami']"
+  },
+  {
+    "node_id": 903,
+    "name": "canned chicken",
+    "flavours": "['salty', 'umami']"
+  },
+  {
+    "node_id": 906,
+    "name": "canned chipotle chile",
+    "flavours": "['spicy', 'umami']"
+  },
+  { "node_id": 920, "name": "canned kidney beans", "flavours": "['neutral']" },
+  { "node_id": 924, "name": "canned mushrooms", "flavours": "['umami']" },
+  { "node_id": 927, "name": "canned peas", "flavours": "['sweet']" },
+  { "node_id": 935, "name": "canned pinto beans", "flavours": "['neutral']" },
+  { "node_id": 937, "name": "canned pumpkin", "flavours": "['sweet']" },
+  {
+    "node_id": 940,
+    "name": "canned red kidney beans",
+    "flavours": "['neutral']"
+  },
+  { "node_id": 941, "name": "canned salmon", "flavours": "['umami', 'salty']" },
+  {
+    "node_id": 947,
+    "name": "canned tomatoes",
+    "flavours": "['umami', 'sour']"
+  },
+  {
+    "node_id": 948,
+    "name": "canned tomato sauce",
+    "flavours": "['umami', 'sour']"
+  },
+  { "node_id": 949, "name": "canned tuna", "flavours": "['umami', 'salty']" },
+  { "node_id": 952, "name": "canned white beans", "flavours": "['neutral']" },
+  {
+    "node_id": 954,
+    "name": "canned whole tomatoes",
+    "flavours": "['umami', 'sour']"
+  },
+  { "node_id": 956, "name": "cannellini beans", "flavours": "['neutral']" },
+  { "node_id": 960, "name": "canola oil", "flavours": "['fatty']" },
+  { "node_id": 966, "name": "capers", "flavours": "['salty', 'sour']" },
+  { "node_id": 982, "name": "caramel sauce", "flavours": "['sweet']" },
+  { "node_id": 987, "name": "caramelized onions", "flavours": "['sweet']" },
+  { "node_id": 988, "name": "caraway seeds", "flavours": "['bitter']" },
+  { "node_id": 991, "name": "cardamom", "flavours": "['sweet']" },
+  { "node_id": 992, "name": "cardamom pods", "flavours": "['sweet']" },
+  { "node_id": 993, "name": "cardamom powder", "flavours": "['sweet']" },
+  { "node_id": 1002, "name": "carob powder", "flavours": "['sweet']" },
+  { "node_id": 1005, "name": "carrot", "flavours": "['sweet']" },
+  { "node_id": 1011, "name": "cashews", "flavours": "['sweet', 'fatty']" },
+  { "node_id": 1017, "name": "cassava", "flavours": "['neutral', 'starchy']" },
+  { "node_id": 1023, "name": "catfish", "flavours": "['umami']" },
+  { "node_id": 1027, "name": "cauliflower", "flavours": "['neutral']" },
+  { "node_id": 1028, "name": "cauliflower florets", "flavours": "['neutral']" },
+  { "node_id": 1031, "name": "cavatelli", "flavours": "['neutral']" },
+  { "node_id": 1033, "name": "caviar", "flavours": "['salty', 'umami']" },
+  { "node_id": 1039, "name": "cedar plank", "flavours": "['neutral']" },
+  { "node_id": 1040, "name": "celeriac", "flavours": "['bitter']" },
+  { "node_id": 1041, "name": "celery", "flavours": "['bitter']" },
+  { "node_id": 1049, "name": "celery salt", "flavours": "['salty']" },
+  { "node_id": 1050, "name": "celery seed", "flavours": "['bitter']" },
+  { "node_id": 1065, "name": "challah", "flavours": "['sweet']" },
+  { "node_id": 1071, "name": "champagne vinegar", "flavours": "['sour']" },
+  { "node_id": 1073, "name": "chana dal", "flavours": "['neutral']" },
+  {
+    "node_id": 1074,
+    "name": "chanterelle mushrooms",
+    "flavours": "['umami', 'neutral']"
+  },
+  {
+    "node_id": 1083,
+    "name": "cheddar cheese",
+    "flavours": "['salty', 'umami', 'fatty']"
+  },
+  {
+    "node_id": 1089,
+    "name": "cheese",
+    "flavours": "['salty', 'umami', 'fatty']"
+  },
+  { "node_id": 1120, "name": "cherry juice", "flavours": "['sweet']" },
+  { "node_id": 1122, "name": "cherry pie filling", "flavours": "['sweet']" },
+  { "node_id": 1125, "name": "cherry tomato", "flavours": "['sweet', 'sour']" },
+  { "node_id": 1136, "name": "chia seeds", "flavours": "['neutral']" },
+  { "node_id": 1142, "name": "chicken base", "flavours": "['salty', 'umami']" },
+  {
+    "node_id": 1144,
+    "name": "chicken bouillon",
+    "flavours": "['salty', 'umami']"
+  },
+  {
+    "node_id": 1146,
+    "name": "chicken bouillon granules",
+    "flavours": "['salty', 'umami']"
+  },
+  {
+    "node_id": 1147,
+    "name": "chicken bouillon powder",
+    "flavours": "['salty', 'umami']"
+  },
+  { "node_id": 1148, "name": "chicken breast", "flavours": "['umami']" },
+  { "node_id": 1151, "name": "chicken breast halves", "flavours": "['umami']" },
+  {
+    "node_id": 1153,
+    "name": "chicken broth",
+    "flavours": "['salty', 'umami']"
+  },
+  { "node_id": 1158, "name": "chicken cutlet", "flavours": "['umami']" },
+  { "node_id": 1159, "name": "chicken drumettes", "flavours": "['umami']" },
+  { "node_id": 1160, "name": "chicken drumsticks", "flavours": "['umami']" },
+  { "node_id": 1161, "name": "chicken fat", "flavours": "['fatty']" },
+  {
+    "node_id": 1168,
+    "name": "chicken gravy",
+    "flavours": "['salty', 'umami']"
+  },
+  { "node_id": 1172, "name": "chicken leg", "flavours": "['umami']" },
+  {
+    "node_id": 1176,
+    "name": "chicken liver",
+    "flavours": "['umami', 'bitter']"
+  },
+  {
+    "node_id": 1182,
+    "name": "chicken pieces",
+    "flavours": "['umami', 'fatty']"
+  },
+  {
+    "node_id": 1187,
+    "name": "chicken sausage",
+    "flavours": "['umami', 'salty', 'fatty']"
+  },
+  {
+    "node_id": 1188,
+    "name": "chicken seasoning",
+    "flavours": "['salty', 'umami']"
+  },
+  {
+    "node_id": 1193,
+    "name": "chicken stock",
+    "flavours": "['umami', 'salty']"
+  },
+  {
+    "node_id": 1202,
+    "name": "chicken wings",
+    "flavours": "['umami', 'fatty']"
+  },
+  { "node_id": 1204, "name": "chickpeas", "flavours": "['neutral', 'umami']" },
+  {
+    "node_id": 1205,
+    "name": "chickpea flour",
+    "flavours": "['neutral', 'umami']"
+  },
+  { "node_id": 1213, "name": "chili beans", "flavours": "['spicy', 'umami']" },
+  {
+    "node_id": 1217,
+    "name": "chili garlic sauce",
+    "flavours": "['spicy', 'umami']"
+  },
+  { "node_id": 1219, "name": "chili oil", "flavours": "['spicy', 'fatty']" },
+  { "node_id": 1220, "name": "chili paste", "flavours": "['spicy']" },
+  { "node_id": 1222, "name": "chili pepper", "flavours": "['spicy']" },
+  { "node_id": 1225, "name": "chili powder", "flavours": "['spicy']" },
+  { "node_id": 1226, "name": "chili sauce", "flavours": "['spicy', 'umami']" },
+  {
+    "node_id": 1227,
+    "name": "chili seasoning mix",
+    "flavours": "['spicy', 'salty']"
+  },
+  { "node_id": 1239, "name": "chinese egg noodles", "flavours": "['neutral']" },
+  { "node_id": 1254, "name": "chipotle chiles", "flavours": "['spicy']" },
+  { "node_id": 1263, "name": "chives", "flavours": "['neutral']" },
+  { "node_id": 1274, "name": "chocolate cake mix", "flavours": "['sweet']" },
+  { "node_id": 1276, "name": "chocolate chips", "flavours": "['sweet']" },
+  {
+    "node_id": 1277,
+    "name": "chocolate chip cookies",
+    "flavours": "['sweet']"
+  },
+  {
+    "node_id": 1284,
+    "name": "chocolate covered caramel candy",
+    "flavours": "['sweet']"
+  },
+  {
+    "node_id": 1311,
+    "name": "chocolate hazelnut spread",
+    "flavours": "['sweet', 'fatty']"
+  },
+  { "node_id": 1312, "name": "chocolate ice cream", "flavours": "['sweet']" },
+  { "node_id": 1325, "name": "chocolate shavings", "flavours": "['sweet']" },
+  { "node_id": 1331, "name": "chocolate syrup", "flavours": "['sweet']" },
+  {
+    "node_id": 1345,
+    "name": "chorizo sausages",
+    "flavours": "['spicy', 'salty']"
+  },
+  { "node_id": 1346, "name": "chow mein noodles", "flavours": "['salty']" },
+  { "node_id": 1347, "name": "choy sum", "flavours": "['bitter']" },
+  { "node_id": 1363, "name": "cilantro", "flavours": "['bitter']" },
+  { "node_id": 1368, "name": "cinnamon", "flavours": "['sweet']" },
+  { "node_id": 1381, "name": "cinnamon stick", "flavours": "['sweet']" },
+  { "node_id": 1401, "name": "clarified butter", "flavours": "['fatty']" },
+  { "node_id": 1403, "name": "clear honey", "flavours": "['sweet']" },
+  { "node_id": 1411, "name": "clove", "flavours": "['spicy']" },
+  { "node_id": 1428, "name": "cocoa nibs", "flavours": "['bitter']" },
+  { "node_id": 1430, "name": "coconut", "flavours": "['sweet', 'fatty']" },
+  {
+    "node_id": 1431,
+    "name": "coconut aminos",
+    "flavours": "['sweet', 'salty']"
+  },
+  {
+    "node_id": 1432,
+    "name": "coconut butter",
+    "flavours": "['sweet', 'fatty']"
+  },
+  { "node_id": 1435, "name": "coconut extract", "flavours": "['sweet']" },
+  { "node_id": 1438, "name": "coconut flour", "flavours": "['neutral']" },
+  { "node_id": 1443, "name": "coconut meat", "flavours": "['sweet', 'fatty']" },
+  { "node_id": 1444, "name": "coconut milk", "flavours": "['sweet', 'fatty']" },
+  { "node_id": 1446, "name": "coconut oil", "flavours": "['fatty']" },
+  {
+    "node_id": 1453,
+    "name": "coconut water",
+    "flavours": "['sweet', 'neutral']"
+  },
+  { "node_id": 1458, "name": "coffee", "flavours": "['bitter']" },
+  { "node_id": 1461, "name": "coffee extract", "flavours": "['bitter']" },
+  {
+    "node_id": 1465,
+    "name": "coffee liqueur",
+    "flavours": "['sweet', 'bitter']"
+  },
+  { "node_id": 1467, "name": "cognac", "flavours": "['sweet']" },
+  { "node_id": 1470, "name": "cola", "flavours": "['sweet']" },
+  {
+    "node_id": 1479,
+    "name": "coleslaw dressing",
+    "flavours": "['sweet', 'sour']"
+  },
+  { "node_id": 1481, "name": "collard greens", "flavours": "['bitter']" },
+  {
+    "node_id": 1497,
+    "name": "condensed cream of chicken soup",
+    "flavours": "['salty', 'umami', 'fatty']"
+  },
+  {
+    "node_id": 1499,
+    "name": "condensed cream of mushroom soup",
+    "flavours": "['salty', 'umami', 'fatty']"
+  },
+  {
+    "node_id": 1514,
+    "name": "cooked bacon",
+    "flavours": "['salty', 'umami', 'fatty']"
+  },
+  { "node_id": 1516, "name": "cooked basmati rice", "flavours": "['neutral']" },
+  { "node_id": 1522, "name": "cooked brown rice", "flavours": "['neutral']" },
+  { "node_id": 1523, "name": "cooked chicken", "flavours": "['umami']" },
+  { "node_id": 1528, "name": "cooked couscous", "flavours": "['neutral']" },
+  { "node_id": 1533, "name": "cooked grits", "flavours": "['neutral']" },
+  { "node_id": 1535, "name": "cooked ham", "flavours": "['salty', 'umami']" },
+  {
+    "node_id": 1539,
+    "name": "cooked lasagne noodles",
+    "flavours": "['neutral']"
+  },
+  { "node_id": 1540, "name": "cooked lentils", "flavours": "['umami']" },
+  { "node_id": 1550, "name": "cooked pasta", "flavours": "['neutral']" },
+  { "node_id": 1551, "name": "cooked penne", "flavours": "['neutral']" },
+  { "node_id": 1554, "name": "cooked quinoa", "flavours": "['neutral']" },
+  { "node_id": 1555, "name": "cooked rice", "flavours": "['neutral']" },
+  { "node_id": 1560, "name": "cooked spaghetti", "flavours": "['neutral']" },
+  { "node_id": 1569, "name": "cookies", "flavours": "['sweet']" },
+  { "node_id": 1570, "name": "cookie crumbs", "flavours": "['sweet']" },
+  { "node_id": 1576, "name": "cooking oil", "flavours": "['fatty']" },
+  { "node_id": 1595, "name": "corn", "flavours": "['sweet', 'neutral']" },
+  { "node_id": 1601, "name": "corn flake crumbs", "flavours": "['sweet']" },
+  { "node_id": 1602, "name": "corn husks", "flavours": "['neutral']" },
+  {
+    "node_id": 1603,
+    "name": "corn kernels",
+    "flavours": "['sweet', 'neutral']"
+  },
+  { "node_id": 1608, "name": "corn oil", "flavours": "['fatty']" },
+  {
+    "node_id": 1610,
+    "name": "corn on the cob",
+    "flavours": "['sweet', 'neutral']"
+  },
+  { "node_id": 1611, "name": "corn syrup", "flavours": "['sweet']" },
+  {
+    "node_id": 1613,
+    "name": "corn tortilla chips",
+    "flavours": "['salty', 'fatty']"
+  },
+  { "node_id": 1615, "name": "cornbread", "flavours": "['sweet']" },
+  { "node_id": 1618, "name": "corned beef", "flavours": "['salty']" },
+  { "node_id": 1619, "name": "corned beef brisket", "flavours": "['salty']" },
+  { "node_id": 1620, "name": "corn flour", "flavours": "['neutral']" },
+  { "node_id": 1622, "name": "cornish hens", "flavours": "['neutral']" },
+  { "node_id": 1623, "name": "cornmeal", "flavours": "['neutral']" },
+  { "node_id": 1625, "name": "corn starch", "flavours": "['neutral']" },
+  { "node_id": 1630, "name": "cotija cheese", "flavours": "['salty']" },
+  { "node_id": 1631, "name": "cottage cheese", "flavours": "['salty']" },
+  { "node_id": 1644, "name": "couscous", "flavours": "['neutral']" },
+  { "node_id": 1645, "name": "crab", "flavours": "['salty', 'sweet']" },
+  { "node_id": 1652, "name": "crabmeat", "flavours": "['salty', 'umami']" },
+  { "node_id": 1658, "name": "cracked wheat", "flavours": "['neutral']" },
+  { "node_id": 1659, "name": "crackers", "flavours": "['salty']" },
+  { "node_id": 1663, "name": "craisins", "flavours": "['sweet']" },
+  {
+    "node_id": 1669,
+    "name": "cranberry juice",
+    "flavours": "['sweet', 'sour']"
+  },
+  { "node_id": 1676, "name": "crawfish", "flavours": "['salty', 'umami']" },
+  { "node_id": 1681, "name": "cream", "flavours": "['fatty']" },
+  { "node_id": 1682, "name": "cream cheese", "flavours": "['salty', 'fatty']" },
+  { "node_id": 1701, "name": "cream of tartar", "flavours": "['sour']" },
+  { "node_id": 1711, "name": "creamed corn", "flavours": "['sweet']" },
+  {
+    "node_id": 1715,
+    "name": "creamy peanut butter",
+    "flavours": "['sweet', 'fatty']"
+  },
+  { "node_id": 1719, "name": "creme de cacao", "flavours": "['sweet']" },
+  { "node_id": 1721, "name": "creme de menthe", "flavours": "['sweet']" },
+  { "node_id": 1723, "name": "creme fraiche", "flavours": "['sour', 'fatty']" },
+  { "node_id": 1724, "name": "crimini mushrooms", "flavours": "['umami']" },
+  {
+    "node_id": 1725,
+    "name": "creole mustard",
+    "flavours": "['spicy', 'sour']"
+  },
+  {
+    "node_id": 1726,
+    "name": "creole seasoning",
+    "flavours": "['spicy', 'salty']"
+  },
+  { "node_id": 1727, "name": "crepes", "flavours": "['neutral']" },
+  { "node_id": 1741, "name": "croissant", "flavours": "['neutral']" },
+  { "node_id": 1745, "name": "croutons", "flavours": "['salty']" },
+  {
+    "node_id": 1749,
+    "name": "crunchy peanut butter",
+    "flavours": "['sweet', 'fatty']"
+  },
+  { "node_id": 1750, "name": "crushed pineapple", "flavours": "['sweet']" },
+  {
+    "node_id": 1756,
+    "name": "crushed tomatoes",
+    "flavours": "['sweet', 'sour', 'umami']"
+  },
+  {
+    "node_id": 1759,
+    "name": "crusty bread",
+    "flavours": "['salty', 'neutral']"
+  },
+  { "node_id": 1768, "name": "cucumber", "flavours": "['neutral']" },
+  { "node_id": 1773, "name": "cumin", "flavours": "['bitter']" },
+  { "node_id": 1775, "name": "cumin seeds", "flavours": "['bitter']" },
+  { "node_id": 1776, "name": "cupcakes", "flavours": "['sweet']" },
+  {
+    "node_id": 1788,
+    "name": "curry powder",
+    "flavours": "['spicy', 'bitter']"
+  },
+  { "node_id": 1795, "name": "daikon radish", "flavours": "['bitter']" },
+  { "node_id": 1801, "name": "dandelion greens", "flavours": "['bitter']" },
+  { "node_id": 1806, "name": "dark brown sugar", "flavours": "['sweet']" },
+  {
+    "node_id": 1810,
+    "name": "dark chocolate",
+    "flavours": "['bitter', 'sweet']"
+  },
+  {
+    "node_id": 1811,
+    "name": "dark chocolate bar",
+    "flavours": "['bitter', 'sweet']"
+  },
+  {
+    "node_id": 1813,
+    "name": "dark chocolate chips",
+    "flavours": "['bitter', 'sweet']"
+  },
+  { "node_id": 1819, "name": "dark corn syrup", "flavours": "['sweet']" },
+  { "node_id": 1835, "name": "dark sesame oil", "flavours": "['fatty']" },
+  { "node_id": 1861, "name": "deli turkey", "flavours": "['umami', 'salty']" },
+  { "node_id": 1862, "name": "delicata squash", "flavours": "['sweet']" },
+  { "node_id": 1863, "name": "demerara sugar", "flavours": "['sweet']" },
+  { "node_id": 1864, "name": "demi glace", "flavours": "['umami', 'salty']" },
+  { "node_id": 1874, "name": "diced green chiles", "flavours": "['spicy']" },
+  {
+    "node_id": 1881,
+    "name": "diced tomatoes with green chilies",
+    "flavours": "['umami', 'sour', 'spicy']"
+  },
+  { "node_id": 1891, "name": "digestive biscuits", "flavours": "['sweet']" },
+  { "node_id": 1892, "name": "dijon mustard", "flavours": "['spicy', 'sour']" },
+  { "node_id": 1895, "name": "dill", "flavours": "['bitter']" },
+  { "node_id": 1897, "name": "dill pickles", "flavours": "['sour', 'salty']" },
+  { "node_id": 1916, "name": "ditalini", "flavours": "['neutral']" },
+  {
+    "node_id": 1919,
+    "name": "double cream",
+    "flavours": "['fatty', 'neutral']"
+  },
+  { "node_id": 1927, "name": "drambuie", "flavours": "['sweet']" },
+  { "node_id": 1934, "name": "dried apples", "flavours": "['sweet']" },
+  { "node_id": 1936, "name": "dried apricots", "flavours": "['sweet']" },
+  { "node_id": 1938, "name": "dried arbol chile", "flavours": "['spicy']" },
+  { "node_id": 1941, "name": "dried basil", "flavours": "['bitter']" },
+  { "node_id": 1946, "name": "dried black beans", "flavours": "['neutral']" },
+  { "node_id": 1954, "name": "dried brown lentils", "flavours": "['neutral']" },
+  {
+    "node_id": 1969,
+    "name": "dried cilantro",
+    "flavours": "['bitter', 'herbaceous']"
+  },
+  {
+    "node_id": 1974,
+    "name": "dried currants",
+    "flavours": "['sweet', 'tart']"
+  },
+  {
+    "node_id": 1977,
+    "name": "dried dill",
+    "flavours": "['bitter', 'herbaceous']"
+  },
+  {
+    "node_id": 1983,
+    "name": "dried fenugreek leaves",
+    "flavours": "['bitter']"
+  },
+  { "node_id": 1984, "name": "dried figs", "flavours": "['sweet']" },
+  { "node_id": 1985, "name": "dried fruit", "flavours": "['sweet']" },
+  {
+    "node_id": 1994,
+    "name": "dried herbs",
+    "flavours": "['bitter', 'herbaceous']"
+  },
+  { "node_id": 2007, "name": "dried kidney beans", "flavours": "['neutral']" },
+  { "node_id": 2022, "name": "dried marjoram", "flavours": "['bitter']" },
+  { "node_id": 2024, "name": "dried mint", "flavours": "['sweet', 'bitter']" },
+  { "node_id": 2031, "name": "dried navy beans", "flavours": "['neutral']" },
+  { "node_id": 2033, "name": "dried onion", "flavours": "['sweet', 'umami']" },
+  { "node_id": 2046, "name": "dried pineapple", "flavours": "['sweet']" },
+  {
+    "node_id": 2050,
+    "name": "dried porcini mushrooms",
+    "flavours": "['umami']"
+  },
+  {
+    "node_id": 2056,
+    "name": "dried red kidney beans",
+    "flavours": "['neutral']"
+  },
+  { "node_id": 2057, "name": "dried red lentils", "flavours": "['neutral']" },
+  { "node_id": 2065, "name": "dried sage", "flavours": "['bitter']" },
+  {
+    "node_id": 2081,
+    "name": "dried tarragon",
+    "flavours": "['sweet', 'bitter']"
+  },
+  { "node_id": 2085, "name": "dried thyme", "flavours": "['bitter']" },
+  { "node_id": 2088, "name": "dried white beans", "flavours": "['neutral']" },
+  { "node_id": 2104, "name": "dry cider", "flavours": "['sour']" },
+  {
+    "node_id": 2133,
+    "name": "dry ranch dressing mix",
+    "flavours": "['salty', 'umami']"
+  },
+  { "node_id": 2135, "name": "dry red wine", "flavours": "['sour', 'bitter']" },
+  { "node_id": 2142, "name": "dry sherry", "flavours": "['sour', 'bitter']" },
+  {
+    "node_id": 2152,
+    "name": "dry white wine",
+    "flavours": "['sour', 'bitter']"
+  },
+  { "node_id": 2154, "name": "dry yeast", "flavours": "['neutral']" },
+  { "node_id": 2156, "name": "duck breast", "flavours": "['umami', 'fatty']" },
+  { "node_id": 2164, "name": "dulce de leche", "flavours": "['sweet']" },
+  { "node_id": 2170, "name": "dungeness crab", "flavours": "['umami']" },
+  {
+    "node_id": 2175,
+    "name": "dutch processed cocoa powder",
+    "flavours": "['bitter']"
+  },
+  { "node_id": 2184, "name": "edamame", "flavours": "['umami']" },
+  { "node_id": 2188, "name": "egg", "flavours": "['umami', 'fatty']" },
+  { "node_id": 2191, "name": "egg noodles", "flavours": "['neutral']" },
+  { "node_id": 2193, "name": "egg substitute", "flavours": "['neutral']" },
+  { "node_id": 2196, "name": "egg whites", "flavours": "['neutral']" },
+  { "node_id": 2198, "name": "egg yolk", "flavours": "['umami', 'fatty']" },
+  { "node_id": 2199, "name": "eggnog", "flavours": "['sweet', 'fatty']" },
+  { "node_id": 2200, "name": "eggplant", "flavours": "['bitter']" },
+  { "node_id": 2201, "name": "elbow macaroni", "flavours": "['neutral']" },
+  { "node_id": 2204, "name": "elderflower liqueur", "flavours": "['sweet']" },
+  { "node_id": 2212, "name": "english cucumber", "flavours": "['neutral']" },
+  { "node_id": 2213, "name": "english muffin", "flavours": "['neutral']" },
+  { "node_id": 2221, "name": "enoki mushrooms", "flavours": "['umami']" },
+  { "node_id": 2229, "name": "escarole", "flavours": "['bitter']" },
+  { "node_id": 2230, "name": "espresso", "flavours": "['bitter']" },
+  {
+    "node_id": 2239,
+    "name": "evaporated milk",
+    "flavours": "['sweet', 'fatty']"
+  },
+  { "node_id": 2240, "name": "evaporated skim milk", "flavours": "['sweet']" },
+  {
+    "node_id": 2251,
+    "name": "extra sharp cheddar cheese",
+    "flavours": "['umami', 'salty']"
+  },
+  {
+    "node_id": 2253,
+    "name": "extra virgin olive oil",
+    "flavours": "['fatty']"
+  },
+  {
+    "node_id": 2261,
+    "name": "farmer cheese",
+    "flavours": "['umami', 'salty']"
+  },
+  {
+    "node_id": 2271,
+    "name": "fat free chicken broth",
+    "flavours": "['umami', 'salty']"
+  },
+  {
+    "node_id": 2274,
+    "name": "fat free cottage cheese",
+    "flavours": "['umami', 'salty']"
+  },
+  { "node_id": 2281, "name": "fat free greek yogurt", "flavours": "['sour']" },
+  {
+    "node_id": 2282,
+    "name": "fat free half and half",
+    "flavours": "['neutral']"
+  },
+  {
+    "node_id": 2286,
+    "name": "fat free less sodium beef broth",
+    "flavours": "['umami']"
+  },
+  {
+    "node_id": 2307,
+    "name": "fat free whipped topping",
+    "flavours": "['sweet']"
+  },
+  { "node_id": 2309, "name": "fava beans", "flavours": "['neutral']" },
+  { "node_id": 2310, "name": "fennel", "flavours": "['sweet']" },
+  { "node_id": 2315, "name": "fennel seeds", "flavours": "['sweet']" },
+  { "node_id": 2317, "name": "fenugreek seeds", "flavours": "['bitter']" },
+  { "node_id": 2320, "name": "feta cheese", "flavours": "['salty', 'umami']" },
+  { "node_id": 2322, "name": "fettuccine", "flavours": "['neutral']" },
+  { "node_id": 2333, "name": "fig jam", "flavours": "['sweet']" },
+  { "node_id": 2336, "name": "file powder", "flavours": "['neutral']" },
+  { "node_id": 2354, "name": "fingerling potato", "flavours": "['neutral']" },
+  {
+    "node_id": 2355,
+    "name": "fire roasted tomatoes",
+    "flavours": "['umami', 'sweet', 'sour']"
+  },
+  { "node_id": 2362, "name": "firm tofu", "flavours": "['neutral']" },
+  { "node_id": 2364, "name": "fish", "flavours": "['umami']" },
+  { "node_id": 2372, "name": "fish sauce", "flavours": "['salty', 'umami']" },
+  { "node_id": 2374, "name": "fish stock", "flavours": "['umami', 'salty']" },
+  { "node_id": 2381, "name": "flank steak", "flavours": "['umami']" },
+  { "node_id": 2382, "name": "flatbread", "flavours": "['neutral']" },
+  { "node_id": 2383, "name": "flat iron steak", "flavours": "['umami']" },
+  { "node_id": 2385, "name": "flat leaf parsley", "flavours": "['bitter']" },
+  { "node_id": 2390, "name": "flaxseed", "flavours": "['neutral']" },
+  { "node_id": 2393, "name": "fleur de sel", "flavours": "['salty']" },
+  { "node_id": 2397, "name": "flour tortilla", "flavours": "['neutral']" },
+  {
+    "node_id": 2405,
+    "name": "fontina cheese",
+    "flavours": "['salty', 'umami', 'fatty']"
+  },
+  { "node_id": 2424, "name": "french bread", "flavours": "['neutral']" },
+  { "node_id": 2432, "name": "french lentils", "flavours": "['neutral']" },
+  { "node_id": 2449, "name": "fresh basil", "flavours": "['neutral']" },
+  {
+    "node_id": 2492,
+    "name": "fresh flat leaf parsley",
+    "flavours": "['neutral']"
+  },
+  { "node_id": 2497, "name": "fresh ginger", "flavours": "['spicy']" },
+  { "node_id": 2506, "name": "fresh herbs", "flavours": "['neutral']" },
+  { "node_id": 2529, "name": "fresh marjoram", "flavours": "['bitter']" },
+  { "node_id": 2542, "name": "fresh parsley", "flavours": "['neutral']" },
+  { "node_id": 2545, "name": "fresh pasta", "flavours": "['neutral']" },
+  { "node_id": 2562, "name": "fresh rosemary", "flavours": "['bitter']" },
+  { "node_id": 2588, "name": "fresh thyme", "flavours": "['bitter']" },
+  { "node_id": 2601, "name": "fresh yeast", "flavours": "['umami']" },
+  {
+    "node_id": 2624,
+    "name": "frozen artichoke hearts",
+    "flavours": "['bitter']"
+  },
+  { "node_id": 2725, "name": "frozen spinach", "flavours": "['bitter']" },
+  { "node_id": 2774, "name": "fudge", "flavours": "['sweet']" },
+  { "node_id": 2779, "name": "fuji apple", "flavours": "['sweet']" },
+  { "node_id": 2785, "name": "gala apple", "flavours": "['sweet', 'sour']" },
+  { "node_id": 2786, "name": "galangal", "flavours": "['spicy']" },
+  { "node_id": 2789, "name": "garam masala", "flavours": "['spicy']" },
+  { "node_id": 2793, "name": "garlic", "flavours": "['spicy']" },
+  {
+    "node_id": 2794,
+    "name": "garlic herb spreadable cheese",
+    "flavours": "['salty', 'fatty']"
+  },
+  { "node_id": 2811, "name": "garlic paste", "flavours": "['spicy']" },
+  { "node_id": 2813, "name": "garlic powder", "flavours": "['spicy']" },
+  { "node_id": 2814, "name": "garlic salt", "flavours": "['salty']" },
+  { "node_id": 2818, "name": "garlic scapes", "flavours": "['spicy']" },
+  { "node_id": 2821, "name": "gelatin", "flavours": "['neutral']" },
+  { "node_id": 2833, "name": "gherkins", "flavours": "['sour', 'salty']" },
+  { "node_id": 2836, "name": "gin", "flavours": "['bitter']" },
+  { "node_id": 2837, "name": "ginger", "flavours": "['spicy']" },
+  { "node_id": 2839, "name": "ginger beer", "flavours": "['sweet', 'spicy']" },
+  { "node_id": 2841, "name": "ginger garlic paste", "flavours": "['spicy']" },
+  { "node_id": 2846, "name": "ginger paste", "flavours": "['spicy']" },
+  { "node_id": 2847, "name": "ginger powder", "flavours": "['spicy']" },
+  {
+    "node_id": 2859,
+    "name": "gingersnap crumbs",
+    "flavours": "['sweet', 'spicy']"
+  },
+  { "node_id": 2883, "name": "glutinous rice", "flavours": "['neutral']" },
+  { "node_id": 2887, "name": "gnocchi", "flavours": "['neutral']" },
+  { "node_id": 2889, "name": "goat milk", "flavours": "['sweet', 'fatty']" },
+  { "node_id": 2890, "name": "goat cheese", "flavours": "['salty', 'umami']" },
+  {
+    "node_id": 2892,
+    "name": "gochujang",
+    "flavours": "['spicy', 'sweet', 'umami']"
+  },
+  { "node_id": 2899, "name": "golden beet", "flavours": "['sweet']" },
+  { "node_id": 2900, "name": "golden brown sugar", "flavours": "['sweet']" },
+  { "node_id": 2904, "name": "golden raisins", "flavours": "['sweet']" },
+  { "node_id": 2907, "name": "golden syrup", "flavours": "['sweet']" },
+  { "node_id": 2915, "name": "gorgonzola", "flavours": "['salty', 'umami']" },
+  { "node_id": 2919, "name": "graham crackers", "flavours": "['sweet']" },
+  { "node_id": 2920, "name": "graham cracker crumbs", "flavours": "['sweet']" },
+  { "node_id": 2935, "name": "grana padano", "flavours": "['salty', 'umami']" },
+  { "node_id": 2936, "name": "grand marnier", "flavours": "['sweet']" },
+  {
+    "node_id": 2937,
+    "name": "granny smith apple",
+    "flavours": "['sweet', 'sour']"
+  },
+  {
+    "node_id": 2942,
+    "name": "granulated garlic",
+    "flavours": "['salty', 'umami']"
+  },
+  { "node_id": 2945, "name": "granulated sugar", "flavours": "['sweet']" },
+  { "node_id": 2947, "name": "grapes", "flavours": "['sweet']" },
+  { "node_id": 2949, "name": "grape jam", "flavours": "['sweet']" },
+  { "node_id": 2954, "name": "grape tomato", "flavours": "['sweet', 'umami']" },
+  { "node_id": 2955, "name": "grapefruit", "flavours": "['sour', 'bitter']" },
+  { "node_id": 2961, "name": "grape seed oil", "flavours": "['neutral']" },
+  {
+    "node_id": 2969,
+    "name": "great northern beans",
+    "flavours": "['neutral']"
+  },
+  { "node_id": 2975, "name": "greek yogurt", "flavours": "['sour']" },
+  { "node_id": 2977, "name": "green apple", "flavours": "['sweet', 'sour']" },
+  { "node_id": 2980, "name": "green beans", "flavours": "['bitter']" },
+  { "node_id": 2985, "name": "green cardamoms", "flavours": "['sweet']" },
+  { "node_id": 2992, "name": "green chili pepper", "flavours": "['spicy']" },
+  {
+    "node_id": 3000,
+    "name": "green curry paste",
+    "flavours": "['spicy', 'umami']"
+  },
+  {
+    "node_id": 3001,
+    "name": "green enchilada sauce",
+    "flavours": "['spicy', 'sour']"
+  },
+  { "node_id": 3002, "name": "green food color", "flavours": "['neutral']" },
+  { "node_id": 3020, "name": "green pepper", "flavours": "['neutral']" },
+  { "node_id": 3035, "name": "green tea", "flavours": "['bitter']" },
+  { "node_id": 3036, "name": "green tea bag", "flavours": "['bitter']" },
+  {
+    "node_id": 3052,
+    "name": "ground allspice",
+    "flavours": "['sweet', 'spicy']"
+  },
+  { "node_id": 3064, "name": "ground cayenne pepper", "flavours": "['spicy']" },
+  { "node_id": 3066, "name": "ground chicken", "flavours": "['umami']" },
+  {
+    "node_id": 3068,
+    "name": "ground chipotle chile pepper",
+    "flavours": "['spicy']"
+  },
+  { "node_id": 3069, "name": "ground chuck", "flavours": "['umami', 'fatty']" },
+  { "node_id": 3071, "name": "ground cinnamon", "flavours": "['sweet']" },
+  {
+    "node_id": 3072,
+    "name": "ground clove",
+    "flavours": "['bitter', 'spicy']"
+  },
+  { "node_id": 3073, "name": "ground coffee", "flavours": "['bitter']" },
+  { "node_id": 3074, "name": "ground coriander", "flavours": "['bitter']" },
+  { "node_id": 3075, "name": "ground cumin", "flavours": "['bitter']" },
+  { "node_id": 3078, "name": "ground elk", "flavours": "['umami']" },
+  { "node_id": 3079, "name": "ground espresso", "flavours": "['bitter']" },
+  { "node_id": 3080, "name": "ground fennel", "flavours": "['sweet']" },
+  { "node_id": 3082, "name": "ground flaxseed", "flavours": "['neutral']" },
+  { "node_id": 3088, "name": "ground lamb", "flavours": "['umami', 'fatty']" },
+  { "node_id": 3090, "name": "ground mace", "flavours": "['spicy']" },
+  { "node_id": 3103, "name": "ground pork", "flavours": "['umami', 'fatty']" },
+  { "node_id": 3111, "name": "ground sage", "flavours": "['bitter']" },
+  { "node_id": 3113, "name": "ground savory", "flavours": "['bitter']" },
+  { "node_id": 3118, "name": "ground thyme", "flavours": "['bitter']" },
+  { "node_id": 3119, "name": "ground turkey", "flavours": "['umami']" },
+  { "node_id": 3122, "name": "ground veal", "flavours": "['umami']" },
+  { "node_id": 3127, "name": "gruyere", "flavours": "['umami', 'salty']" },
+  { "node_id": 3129, "name": "guacamole", "flavours": "['fatty', 'umami']" },
+  { "node_id": 3132, "name": "guar gum", "flavours": "['neutral']" },
+  { "node_id": 3133, "name": "guava", "flavours": "['sweet']" },
+  { "node_id": 3148, "name": "haddock", "flavours": "['umami']" },
+  {
+    "node_id": 3153,
+    "name": "half and half",
+    "flavours": "['fatty', 'neutral']"
+  },
+  {
+    "node_id": 3157,
+    "name": "halibut fillets",
+    "flavours": "['umami', 'salty']"
+  },
+  { "node_id": 3161, "name": "ham", "flavours": "['salty', 'umami']" },
+  { "node_id": 3165, "name": "ham slices", "flavours": "['salty', 'umami']" },
+  { "node_id": 3167, "name": "ham steak", "flavours": "['salty', 'umami']" },
+  {
+    "node_id": 3170,
+    "name": "hamburger bun",
+    "flavours": "['neutral', 'slightly sweet']"
+  },
+  {
+    "node_id": 3178,
+    "name": "hard boiled egg",
+    "flavours": "['umami', 'neutral']"
+  },
+  { "node_id": 3189, "name": "harissa", "flavours": "['spicy', 'umami']" },
+  { "node_id": 3190, "name": "hash browns", "flavours": "['salty', 'fatty']" },
+  { "node_id": 3193, "name": "hass avocado", "flavours": "['fatty', 'umami']" },
+  { "node_id": 3199, "name": "hawaiian roll", "flavours": "['sweet']" },
+  { "node_id": 3201, "name": "hazelnuts", "flavours": "['fatty', 'umami']" },
+  {
+    "node_id": 3231,
+    "name": "heirloom tomato",
+    "flavours": "['sweet', 'sour']"
+  },
+  { "node_id": 3234, "name": "hemp milk", "flavours": "['neutral']" },
+  { "node_id": 3235, "name": "hemp seeds", "flavours": "['nutty']" },
+  { "node_id": 3250, "name": "herbes de provence", "flavours": "['bitter']" },
+  { "node_id": 3278, "name": "hoisin sauce", "flavours": "['sweet', 'umami']" },
+  {
+    "node_id": 3280,
+    "name": "hollandaise sauce",
+    "flavours": "['fatty', 'umami']"
+  },
+  {
+    "node_id": 3281,
+    "name": "hollandaise sauce mix",
+    "flavours": "['fatty', 'umami']"
+  },
+  { "node_id": 3290, "name": "honey", "flavours": "['sweet']" },
+  {
+    "node_id": 3298,
+    "name": "honey mustard",
+    "flavours": "['sweet', 'spicy']"
+  },
+  { "node_id": 3312, "name": "horseradish", "flavours": "['spicy']" },
+  { "node_id": 3315, "name": "horseradish root", "flavours": "['spicy']" },
+  { "node_id": 3332, "name": "hot cocoa mix", "flavours": "['sweet']" },
+  {
+    "node_id": 3362,
+    "name": "hot sauce",
+    "flavours": "['spicy', 'sour', 'salty']"
+  },
+  { "node_id": 3376, "name": "ice", "flavours": "['neutral']" },
+  { "node_id": 3386, "name": "icing", "flavours": "['sweet']" },
+  {
+    "node_id": 3407,
+    "name": "instant chocolate pudding mix",
+    "flavours": "['sweet']"
+  },
+  { "node_id": 3409, "name": "instant coffee", "flavours": "['bitter']" },
+  { "node_id": 3417, "name": "instant espresso", "flavours": "['bitter']" },
+  {
+    "node_id": 3422,
+    "name": "instant lemon pudding mix",
+    "flavours": "['sweet', 'sour']"
+  },
+  {
+    "node_id": 3436,
+    "name": "instant potatoes flakes",
+    "flavours": "['neutral']"
+  },
+  {
+    "node_id": 3442,
+    "name": "instant vanilla pudding mix",
+    "flavours": "['sweet']"
+  },
+  { "node_id": 3444, "name": "instant yeast", "flavours": "['neutral']" },
+  { "node_id": 3446, "name": "irish cream", "flavours": "['sweet']" },
+  { "node_id": 3451, "name": "italian bread", "flavours": "['neutral']" },
+  {
+    "node_id": 3468,
+    "name": "italian sausage",
+    "flavours": "['salty', 'umami', 'spicy']"
+  },
+  {
+    "node_id": 3470,
+    "name": "italian seasoning",
+    "flavours": "['salty', 'umami']"
+  },
+  {
+    "node_id": 3482,
+    "name": "italian tomato",
+    "flavours": "['sweet', 'sour', 'umami']"
+  },
+  {
+    "node_id": 3484,
+    "name": "italian turkey sausage",
+    "flavours": "['salty', 'umami']"
+  },
+  { "node_id": 3489, "name": "jackfruit", "flavours": "['sweet']" },
+  { "node_id": 3491, "name": "jaggery", "flavours": "['sweet']" },
+  { "node_id": 3497, "name": "jalapeno pepper", "flavours": "['spicy']" },
+  { "node_id": 3502, "name": "jam", "flavours": "['sweet']" },
+  { "node_id": 3506, "name": "japanese eggplant", "flavours": "['neutral']" },
+  {
+    "node_id": 3511,
+    "name": "jarlsberg cheese",
+    "flavours": "['salty', 'umami']"
+  },
+  {
+    "node_id": 3526,
+    "name": "jerusalem artichoke",
+    "flavours": "['sweet', 'neutral']"
+  },
+  { "node_id": 3527, "name": "jicama", "flavours": "['sweet', 'neutral']" },
+  { "node_id": 3535, "name": "juice", "flavours": "['sweet', 'sour']" },
+  { "node_id": 3539, "name": "jumbo shrimp", "flavours": "['salty', 'umami']" },
+  {
+    "node_id": 3541,
+    "name": "kabocha squash",
+    "flavours": "['sweet', 'neutral']"
+  },
+  {
+    "node_id": 3545,
+    "name": "kalamata olives",
+    "flavours": "['salty', 'bitter']"
+  },
+  { "node_id": 3546, "name": "kale", "flavours": "['bitter']" },
+  { "node_id": 3562, "name": "kelp", "flavours": "['salty', 'umami']" },
+  { "node_id": 3565, "name": "ketchup", "flavours": "['sweet', 'sour']" },
+  { "node_id": 3572, "name": "kidney beans", "flavours": "['neutral']" },
+  { "node_id": 3573, "name": "kielbasa", "flavours": "['salty', 'fatty']" },
+  { "node_id": 3587, "name": "kiwi", "flavours": "['sweet', 'sour']" },
+  { "node_id": 3591, "name": "knackwurst", "flavours": "['salty', 'umami']" },
+  { "node_id": 3596, "name": "kohlrabi", "flavours": "['neutral']" },
+  { "node_id": 3605, "name": "kosher salt", "flavours": "['salty']" },
+  { "node_id": 3634, "name": "ladyfingers", "flavours": "['sweet']" },
+  { "node_id": 3636, "name": "lamb", "flavours": "['umami', 'fatty']" },
+  {
+    "node_id": 3645,
+    "name": "lamb loin chop",
+    "flavours": "['umami', 'fatty']"
+  },
+  {
+    "node_id": 3652,
+    "name": "lamb shoulder",
+    "flavours": "['umami', 'fatty']"
+  },
+  {
+    "node_id": 3654,
+    "name": "lamb stew meat",
+    "flavours": "['umami', 'fatty']"
+  },
+  { "node_id": 3655, "name": "lamb stock", "flavours": "['umami']" },
+  { "node_id": 3685, "name": "lean bacon", "flavours": "['salty', 'umami']" },
+  { "node_id": 3715, "name": "lebanese cucumber", "flavours": "['neutral']" },
+  { "node_id": 3717, "name": "leek", "flavours": "['umami', 'neutral']" },
+  { "node_id": 3719, "name": "leg of lamb", "flavours": "['umami', 'fatty']" },
+  { "node_id": 3720, "name": "lemon", "flavours": "['sour']" },
+  { "node_id": 3729, "name": "lemon basil", "flavours": "['sour', 'sweet']" },
+  {
+    "node_id": 3731,
+    "name": "lemon cake mix",
+    "flavours": "['sweet', 'sour']"
+  },
+  {
+    "node_id": 3732,
+    "name": "lemon curd",
+    "flavours": "['sweet', 'sour', 'fatty']"
+  },
+  { "node_id": 3734, "name": "lemon extract", "flavours": "['sour']" },
+  { "node_id": 3743, "name": "lemon juice", "flavours": "['sour']" },
+  { "node_id": 3750, "name": "lemon peel", "flavours": "['bitter']" },
+  { "node_id": 3752, "name": "lemon pepper", "flavours": "['sour', 'spicy']" },
+  { "node_id": 3769, "name": "lemon wedge", "flavours": "['sour']" },
+  { "node_id": 3772, "name": "lemonade", "flavours": "['sweet', 'sour']" },
+  {
+    "node_id": 3773,
+    "name": "lemonade concentrate",
+    "flavours": "['sweet', 'sour']"
+  },
+  { "node_id": 3775, "name": "lemon grass", "flavours": "['bitter']" },
+  { "node_id": 3781, "name": "lentils", "flavours": "['neutral']" },
+  { "node_id": 3782, "name": "lettuce", "flavours": "['neutral']" },
+  { "node_id": 3785, "name": "lettuce leaf", "flavours": "['neutral']" },
+  { "node_id": 3789, "name": "licorice twists", "flavours": "['sweet']" },
+  { "node_id": 3791, "name": "light beer", "flavours": "['bitter']" },
+  {
+    "node_id": 3801,
+    "name": "light coconut milk",
+    "flavours": "['sweet', 'fatty']"
+  },
+  {
+    "node_id": 3803,
+    "name": "light cream",
+    "flavours": "['fatty', 'neutral']"
+  },
+  {
+    "node_id": 3811,
+    "name": "light mayonnaise",
+    "flavours": "['fatty', 'salty']"
+  },
+  { "node_id": 3817, "name": "light olive oil", "flavours": "['fatty']" },
+  {
+    "node_id": 3826,
+    "name": "light soy sauce",
+    "flavours": "['salty', 'umami']"
+  },
+  { "node_id": 3839, "name": "lima beans", "flavours": "['neutral']" },
+  { "node_id": 3840, "name": "lime", "flavours": "['sour']" },
+  { "node_id": 3847, "name": "lime juice", "flavours": "['sour']" },
+  { "node_id": 3848, "name": "lime peel", "flavours": "['sour']" },
+  { "node_id": 3853, "name": "lime wedge", "flavours": "['sour']" },
+  { "node_id": 3855, "name": "limeade", "flavours": "['sweet', 'sour']" },
+  { "node_id": 3859, "name": "limoncello", "flavours": "['sweet', 'sour']" },
+  { "node_id": 3864, "name": "linguine", "flavours": "['neutral']" },
+  { "node_id": 3883, "name": "liquid smoke", "flavours": "['umami']" },
+  { "node_id": 3888, "name": "liquor", "flavours": "['bitter', 'sweet']" },
+  {
+    "node_id": 3891,
+    "name": "littleneck clams",
+    "flavours": "['salty', 'umami']"
+  },
+  { "node_id": 3899, "name": "lobster", "flavours": "['salty', 'umami']" },
+  {
+    "node_id": 3903,
+    "name": "lobster tails",
+    "flavours": "['umami', 'sweet']"
+  },
+  {
+    "node_id": 3913,
+    "name": "long grain brown rice",
+    "flavours": "['neutral']"
+  },
+  { "node_id": 3914, "name": "long grain rice", "flavours": "['neutral']" },
+  {
+    "node_id": 3959,
+    "name": "low fat plain yogurt",
+    "flavours": "['sour', 'fatty']"
+  },
+  {
+    "node_id": 3962,
+    "name": "low fat ricotta cheese",
+    "flavours": "['neutral', 'fatty']"
+  },
+  {
+    "node_id": 3973,
+    "name": "low fat vanilla yogurt",
+    "flavours": "['sweet', 'sour', 'fatty']"
+  },
+  {
+    "node_id": 3981,
+    "name": "low sodium chicken broth",
+    "flavours": "['umami', 'salty']"
+  },
+  {
+    "node_id": 3988,
+    "name": "lower sodium soy sauce",
+    "flavours": "['umami', 'salty']"
+  },
+  {
+    "node_id": 3997,
+    "name": "low sodium vegetable broth",
+    "flavours": "['umami', 'neutral']"
+  },
+  {
+    "node_id": 4005,
+    "name": "lump crabmeat",
+    "flavours": "['sweet', 'umami']"
+  },
+  {
+    "node_id": 4013,
+    "name": "macadamia nuts",
+    "flavours": "['sweet', 'fatty']"
+  },
+  { "node_id": 4023, "name": "mache", "flavours": "['neutral']" },
+  { "node_id": 4024, "name": "mackerel", "flavours": "['umami', 'fatty']" },
+  { "node_id": 4031, "name": "mahi mahi", "flavours": "['umami']" },
+  {
+    "node_id": 4044,
+    "name": "manchego cheese",
+    "flavours": "['salty', 'umami', 'fatty']"
+  },
+  {
+    "node_id": 4045,
+    "name": "mandarin oranges",
+    "flavours": "['sweet', 'sour']"
+  },
+  {
+    "node_id": 4047,
+    "name": "mandarin orange sections",
+    "flavours": "['sweet', 'sour']"
+  },
+  { "node_id": 4052, "name": "mango", "flavours": "['sweet']" },
+  { "node_id": 4057, "name": "mango pulp", "flavours": "['sweet']" },
+  { "node_id": 4058, "name": "mango puree", "flavours": "['sweet']" },
+  {
+    "node_id": 4065,
+    "name": "manzanilla olives",
+    "flavours": "['salty', 'bitter']"
+  },
+  { "node_id": 4067, "name": "maple extract", "flavours": "['sweet']" },
+  { "node_id": 4068, "name": "maple flavoring", "flavours": "['sweet']" },
+  { "node_id": 4071, "name": "maple syrup", "flavours": "['sweet']" },
+  { "node_id": 4076, "name": "margarine", "flavours": "['fatty', 'salty']" },
+  { "node_id": 4078, "name": "marie biscuits", "flavours": "['sweet']" },
+  {
+    "node_id": 4080,
+    "name": "marinara sauce",
+    "flavours": "['sour', 'umami']"
+  },
+  { "node_id": 4084, "name": "marjoram", "flavours": "['bitter']" },
+  { "node_id": 4090, "name": "marsala", "flavours": "['sweet']" },
+  { "node_id": 4092, "name": "marshmallows", "flavours": "['sweet']" },
+  { "node_id": 4094, "name": "marshmallow cream", "flavours": "['sweet']" },
+  { "node_id": 4096, "name": "marzipan", "flavours": "['sweet']" },
+  { "node_id": 4098, "name": "masa harina", "flavours": "['neutral']" },
+  { "node_id": 4101, "name": "mascarpone", "flavours": "['fatty']" },
+  { "node_id": 4103, "name": "mashed banana", "flavours": "['sweet']" },
+  { "node_id": 4113, "name": "matzo meal", "flavours": "['neutral']" },
+  { "node_id": 4115, "name": "maui onion", "flavours": "['sweet']" },
+  { "node_id": 4116, "name": "mayonnaise", "flavours": "['fatty']" },
+  { "node_id": 4123, "name": "meat", "flavours": "['umami', 'fatty']" },
+  { "node_id": 4158, "name": "mesclun", "flavours": "['bitter']" },
+  {
+    "node_id": 4166,
+    "name": "mexican cheese",
+    "flavours": "['umami', 'salty', 'fatty']"
+  },
+  { "node_id": 4184, "name": "meyer lemon", "flavours": "['sour']" },
+  {
+    "node_id": 4189,
+    "name": "mild cheddar cheese",
+    "flavours": "['salty', 'umami', 'fatty']"
+  },
+  { "node_id": 4204, "name": "milk", "flavours": "['sweet', 'fatty']" },
+  {
+    "node_id": 4205,
+    "name": "milk chocolate",
+    "flavours": "['sweet', 'fatty']"
+  },
+  {
+    "node_id": 4207,
+    "name": "milk chocolate chips",
+    "flavours": "['sweet', 'fatty']"
+  },
+  { "node_id": 4224, "name": "mineral water", "flavours": "['neutral']" },
+  {
+    "node_id": 4226,
+    "name": "mini chocolate chips",
+    "flavours": "['sweet', 'fatty']"
+  },
+  { "node_id": 4227, "name": "mini marshmallows", "flavours": "['sweet']" },
+  {
+    "node_id": 4238,
+    "name": "miniature peanut butter cups",
+    "flavours": "['sweet', 'fatty']"
+  },
+  { "node_id": 4243, "name": "mint", "flavours": "['fresh']" },
+  { "node_id": 4261, "name": "mirepoix", "flavours": "['umami']" },
+  { "node_id": 4262, "name": "mirin", "flavours": "['sweet']" },
+  { "node_id": 4264, "name": "miso", "flavours": "['umami', 'salty']" },
+  { "node_id": 4274, "name": "mixed fruit", "flavours": "['sweet']" },
+  {
+    "node_id": 4285,
+    "name": "mixed spice",
+    "flavours": "['spicy', 'bitter', 'neutral']"
+  },
+  {
+    "node_id": 4287,
+    "name": "mixed vegetables",
+    "flavours": "['sweet', 'bitter', 'neutral']"
+  },
+  { "node_id": 4292, "name": "molasses", "flavours": "['sweet']" },
+  {
+    "node_id": 4297,
+    "name": "monterey jack cheese",
+    "flavours": "['salty', 'fatty']"
+  },
+  { "node_id": 4324, "name": "mung beans", "flavours": "['neutral']" },
+  { "node_id": 4326, "name": "mung bean sprouts", "flavours": "['neutral']" },
+  { "node_id": 4329, "name": "muscovado sugar", "flavours": "['sweet']" },
+  { "node_id": 4342, "name": "mussels", "flavours": "['umami', 'salty']" },
+  { "node_id": 4343, "name": "mustard", "flavours": "['spicy', 'sour']" },
+  {
+    "node_id": 4344,
+    "name": "mustard greens",
+    "flavours": "['bitter', 'spicy']"
+  },
+  { "node_id": 4347, "name": "mustard powder", "flavours": "['spicy']" },
+  { "node_id": 4360, "name": "napa cabbage", "flavours": "['bitter']" },
+  { "node_id": 4368, "name": "navel orange", "flavours": "['sweet', 'sour']" },
+  { "node_id": 4380, "name": "new potato", "flavours": "['neutral']" },
+  { "node_id": 4434, "name": "nut butter", "flavours": "['fatty', 'umami']" },
+  { "node_id": 4438, "name": "nutmeg", "flavours": "['sweet']" },
+  {
+    "node_id": 4440,
+    "name": "nutritional yeast flakes",
+    "flavours": "['umami']"
+  },
+  { "node_id": 4445, "name": "oat bran", "flavours": "['neutral']" },
+  { "node_id": 4446, "name": "oat flour", "flavours": "['neutral']" },
+  {
+    "node_id": 4456,
+    "name": "oil cured black olives",
+    "flavours": "['salty', 'fatty']"
+  },
+  { "node_id": 4460, "name": "okra", "flavours": "['neutral']" },
+  {
+    "node_id": 4462,
+    "name": "old bay seasoning",
+    "flavours": "['salty', 'spicy']"
+  },
+  { "node_id": 4469, "name": "olives", "flavours": "['salty', 'fatty']" },
+  { "node_id": 4472, "name": "olive oil", "flavours": "['fatty']" },
+  { "node_id": 4478, "name": "onion", "flavours": "['umami']" },
+  { "node_id": 4485, "name": "onion powder", "flavours": "['umami']" },
+  { "node_id": 4488, "name": "onion salt", "flavours": "['salty', 'umami']" },
+  { "node_id": 4494, "name": "orange", "flavours": "['sweet', 'sour']" },
+  { "node_id": 4506, "name": "orange extract", "flavours": "['sweet']" },
+  { "node_id": 4516, "name": "orange juice", "flavours": "['sweet', 'sour']" },
+  { "node_id": 4519, "name": "orange liqueur", "flavours": "['sweet']" },
+  {
+    "node_id": 4520,
+    "name": "orange marmalade",
+    "flavours": "['sweet', 'bitter']"
+  },
+  { "node_id": 4524, "name": "orange pepper", "flavours": "['spicy']" },
+  { "node_id": 4540, "name": "orange zest", "flavours": "['bitter']" },
+  { "node_id": 4545, "name": "oregano", "flavours": "['bitter']" },
+  { "node_id": 4571, "name": "oxtail", "flavours": "['umami', 'fatty']" },
+  { "node_id": 4572, "name": "oysters", "flavours": "['salty', 'umami']" },
+  { "node_id": 4575, "name": "oyster mushrooms", "flavours": "['umami']" },
+  {
+    "node_id": 4576,
+    "name": "oyster sauce",
+    "flavours": "['salty', 'umami', 'sweet']"
+  },
+  { "node_id": 4581, "name": "palm oil", "flavours": "['fatty']" },
+  { "node_id": 4582, "name": "palm sugar", "flavours": "['sweet']" },
+  { "node_id": 4590, "name": "pancake mix", "flavours": "['sweet']" },
+  {
+    "node_id": 4592,
+    "name": "pancetta",
+    "flavours": "['salty', 'umami', 'fatty']"
+  },
+  { "node_id": 4608, "name": "paprika", "flavours": "['spicy']" },
+  { "node_id": 4620, "name": "parsley", "flavours": "['bitter']" },
+  { "node_id": 4625, "name": "parsnip", "flavours": "['sweet']" },
+  {
+    "node_id": 4626,
+    "name": "part skim mozzarella cheese",
+    "flavours": "['salty', 'umami']"
+  },
+  { "node_id": 4635, "name": "pasta", "flavours": "['neutral']" },
+  { "node_id": 4638, "name": "pasta sauce", "flavours": "['sweet', 'sour']" },
+  { "node_id": 4640, "name": "pasta shells", "flavours": "['neutral']" },
+  { "node_id": 4645, "name": "pastry cream", "flavours": "['sweet']" },
+  { "node_id": 4663, "name": "peach", "flavours": "['sweet']" },
+  { "node_id": 4675, "name": "peach preserves", "flavours": "['sweet']" },
+  {
+    "node_id": 4677,
+    "name": "peach schnapps",
+    "flavours": "['sweet', 'bitter']"
+  },
+  { "node_id": 4687, "name": "peanuts", "flavours": "['fatty', 'neutral']" },
+  {
+    "node_id": 4689,
+    "name": "peanut butter",
+    "flavours": "['fatty', 'salty']"
+  },
+  {
+    "node_id": 4695,
+    "name": "peanut butter cups",
+    "flavours": "['sweet', 'fatty']"
+  },
+  { "node_id": 4699, "name": "peanut oil", "flavours": "['fatty']" },
+  {
+    "node_id": 4700,
+    "name": "peanut sauce",
+    "flavours": "['salty', 'spicy', 'fatty']"
+  },
+  { "node_id": 4701, "name": "pear", "flavours": "['sweet']" },
+  {
+    "node_id": 4706,
+    "name": "pear liqueur",
+    "flavours": "['sweet', 'bitter']"
+  },
+  {
+    "node_id": 4713,
+    "name": "peas and carrots",
+    "flavours": "['sweet', 'neutral']"
+  },
+  { "node_id": 4716, "name": "pecans", "flavours": "['fatty', 'sweet']" },
+  { "node_id": 4720, "name": "pecan pieces", "flavours": "['fatty', 'sweet']" },
+  { "node_id": 4727, "name": "penne", "flavours": "['neutral']" },
+  { "node_id": 4733, "name": "peppers", "flavours": "['spicy']" },
+  { "node_id": 4745, "name": "peppermint candy", "flavours": "['sweet']" },
+  { "node_id": 4746, "name": "peppermint extract", "flavours": "['sweet']" },
+  {
+    "node_id": 4754,
+    "name": "pepperoni",
+    "flavours": "['salty', 'umami', 'spicy']"
+  },
+  {
+    "node_id": 4755,
+    "name": "pepperoni slices",
+    "flavours": "['salty', 'umami', 'spicy']"
+  },
+  { "node_id": 4757, "name": "perch", "flavours": "['umami']" },
+  { "node_id": 4761, "name": "pernod", "flavours": "['sweet']" },
+  { "node_id": 4762, "name": "persian cucumber", "flavours": "['neutral']" },
+  { "node_id": 4763, "name": "persimmon", "flavours": "['sweet']" },
+  {
+    "node_id": 4780,
+    "name": "picante sauce",
+    "flavours": "['spicy', 'sour', 'umami']"
+  },
+  { "node_id": 4782, "name": "pickles", "flavours": "['sour', 'salty']" },
+  { "node_id": 4783, "name": "pickle juice", "flavours": "['sour', 'salty']" },
+  {
+    "node_id": 4788,
+    "name": "pickled daikon",
+    "flavours": "['sour', 'salty']"
+  },
+  {
+    "node_id": 4806,
+    "name": "pico de gallo",
+    "flavours": "['spicy', 'sour', 'umami']"
+  },
+  {
+    "node_id": 4839,
+    "name": "pimento stuffed green olives",
+    "flavours": "['salty', 'umami']"
+  },
+  { "node_id": 4841, "name": "pimiento", "flavours": "['sweet']" },
+  { "node_id": 4845, "name": "pine nuts", "flavours": "['fatty']" },
+  { "node_id": 4846, "name": "pineapple", "flavours": "['sweet', 'sour']" },
+  {
+    "node_id": 4848,
+    "name": "pineapple chunks",
+    "flavours": "['sweet', 'sour']"
+  },
+  { "node_id": 4853, "name": "pineapple jam", "flavours": "['sweet']" },
+  {
+    "node_id": 4855,
+    "name": "pineapple juice",
+    "flavours": "['sweet', 'sour']"
+  },
+  {
+    "node_id": 4860,
+    "name": "pineapple rings",
+    "flavours": "['sweet', 'sour']"
+  },
+  {
+    "node_id": 4867,
+    "name": "pineapple tidbits",
+    "flavours": "['sweet', 'sour']"
+  },
+  { "node_id": 4878, "name": "pinto beans", "flavours": "['neutral']" },
+  {
+    "node_id": 4887,
+    "name": "pistachio nuts",
+    "flavours": "['fatty', 'umami']"
+  },
+  { "node_id": 4903, "name": "pizza dough", "flavours": "['neutral']" },
+  { "node_id": 4920, "name": "plain yogurt", "flavours": "['sour']" },
+  { "node_id": 4921, "name": "plantain", "flavours": "['sweet']" },
+  { "node_id": 4935, "name": "plum tomato", "flavours": "['sour']" },
+  { "node_id": 4940, "name": "poblano pepper", "flavours": "['spicy']" },
+  { "node_id": 4942, "name": "polenta", "flavours": "['neutral']" },
+  { "node_id": 4948, "name": "pomegranate", "flavours": "['sweet', 'sour']" },
+  {
+    "node_id": 4950,
+    "name": "pomegranate juice",
+    "flavours": "['sweet', 'sour']"
+  },
+  {
+    "node_id": 4952,
+    "name": "pomegranate molasses",
+    "flavours": "['sweet', 'sour']"
+  },
+  {
+    "node_id": 4953,
+    "name": "pomegranate seeds",
+    "flavours": "['sweet', 'sour']"
+  },
+  {
+    "node_id": 4957,
+    "name": "ponzu sauce",
+    "flavours": "['sour', 'salty', 'umami']"
+  },
+  { "node_id": 4961, "name": "poppy seeds", "flavours": "['neutral']" },
+  { "node_id": 4966, "name": "pork", "flavours": "['umami', 'fatty']" },
+  { "node_id": 4972, "name": "pork belly", "flavours": "['umami', 'fatty']" },
+  { "node_id": 4977, "name": "pork chops", "flavours": "['umami', 'fatty']" },
+  { "node_id": 4979, "name": "pork fat", "flavours": "['fatty']" },
+  { "node_id": 4985, "name": "pork liver", "flavours": "['umami', 'bitter']" },
+  { "node_id": 4993, "name": "pork ribs", "flavours": "['umami', 'fatty']" },
+  { "node_id": 4998, "name": "pork roast", "flavours": "['umami', 'fatty']" },
+  {
+    "node_id": 4999,
+    "name": "pork sausage",
+    "flavours": "['umami', 'fatty', 'salty', 'spicy']"
+  },
+  {
+    "node_id": 5003,
+    "name": "pork shoulder",
+    "flavours": "['umami', 'fatty']"
+  },
+  { "node_id": 5010, "name": "pork steaks", "flavours": "['umami', 'fatty']" },
+  {
+    "node_id": 5014,
+    "name": "pork tenderloin",
+    "flavours": "['umami', 'fatty']"
+  },
+  { "node_id": 5016, "name": "port wine", "flavours": "['sweet', 'bitter']" },
+  {
+    "node_id": 5020,
+    "name": "porterhouse steak",
+    "flavours": "['umami', 'fatty']"
+  },
+  { "node_id": 5026, "name": "pot roast", "flavours": "['umami', 'fatty']" },
+  { "node_id": 5027, "name": "potato", "flavours": "['neutral']" },
+  { "node_id": 5035, "name": "potato starch", "flavours": "['neutral']" },
+  {
+    "node_id": 5039,
+    "name": "poultry seasoning",
+    "flavours": "['salty', 'spicy']"
+  },
+  { "node_id": 5040, "name": "pound cake", "flavours": "['sweet', 'fatty']" },
+  { "node_id": 5053, "name": "powdered milk", "flavours": "['sweet']" },
+  { "node_id": 5057, "name": "powdered sugar", "flavours": "['sweet']" },
+  {
+    "node_id": 5077,
+    "name": "prepared pizza crust",
+    "flavours": "['neutral']"
+  },
+  { "node_id": 5079, "name": "prepared polenta", "flavours": "['neutral']" },
+  {
+    "node_id": 5103,
+    "name": "prosciutto",
+    "flavours": "['salty', 'umami', 'fatty']"
+  },
+  { "node_id": 5107, "name": "protein powder", "flavours": "['neutral']" },
+  { "node_id": 5109, "name": "prunes", "flavours": "['sweet']" },
+  { "node_id": 5114, "name": "psyllium husks", "flavours": "['neutral']" },
+  { "node_id": 5121, "name": "puffed rice cereal", "flavours": "['neutral']" },
+  { "node_id": 5130, "name": "pumpkin pie mix", "flavours": "['sweet']" },
+  { "node_id": 5131, "name": "pumpkin pie spice", "flavours": "['sweet']" },
+  { "node_id": 5133, "name": "pumpkin seeds", "flavours": "['neutral']" },
+  { "node_id": 5145, "name": "purple plum", "flavours": "['sweet', 'sour']" },
+  { "node_id": 5152, "name": "quark", "flavours": "['sour']" },
+  { "node_id": 5156, "name": "queso fresco", "flavours": "['salty']" },
+  { "node_id": 5161, "name": "quick cooking oats", "flavours": "['neutral']" },
+  {
+    "node_id": 5166,
+    "name": "quick cooking tapioca",
+    "flavours": "['neutral']"
+  },
+  { "node_id": 5171, "name": "quince", "flavours": "['sour']" },
+  { "node_id": 5173, "name": "quinoa", "flavours": "['neutral']" },
+  { "node_id": 5174, "name": "quinoa flour", "flavours": "['neutral']" },
+  { "node_id": 5177, "name": "rack of lamb", "flavours": "['neutral']" },
+  { "node_id": 5182, "name": "radicchio", "flavours": "['bitter']" },
+  { "node_id": 5183, "name": "radish", "flavours": "['spicy']" },
+  { "node_id": 5190, "name": "raisins", "flavours": "['sweet']" },
+  { "node_id": 5194, "name": "ramen noodles", "flavours": "['salty']" },
+  {
+    "node_id": 5198,
+    "name": "ranch dressing",
+    "flavours": "['salty', 'umami', 'fatty']"
+  },
+  { "node_id": 5211, "name": "raspberry jam", "flavours": "['sweet']" },
+  { "node_id": 5239, "name": "raw honey", "flavours": "['sweet']" },
+  { "node_id": 5244, "name": "raw shrimp", "flavours": "['umami']" },
+  { "node_id": 5262, "name": "red apple", "flavours": "['sweet']" },
+  { "node_id": 5266, "name": "red beet", "flavours": "['sweet']" },
+  { "node_id": 5271, "name": "red cabbage", "flavours": "['bitter']" },
+  { "node_id": 5279, "name": "dried chili pepper", "flavours": "['spicy']" },
+  { "node_id": 5287, "name": "red curry paste", "flavours": "['spicy']" },
+  { "node_id": 5290, "name": "red delicious apple", "flavours": "['sweet']" },
+  { "node_id": 5292, "name": "red food color", "flavours": "['neutral']" },
+  { "node_id": 5303, "name": "red kidney beans", "flavours": "['neutral']" },
+  { "node_id": 5310, "name": "red onion", "flavours": "['sweet', 'bitter']" },
+  { "node_id": 5317, "name": "red pepper", "flavours": "['spicy']" },
+  { "node_id": 5318, "name": "red pepper flakes", "flavours": "['spicy']" },
+  { "node_id": 5326, "name": "red potato", "flavours": "['neutral']" },
+  { "node_id": 5345, "name": "red wine", "flavours": "['sour', 'bitter']" },
+  { "node_id": 5348, "name": "red wine vinegar", "flavours": "['sour']" },
+  {
+    "node_id": 5367,
+    "name": "reduced fat feta cheese",
+    "flavours": "['salty', 'umami']"
+  },
+  {
+    "node_id": 5404,
+    "name": "refried beans",
+    "flavours": "['salty', 'umami']"
+  },
+  {
+    "node_id": 5409,
+    "name": "refrigerated cheese tortellini",
+    "flavours": "['salty', 'umami']"
+  },
+  {
+    "node_id": 5412,
+    "name": "refrigerated pie crust",
+    "flavours": "['neutral']"
+  },
+  { "node_id": 5424, "name": "rhubarb", "flavours": "['sour']" },
+  { "node_id": 5427, "name": "ribeye steak", "flavours": "['umami', 'fatty']" },
+  { "node_id": 5431, "name": "rice", "flavours": "['neutral']" },
+  { "node_id": 5439, "name": "rice flour", "flavours": "['neutral']" },
+  { "node_id": 5441, "name": "rice milk", "flavours": "['neutral', 'sweet']" },
+  { "node_id": 5448, "name": "rice vermicelli", "flavours": "['neutral']" },
+  { "node_id": 5449, "name": "rice vinegar", "flavours": "['sour']" },
+  {
+    "node_id": 5454,
+    "name": "ricotta cheese",
+    "flavours": "['neutral', 'salty']"
+  },
+  { "node_id": 5460, "name": "risotto rice", "flavours": "['neutral']" },
+  { "node_id": 5466, "name": "roast beef", "flavours": "['umami', 'fatty']" },
+  {
+    "node_id": 5476,
+    "name": "roasted garlic",
+    "flavours": "['umami', 'sweet', 'bitter']"
+  },
+  {
+    "node_id": 5479,
+    "name": "roasted peanuts",
+    "flavours": "['umami', 'fatty', 'salty']"
+  },
+  {
+    "node_id": 5484,
+    "name": "roasted red peppers",
+    "flavours": "['umami', 'sweet']"
+  },
+  {
+    "node_id": 5495,
+    "name": "roasting chicken",
+    "flavours": "['umami', 'salty']"
+  },
+  { "node_id": 5500, "name": "rock salt", "flavours": "['salty']" },
+  { "node_id": 5533, "name": "rose water", "flavours": "['neutral']" },
+  { "node_id": 5535, "name": "rosemary", "flavours": "['bitter', 'umami']" },
+  { "node_id": 5551, "name": "round steak", "flavours": "['umami']" },
+  { "node_id": 5554, "name": "rubbed sage", "flavours": "['bitter', 'umami']" },
+  { "node_id": 5558, "name": "rum", "flavours": "['sweet']" },
+  { "node_id": 5559, "name": "rum extract", "flavours": "['sweet']" },
+  { "node_id": 5561, "name": "rump roast", "flavours": "['umami']" },
+  { "node_id": 5565, "name": "russet potato", "flavours": "['neutral']" },
+  { "node_id": 5567, "name": "rutabaga", "flavours": "['sweet']" },
+  { "node_id": 5575, "name": "rye meal", "flavours": "['bitter']" },
+  { "node_id": 5578, "name": "safflower oil", "flavours": "['neutral']" },
+  { "node_id": 5579, "name": "saffron", "flavours": "['bitter', 'umami']" },
+  { "node_id": 5582, "name": "sage", "flavours": "['bitter']" },
+  {
+    "node_id": 5588,
+    "name": "salad dressing",
+    "flavours": "['sour', 'salty', 'umami']"
+  },
+  { "node_id": 5593, "name": "salad oil", "flavours": "['fatty']" },
+  { "node_id": 5597, "name": "salami", "flavours": "['salty', 'umami']" },
+  { "node_id": 5598, "name": "salmon", "flavours": "['umami', 'fatty']" },
+  {
+    "node_id": 5600,
+    "name": "salmon fillets",
+    "flavours": "['umami', 'fatty']"
+  },
+  { "node_id": 5601, "name": "salmon roe", "flavours": "['salty', 'umami']" },
+  { "node_id": 5602, "name": "salmon steak", "flavours": "['umami', 'fatty']" },
+  { "node_id": 5603, "name": "salsa", "flavours": "['spicy', 'sour']" },
+  { "node_id": 5606, "name": "salsa verde", "flavours": "['spicy', 'sour']" },
+  {
+    "node_id": 5614,
+    "name": "salt and pepper",
+    "flavours": "['salty', 'spicy']"
+  },
+  { "node_id": 5620, "name": "salt pork", "flavours": "['salty', 'umami']" },
+  {
+    "node_id": 5625,
+    "name": "salted butter",
+    "flavours": "['salty', 'fatty']"
+  },
+  { "node_id": 5647, "name": "sardines", "flavours": "['salty', 'umami']" },
+  { "node_id": 5652, "name": "sauerkraut", "flavours": "['sour']" },
+  {
+    "node_id": 5653,
+    "name": "sausage",
+    "flavours": "['salty', 'umami', 'fatty']"
+  },
+  { "node_id": 5662, "name": "savoy cabbage", "flavours": "['bitter']" },
+  { "node_id": 5668, "name": "scallops", "flavours": "['sweet', 'umami']" },
+  { "node_id": 5676, "name": "scotch whiskey", "flavours": "['bitter']" },
+  { "node_id": 5681, "name": "sea bream", "flavours": "['umami']" },
+  {
+    "node_id": 5687,
+    "name": "seafood seasoning",
+    "flavours": "['salty', 'spicy']"
+  },
+  { "node_id": 5690, "name": "seasoned salt", "flavours": "['salty']" },
+  { "node_id": 5691, "name": "seasoned breadcrumbs", "flavours": "['salty']" },
+  { "node_id": 5699, "name": "seasoning", "flavours": "['salty', 'spicy']" },
+  { "node_id": 5715, "name": "seedless watermelon", "flavours": "['sweet']" },
+  { "node_id": 5721, "name": "self rising flour", "flavours": "['neutral']" },
+  { "node_id": 5727, "name": "semisweet chocolate", "flavours": "['sweet']" },
+  {
+    "node_id": 5729,
+    "name": "semisweet chocolate chips",
+    "flavours": "['sweet']"
+  },
+  { "node_id": 5735, "name": "semolina", "flavours": "['neutral']" },
+  { "node_id": 5741, "name": "serrano pepper", "flavours": "['spicy']" },
+  { "node_id": 5747, "name": "sesame oil", "flavours": "['nutty', 'fatty']" },
+  { "node_id": 5750, "name": "sesame seeds", "flavours": "['nutty', 'fatty']" },
+  { "node_id": 5759, "name": "shallot", "flavours": "['sweet', 'umami']" },
+  {
+    "node_id": 5760,
+    "name": "shaoxing wine",
+    "flavours": "['sweet', 'umami']"
+  },
+  {
+    "node_id": 5763,
+    "name": "sharp cheddar cheese",
+    "flavours": "['salty', 'umami']"
+  },
+  { "node_id": 5777, "name": "shiitake mushrooms", "flavours": "['umami']" },
+  {
+    "node_id": 5788,
+    "name": "short grain brown rice",
+    "flavours": "['neutral']"
+  },
+  { "node_id": 5789, "name": "short grain rice", "flavours": "['neutral']" },
+  {
+    "node_id": 5798,
+    "name": "shortcrust pastry",
+    "flavours": "['neutral', 'fatty']"
+  },
+  { "node_id": 5800, "name": "shortening", "flavours": "['fatty']" },
+  {
+    "node_id": 5803,
+    "name": "shredded cheddar cheese",
+    "flavours": "['salty', 'umami', 'fatty']"
+  },
+  { "node_id": 5809, "name": "shrimp", "flavours": "['umami', 'salty']" },
+  {
+    "node_id": 5816,
+    "name": "silken tofu",
+    "flavours": "['neutral', 'umami']"
+  },
+  { "node_id": 5818, "name": "simple syrup", "flavours": "['sweet']" },
+  {
+    "node_id": 5840,
+    "name": "skinless chicken drumsticks",
+    "flavours": "['umami']"
+  },
+  {
+    "node_id": 5846,
+    "name": "skirt steak",
+    "flavours": "['umami', 'neutral']"
+  },
+  {
+    "node_id": 5849,
+    "name": "sliced almonds",
+    "flavours": "['nutty', 'fatty']"
+  },
+  {
+    "node_id": 5855,
+    "name": "slivered almonds",
+    "flavours": "['nutty', 'fatty']"
+  },
+  {
+    "node_id": 5887,
+    "name": "cooked chicken breast",
+    "flavours": "['salty', 'umami']"
+  },
+  {
+    "node_id": 5892,
+    "name": "smoked ham hock",
+    "flavours": "['salty', 'umami']"
+  },
+  { "node_id": 5899, "name": "smoked paprika", "flavours": "['spicy']" },
+  {
+    "node_id": 5905,
+    "name": "smoked salmon",
+    "flavours": "['salty', 'umami']"
+  },
+  {
+    "node_id": 5906,
+    "name": "smoked sausage",
+    "flavours": "['salty', 'umami', 'spicy']"
+  },
+  { "node_id": 5925, "name": "snow peas", "flavours": "['sweet']" },
+  { "node_id": 5928, "name": "soba noodles", "flavours": "['neutral']" },
+  { "node_id": 5957, "name": "sorghum flour", "flavours": "['neutral']" },
+  { "node_id": 5968, "name": "sour cream", "flavours": "['sour', 'fatty']" },
+  { "node_id": 5970, "name": "soured milk", "flavours": "['sour']" },
+  { "node_id": 5975, "name": "sourdough bread", "flavours": "['sour']" },
+  { "node_id": 5986, "name": "soy cheese", "flavours": "['salty']" },
+  { "node_id": 5991, "name": "soy flour", "flavours": "['neutral']" },
+  { "node_id": 5996, "name": "soy protein powder", "flavours": "['neutral']" },
+  { "node_id": 5997, "name": "soy sauce", "flavours": "['salty', 'umami']" },
+  { "node_id": 6007, "name": "soymilk", "flavours": "['neutral']" },
+  { "node_id": 6010, "name": "spaghetti", "flavours": "['neutral']" },
+  { "node_id": 6015, "name": "spaghetti squash", "flavours": "['neutral']" },
+  {
+    "node_id": 6018,
+    "name": "spanish chorizo",
+    "flavours": "['spicy', 'salty', 'umami']"
+  },
+  { "node_id": 6029, "name": "sparkling water", "flavours": "['neutral']" },
+  { "node_id": 6035, "name": "spelt", "flavours": "['neutral']" },
+  { "node_id": 6036, "name": "spelt flour", "flavours": "['neutral']" },
+  { "node_id": 6037, "name": "spices", "flavours": "['spicy']" },
+  {
+    "node_id": 6042,
+    "name": "spicy brown mustard",
+    "flavours": "['spicy', 'sour']"
+  },
+  { "node_id": 6051, "name": "spinach", "flavours": "['bitter']" },
+  { "node_id": 6052, "name": "spinach fettuccine", "flavours": "['neutral']" },
+  { "node_id": 6069, "name": "sponge cake", "flavours": "['sweet']" },
+  { "node_id": 6075, "name": "spring onions", "flavours": "['bitter']" },
+  {
+    "node_id": 6077,
+    "name": "spring roll wrappers",
+    "flavours": "['neutral']"
+  },
+  { "node_id": 6081, "name": "squash blossoms", "flavours": "['neutral']" },
+  { "node_id": 6083, "name": "squid", "flavours": "['umami']" },
+  { "node_id": 6091, "name": "star anise", "flavours": "['sweet']" },
+  { "node_id": 6095, "name": "steak", "flavours": "['umami']" },
+  { "node_id": 6097, "name": "steak sauce", "flavours": "['salty', 'sweet']" },
+  { "node_id": 6104, "name": "steel cut oats", "flavours": "['neutral']" },
+  { "node_id": 6105, "name": "stevia", "flavours": "['sweet']" },
+  {
+    "node_id": 6110,
+    "name": "stewed tomatoes",
+    "flavours": "['umami', 'sour']"
+  },
+  { "node_id": 6121, "name": "stock", "flavours": "['umami', 'salty']" },
+  {
+    "node_id": 6138,
+    "name": "strawberry ice cream",
+    "flavours": "['sweet', 'fatty']"
+  },
+  { "node_id": 6140, "name": "strawberry jam", "flavours": "['sweet']" },
+  { "node_id": 6162, "name": "strong coffee", "flavours": "['bitter']" },
+  { "node_id": 6172, "name": "sugar", "flavours": "['sweet']" },
+  { "node_id": 6202, "name": "sugar pumpkin", "flavours": "['sweet']" },
+  { "node_id": 6203, "name": "sugar snap peas", "flavours": "['sweet']" },
+  { "node_id": 6204, "name": "sugar substitute", "flavours": "['sweet']" },
+  { "node_id": 6209, "name": "sumac", "flavours": "['sour']" },
+  {
+    "node_id": 6214,
+    "name": "sun dried tomatoes",
+    "flavours": "['umami', 'sweet']"
+  },
+  {
+    "node_id": 6218,
+    "name": "sundried tomato pesto",
+    "flavours": "['umami', 'sweet', 'fatty']"
+  },
+  { "node_id": 6220, "name": "sunflower oil", "flavours": "['fatty']" },
+  {
+    "node_id": 6221,
+    "name": "sunflower seeds",
+    "flavours": "['nutty', 'fatty']"
+  },
+  { "node_id": 6224, "name": "superfine sugar", "flavours": "['sweet']" },
+  {
+    "node_id": 6241,
+    "name": "sweet chili sauce",
+    "flavours": "['sweet', 'spicy']"
+  },
+  { "node_id": 6243, "name": "sweet corn", "flavours": "['sweet']" },
+  {
+    "node_id": 6252,
+    "name": "sweet italian sausage",
+    "flavours": "['sweet', 'umami']"
+  },
+  {
+    "node_id": 6260,
+    "name": "sweet paprika",
+    "flavours": "['sweet', 'spicy']"
+  },
+  { "node_id": 6263, "name": "sweet pickles", "flavours": "['sweet', 'sour']" },
+  { "node_id": 6266, "name": "sweet potato", "flavours": "['sweet']" },
+  { "node_id": 6273, "name": "sweet rice flour", "flavours": "['sweet']" },
+  {
+    "node_id": 6291,
+    "name": "sweetened condensed milk",
+    "flavours": "['sweet']"
+  },
+  { "node_id": 6297, "name": "swiss chard", "flavours": "['bitter']" },
+  {
+    "node_id": 6299,
+    "name": "swiss cheese",
+    "flavours": "['salty', 'umami', 'fatty']"
+  },
+  { "node_id": 6300, "name": "swordfish", "flavours": "['umami']" },
+  { "node_id": 6310, "name": "tabasco sauce", "flavours": "['spicy', 'sour']" },
+  {
+    "node_id": 6319,
+    "name": "taco seasoning mix",
+    "flavours": "['spicy', 'salty']"
+  },
+  { "node_id": 6322, "name": "tahini", "flavours": "['fatty', 'bitter']" },
+  { "node_id": 6327, "name": "tamari", "flavours": "['salty', 'umami']" },
+  { "node_id": 6331, "name": "tamarind paste", "flavours": "['sour']" },
+  { "node_id": 6333, "name": "tamarind pulp", "flavours": "['sour']" },
+  { "node_id": 6337, "name": "tangerine", "flavours": "['sweet', 'sour']" },
+  { "node_id": 6343, "name": "tapioca", "flavours": "['neutral']" },
+  { "node_id": 6346, "name": "tapioca starch", "flavours": "['neutral']" },
+  { "node_id": 6349, "name": "tarragon", "flavours": "['bitter']" },
+  { "node_id": 6351, "name": "tarragon vinegar", "flavours": "['sour']" },
+  { "node_id": 6352, "name": "tart apple", "flavours": "['sour']" },
+  {
+    "node_id": 6360,
+    "name": "tartar sauce",
+    "flavours": "['salty', 'sour', 'umami']"
+  },
+  { "node_id": 6364, "name": "tater tots", "flavours": "['salty', 'fatty']" },
+  { "node_id": 6367, "name": "tea", "flavours": "['bitter']" },
+  { "node_id": 6372, "name": "teff flour", "flavours": "['neutral']" },
+  {
+    "node_id": 6380,
+    "name": "teriyaki sauce",
+    "flavours": "['sweet', 'salty', 'umami']"
+  },
+  { "node_id": 6385, "name": "thai basil", "flavours": "['bitter']" },
+  { "node_id": 6386, "name": "thai chili", "flavours": "['spicy']" },
+  {
+    "node_id": 6389,
+    "name": "thai fish sauce",
+    "flavours": "['salty', 'umami']"
+  },
+  { "node_id": 6409, "name": "thyme", "flavours": "['bitter']" },
+  { "node_id": 6415, "name": "tiger shrimp", "flavours": "['umami', 'salty']" },
+  { "node_id": 6433, "name": "toffee pieces", "flavours": "['sweet']" },
+  { "node_id": 6434, "name": "tofu", "flavours": "['neutral']" },
+  { "node_id": 6439, "name": "tomatillos", "flavours": "['sour']" },
+  { "node_id": 6441, "name": "tomato", "flavours": "['umami', 'sour']" },
+  { "node_id": 6448, "name": "tomato juice", "flavours": "['umami', 'sour']" },
+  { "node_id": 6450, "name": "tomato paste", "flavours": "['umami', 'sour']" },
+  { "node_id": 6451, "name": "tomato puree", "flavours": "['umami', 'sour']" },
+  { "node_id": 6454, "name": "tomato soup", "flavours": "['umami', 'sour']" },
+  {
+    "node_id": 6472,
+    "name": "top sirloin steak",
+    "flavours": "['umami', 'fatty']"
+  },
+  { "node_id": 6475, "name": "tortilla", "flavours": "['neutral']" },
+  { "node_id": 6486, "name": "triple sec", "flavours": "['sweet']" },
+  {
+    "node_id": 6489,
+    "name": "trout fillets",
+    "flavours": "['umami', 'fatty']"
+  },
+  { "node_id": 6492, "name": "truffle oil", "flavours": "['umami', 'fatty']" },
+  { "node_id": 6497, "name": "tuna", "flavours": "['umami', 'fatty']" },
+  {
+    "node_id": 6501,
+    "name": "tuna in olive oil",
+    "flavours": "['umami', 'fatty']"
+  },
+  { "node_id": 6506, "name": "turbinado sugar", "flavours": "['sweet']" },
+  {
+    "node_id": 6526,
+    "name": "turkey kielbasa",
+    "flavours": "['umami', 'salty']"
+  },
+  {
+    "node_id": 6535,
+    "name": "turkey sausage",
+    "flavours": "['umami', 'salty', 'spicy']"
+  },
+  { "node_id": 6537, "name": "turkey stock", "flavours": "['umami', 'salty']" },
+  { "node_id": 6545, "name": "turmeric", "flavours": "['bitter']" },
+  { "node_id": 6547, "name": "turnip", "flavours": "['sweet', 'bitter']" },
+  { "node_id": 6549, "name": "tzatziki", "flavours": "['sour', 'salty']" },
+  {
+    "node_id": 6574,
+    "name": "unsalted butter",
+    "flavours": "['fatty', 'neutral']"
+  },
+  {
+    "node_id": 6582,
+    "name": "unsalted peanuts",
+    "flavours": "['neutral', 'fatty']"
+  },
+  {
+    "node_id": 6599,
+    "name": "unsweetened baking chocolate",
+    "flavours": "['bitter']"
+  },
+  { "node_id": 6605, "name": "unsweetened coconut", "flavours": "['neutral']" },
+  {
+    "node_id": 6611,
+    "name": "unsweetened shredded coconut",
+    "flavours": "['neutral']"
+  },
+  {
+    "node_id": 6625,
+    "name": "unsweetened soymilk",
+    "flavours": "['neutral', 'fatty']"
+  },
+  { "node_id": 6631, "name": "vanilla", "flavours": "['sweet']" },
+  { "node_id": 6633, "name": "vanilla bean", "flavours": "['sweet']" },
+  { "node_id": 6644, "name": "vanilla extract", "flavours": "['sweet']" },
+  { "node_id": 6649, "name": "vanilla frosting", "flavours": "['sweet']" },
+  { "node_id": 6650, "name": "vanilla frozen yogurt", "flavours": "['sweet']" },
+  { "node_id": 6653, "name": "vanilla ice cream", "flavours": "['sweet']" },
+  { "node_id": 6659, "name": "vanilla powder", "flavours": "['sweet']" },
+  {
+    "node_id": 6660,
+    "name": "vanilla protein powder",
+    "flavours": "['sweet']"
+  },
+  { "node_id": 6663, "name": "vanilla sugar", "flavours": "['sweet']" },
+  { "node_id": 6666, "name": "vanilla wafer cookies", "flavours": "['sweet']" },
+  { "node_id": 6669, "name": "vanilla yogurt", "flavours": "['sweet']" },
+  { "node_id": 6673, "name": "veal cutlet", "flavours": "['umami', 'fatty']" },
+  { "node_id": 6683, "name": "veal shank", "flavours": "['umami', 'fatty']" },
+  {
+    "node_id": 6692,
+    "name": "vegan cheddar cheese",
+    "flavours": "['umami', 'salty']"
+  },
+  {
+    "node_id": 6694,
+    "name": "vegan cream cheese",
+    "flavours": "['umami', 'salty']"
+  },
+  {
+    "node_id": 6697,
+    "name": "vegan mayonnaise",
+    "flavours": "['fatty', 'salty']"
+  },
+  {
+    "node_id": 6699,
+    "name": "vegan sour cream",
+    "flavours": "['sour', 'salty']"
+  },
+  {
+    "node_id": 6706,
+    "name": "vegetable bouillon cube",
+    "flavours": "['umami', 'salty']"
+  },
+  { "node_id": 6711, "name": "vegetable oil", "flavours": "['fatty']" },
+  {
+    "node_id": 6717,
+    "name": "vegetable stock",
+    "flavours": "['umami', 'salty']"
+  },
+  {
+    "node_id": 6733,
+    "name": "veggie burger",
+    "flavours": "['salty', 'umami']"
+  },
+  { "node_id": 6759, "name": "vital wheat gluten", "flavours": "['neutral']" },
+  { "node_id": 6763, "name": "vodka", "flavours": "['neutral']" },
+  { "node_id": 6775, "name": "walnuts", "flavours": "['fatty']" },
+  { "node_id": 6779, "name": "walnut oil", "flavours": "['fatty']" },
+  { "node_id": 6780, "name": "walnut pieces", "flavours": "['fatty']" },
+  { "node_id": 6783, "name": "wasabi paste", "flavours": "['spicy']" },
+  { "node_id": 6785, "name": "wasabi powder", "flavours": "['spicy']" },
+  { "node_id": 6787, "name": "water", "flavours": "['neutral']" },
+  { "node_id": 6791, "name": "watercress", "flavours": "['bitter']" },
+  { "node_id": 6793, "name": "watermelon", "flavours": "['sweet']" },
+  { "node_id": 6799, "name": "wax beans", "flavours": "['neutral']" },
+  { "node_id": 6806, "name": "wheat bran", "flavours": "['neutral']" },
+  { "node_id": 6812, "name": "wheat flour", "flavours": "['neutral']" },
+  { "node_id": 6814, "name": "wheat germ", "flavours": "['neutral']" },
+  { "node_id": 6824, "name": "whey protein powder", "flavours": "['neutral']" },
+  {
+    "node_id": 6825,
+    "name": "whipped butter",
+    "flavours": "['fatty', 'salty']"
+  },
+  {
+    "node_id": 6826,
+    "name": "whipped cream",
+    "flavours": "['sweet', 'fatty']"
+  },
+  {
+    "node_id": 6829,
+    "name": "whipped topping",
+    "flavours": "['sweet', 'fatty']"
+  },
+  {
+    "node_id": 6830,
+    "name": "whipping cream",
+    "flavours": "['sweet', 'fatty']"
+  },
+  { "node_id": 6833, "name": "white asparagus", "flavours": "['bitter']" },
+  { "node_id": 6836, "name": "white balsamic vinegar", "flavours": "['sour']" },
+  { "node_id": 6838, "name": "white bread", "flavours": "['neutral']" },
+  { "node_id": 6845, "name": "white cake mix", "flavours": "['sweet']" },
+  {
+    "node_id": 6848,
+    "name": "white cheddar cheese",
+    "flavours": "['salty', 'umami']"
+  },
+  {
+    "node_id": 6855,
+    "name": "white chocolate chips",
+    "flavours": "['sweet', 'fatty']"
+  },
+  { "node_id": 6864, "name": "white corn tortilla", "flavours": "['neutral']" },
+  { "node_id": 6866, "name": "white cornmeal", "flavours": "['neutral']" },
+  { "node_id": 6874, "name": "white fish fillets", "flavours": "['umami']" },
+  { "node_id": 6880, "name": "white grape juice", "flavours": "['sweet']" },
+  { "node_id": 6887, "name": "white miso", "flavours": "['umami', 'salty']" },
+  { "node_id": 6890, "name": "white onion", "flavours": "['sweet', 'umami']" },
+  { "node_id": 6894, "name": "white pepper", "flavours": "['spicy']" },
+  { "node_id": 6896, "name": "white peppercorns", "flavours": "['spicy']" },
+  { "node_id": 6908, "name": "white shoepeg corn", "flavours": "['sweet']" },
+  {
+    "node_id": 6917,
+    "name": "white whole wheat flour",
+    "flavours": "['neutral']"
+  },
+  { "node_id": 6919, "name": "white wine vinegar", "flavours": "['sour']" },
+  {
+    "node_id": 6933,
+    "name": "whole chicken",
+    "flavours": "['umami', 'salty']"
+  },
+  {
+    "node_id": 6936,
+    "name": "whole coriander seeds",
+    "flavours": "['spicy', 'citrusy']"
+  },
+  {
+    "node_id": 6945,
+    "name": "whole grain mustard",
+    "flavours": "['spicy', 'sour']"
+  },
+  {
+    "node_id": 6952,
+    "name": "whole kernel corn",
+    "flavours": "['sweet', 'neutral']"
+  },
+  { "node_id": 6956, "name": "whole milk", "flavours": "['sweet', 'fatty']" },
+  { "node_id": 6968, "name": "whole tomato", "flavours": "['sweet', 'sour']" },
+  { "node_id": 6970, "name": "whole turkey", "flavours": "['umami']" },
+  { "node_id": 6976, "name": "whole wheat bread", "flavours": "['neutral']" },
+  {
+    "node_id": 6979,
+    "name": "whole wheat breadcrumbs",
+    "flavours": "['neutral']"
+  },
+  {
+    "node_id": 6981,
+    "name": "whole wheat couscous",
+    "flavours": "['neutral']"
+  },
+  { "node_id": 6988, "name": "whole wheat flour", "flavours": "['neutral']" },
+  {
+    "node_id": 6990,
+    "name": "whole wheat hamburger bun",
+    "flavours": "['neutral']"
+  },
+  {
+    "node_id": 6996,
+    "name": "whole wheat pastry flour",
+    "flavours": "['neutral']"
+  },
+  { "node_id": 6997, "name": "whole wheat penne", "flavours": "['neutral']" },
+  { "node_id": 7013, "name": "wild rice", "flavours": "['neutral']" },
+  { "node_id": 7017, "name": "wine", "flavours": "['sour', 'bitter']" },
+  { "node_id": 7018, "name": "wine vinegar", "flavours": "['sour']" },
+  { "node_id": 7029, "name": "wonton wrappers", "flavours": "['neutral']" },
+  {
+    "node_id": 7035,
+    "name": "worcestershire sauce",
+    "flavours": "['umami', 'salty', 'sour']"
+  },
+  { "node_id": 7036, "name": "wrap", "flavours": "['neutral']" },
+  { "node_id": 7038, "name": "xanthan gum", "flavours": "['neutral']" },
+  { "node_id": 7043, "name": "yam", "flavours": "['sweet']" },
+  { "node_id": 7052, "name": "yellow cake mix", "flavours": "['sweet']" },
+  { "node_id": 7062, "name": "yellow food color", "flavours": "['neutral']" },
+  { "node_id": 7065, "name": "yellow miso", "flavours": "['umami', 'salty']" },
+  {
+    "node_id": 7067,
+    "name": "yellow mustard",
+    "flavours": "['spicy', 'sour']"
+  },
+  { "node_id": 7068, "name": "yellow mustard seeds", "flavours": "['spicy']" },
+  { "node_id": 7069, "name": "yellow onion", "flavours": "['sweet']" },
+  { "node_id": 7071, "name": "yellow pepper", "flavours": "['sweet']" },
+  { "node_id": 7077, "name": "yellow squash", "flavours": "['neutral']" },
+  { "node_id": 7087, "name": "yogurt", "flavours": "['sour']" },
+  { "node_id": 7094, "name": "yukon gold potato", "flavours": "['neutral']" },
+  { "node_id": 7096, "name": "yuzu juice", "flavours": "['sour']" },
+  { "node_id": 7098, "name": "zinfandel", "flavours": "['sweet', 'bitter']" },
+  { "node_id": 7101, "name": "zucchini", "flavours": "['neutral', 'bitter']" }
+]

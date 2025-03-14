@@ -84,8 +84,7 @@ def scrape_tasty_tips_with_pagination(url):
         driver.quit()
 
 
-def get_reviews(recipe):
-    url = f"https://tasty.co/recipe/{recipe}"
+def get_reviews(url):
     tips = scrape_tasty_tips_with_pagination(url)
     return perform_sentiment_analysis(tips)
 

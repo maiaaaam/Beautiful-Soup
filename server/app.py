@@ -7,6 +7,7 @@ from models.sentiment_analyzer import ReviewSentimentAnalyzer
 from models.topic_model import RecipeTopicModel
 from api.fitness_api import get_workout_suggestions
 from api.tasty_reviews import get_reviews
+from api.tasty_recipe_list import scrape_tasty_links
 from api.nutrition_api import get_recipe_nutrition, get_nutrition_by_recipe_name
 from api.recipe_api import get_recipe_spoonacular, get_recipe_tasty, get_recipe_mmabs, get_recipe_information, extract_ingredients, search_recipes_by_name
 from flask import Flask, request, jsonify
@@ -33,7 +34,6 @@ tasty_scraper = TastyScraper()
 # workout_recommender = WorkoutRecommender()
 
 
-
 try:
     topic_model.load_model()
     print("Topic model loaded successfully")
@@ -45,7 +45,6 @@ try:
     print("Flavor graph loaded successfully")
 except:
     print("No flavor graph found, will initialize empty graph")
-
 
 
 @app.route('/api/recipes/spoonacular', methods=['GET'])
@@ -69,6 +68,7 @@ def get_recipes_tasty():
         return jsonify({"error": "No ingredients provided"}), 400
 
     ingredients_list = [ing.strip() for ing in ingredients.split(',')]
+
     recipes = get_recipe_tasty(ingredients_list)
 
     return jsonify(recipes)
@@ -89,8 +89,13 @@ def get_recipes_mmabs():
 
 @app.route('/api/reviews', methods=['GET'])
 def get_reviews_api():
-    recipe = request.args.get('recipe')
-    reviews = get_reviews(recipe)
+    ingredients = request.args.get('ingredients', '')
+    if not ingredients:
+        return jsonify({"error": "No ingredients provided"}), 400
+
+    ingredients_list = [ing.strip() for ing in ingredients.split(',')]
+    urls = scrape_tasty_links(ingredients_list)
+    reviews = get_reviews(urls[0])
     return jsonify(reviews)
 
 
