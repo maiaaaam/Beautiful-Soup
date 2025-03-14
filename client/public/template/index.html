@@ -435,7 +435,6 @@
 
     <!-- search_recipe_area_start -->
     <div class="recepie_area">
-      <h1 class="align_head">Find the Perfect Recipe and Workout Plan</h1>
       <div class="container">
         <div class="row">
           <div class="col-md-4">
@@ -449,35 +448,6 @@
               />
               <button onclick="searchRecipes()" class="line_btn">
                 Search Recipes
-              </button>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card">
-              <h2>Get Recipe Details</h2>
-              <input
-                type="text"
-                id="recipeNameInput"
-                placeholder="Enter recipe name"
-              />
-              <button onclick="getRecipeDetails()" class="line_btn">
-                Get Recipe Details
-              </button>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card">
-              <h2>Get Workout Suggestions</h2>
-              <input
-                type="number"
-                id="caloriesInput"
-                placeholder="Enter calories to burn"
-                value="300"
-              />
-              <button onclick="getWorkoutSuggestions()" class="line_btn">
-                Get Workouts
               </button>
             </div>
           </div>
@@ -790,9 +760,7 @@ Results will appear here...</pre
           title,
           image,
           likes,
-          usedIngredients = [],
-          missedIngredients = [],
-          unusedIngredients = [],
+          ingredientsList = [],
           instructions = [], // Ensure instructions is destructured from the recipe object
         } = recipe;
 
@@ -802,15 +770,6 @@ Results will appear here...</pre
 
         // Add recipe image and likes
         card.innerHTML = `
-            <div class="recipe-image-container">
-                <img src="${image}" alt="${title}" class="recipe-image">
-                <div class="recipe-likes">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                    </svg>
-                    <span>${likes || 0}</span>
-                </div>
-            </div>
             <h3 class="recipe-title">${title}</h3>
         `;
 
@@ -819,59 +778,44 @@ Results will appear here...</pre
         ingredientsSection.className = "ingredients-section";
 
         // Used ingredients
-        if (usedIngredients.length > 0) {
-          const usedSection = createIngredientSection(
-            "Ingredients You Have",
-            usedIngredients,
-            "used-ingredients",
-            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>'
-          );
-          ingredientsSection.appendChild(usedSection);
+        // if (ingredientsList.length > 0) {
+        //   const usedSection = createIngredientSection(
+        //     "Ingredients:",
+        //     ingredientsList
+        //   );
+        //   ingredientsSection.appendChild(usedSection);
+        // }
+        if (ingredientsList.length > 0) {
+          const ingredientsListSection = document.createElement("div");
+          ingredientsListSection.className = "ingredients-section";
+
+          // Add a title for the ingredientsList
+          const ingredientsListTitle = document.createElement("h4");
+          ingredientsListTitle.textContent = "Ingredients:";
+          ingredientsListSection.appendChild(ingredientsListTitle);
+
+          // Create an ordered list for the ingredientsList
+          const ol = document.createElement("ol");
+          ingredientsList.forEach((step, index) => {
+            const li = document.createElement("li");
+            step = step.charAt(0).toUpperCase() + step.slice(1);
+            li.textContent = `${index + 1}. ${step}`;
+            ol.appendChild(li);
+          });
+          ingredientsListSection.appendChild(ol);
+
+          // Append the ingredientsList section to the card
+          card.appendChild(ingredientsListSection);
         }
-
-        // Missed ingredients
-        if (missedIngredients.length > 0) {
-          const missedSection = createIngredientSection(
-            "Ingredients You Need",
-            missedIngredients,
-            "missed-ingredients",
-            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>'
-          );
-          ingredientsSection.appendChild(missedSection);
-        }
-
-        // Unused ingredients
-        if (unusedIngredients.length > 0) {
-          const unusedSection = createIngredientSection(
-            "Unused Ingredients",
-            unusedIngredients,
-            "unused-ingredients",
-            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>'
-          );
-          ingredientsSection.appendChild(unusedSection);
-        }
-
-        card.appendChild(ingredientsSection);
-
-        // Add view recipe button
-        const buttonContainer = document.createElement("div");
-        buttonContainer.className = "button-container";
-        // buttonContainer.innerHTML = `
-        //     <a href="https://spoonacular.com/recipes/${title ? title.toLowerCase().replace(/\s+/g, '-') : 'recipe'}-${id}"
-        //     target="_blank" class="view-recipe-button">
-        //     View Full Recipe
-        //     </a>
-        // `;
-        card.appendChild(buttonContainer);
 
         // Add instructions section if available
         if (instructions.length > 0) {
           const instructionsSection = document.createElement("div");
-          instructionsSection.className = "instructions-section";
+          instructionsSection.className = "ingredients-section";
 
           // Add a title for the instructions
           const instructionsTitle = document.createElement("h4");
-          instructionsTitle.textContent = "Instructions";
+          instructionsTitle.textContent = "Instructions:";
           instructionsSection.appendChild(instructionsTitle);
 
           // Create an ordered list for the instructions
@@ -896,7 +840,7 @@ Results will appear here...</pre
 
         const heading = document.createElement("h4");
         heading.className = "ingredient-heading";
-        heading.innerHTML = `${icon} ${title}`;
+        heading.innerHTML = `${title}`;
         section.appendChild(heading);
 
         const list = document.createElement("ul");
@@ -905,18 +849,10 @@ Results will appear here...</pre
         ingredients.forEach((ingredient) => {
           const listItem = document.createElement("li");
           listItem.className = "ingredient-item";
-
-          // Get the image filename from the URL
-          const imageName = ingredient.image.split("/").pop();
-          const imageUrl = `https://img.spoonacular.com/ingredients_100x100/${imageName}`;
-
           listItem.innerHTML = `
-                    <img src="${imageUrl}" alt="${
-            ingredient.name
-          }" class="ingredient-image">
-                    <span>${ingredient.amount || ""} ${ingredient.unit || ""} ${
-            ingredient.name
-          }</span>
+                     <span>${
+                       ingredient.charAt(0).toUpperCase() + ingredient.slice(1)
+                     }</span>
                 `;
           list.appendChild(listItem);
         });
@@ -1407,22 +1343,7 @@ Results will appear here...</pre
               recipe.name || "Recipe"
             )}`,
             likes: Math.floor(Math.random() * 100),
-            usedIngredients: Array.isArray(recipe.ingredients)
-              ? recipe.ingredients.map((ing) => {
-                  // Split the ingredient text into parts
-                  const parts = String(ing).split(" ");
-                  return {
-                    name: parts[0],
-                    amount: parts.length > 1 ? parts.slice(1).join(" ") : "",
-                    unit: "",
-                    image: `https://via.placeholder.com/100x100?text=${encodeURIComponent(
-                      parts[0]
-                    )}`,
-                  };
-                })
-              : [],
-            missedIngredients: [],
-            nutrients: data.nutrients || {},
+            ingredientsList: recipe.ingredients,
             instructions: Array.isArray(recipe.instructions)
               ? recipe.instructions
               : [],
@@ -1445,28 +1366,7 @@ Results will appear here...</pre
                 title: recipe.name,
                 image: `https://spoonacular.com/recipeImages/${recipeId}-556x370.jpg`,
                 likes: Math.floor(Math.random() * 100),
-                usedIngredients: recipe.ingredients
-                  .slice(0, Math.floor(recipe.ingredients.length / 2))
-                  .map((ing) => {
-                    const parts = ing.split(" ");
-                    return {
-                      name: parts[0],
-                      amount: parts.length > 1 ? parts[1] : "",
-                      unit: parts.length > 2 ? parts[2] : "",
-                      image: `https://spoonacular.com/cdn/ingredients_100x100/${parts[0].toLowerCase()}.jpg`,
-                    };
-                  }),
-                missedIngredients: recipe.ingredients
-                  .slice(Math.floor(recipe.ingredients.length / 2))
-                  .map((ing) => {
-                    const parts = ing.split(" ");
-                    return {
-                      name: parts[0],
-                      amount: parts.length > 1 ? parts[1] : "",
-                      unit: parts.length > 2 ? parts[2] : "",
-                      image: `https://spoonacular.com/cdn/ingredients_100x100/${parts[0].toLowerCase()}.jpg`,
-                    };
-                  }),
+                ingredientsList: recipe.ingredients,
                 nutrients: nutrients,
                 instructions: recipe.instructions,
               };
@@ -1509,21 +1409,7 @@ Results will appear here...</pre
                 recipe.name || "Recipe"
               )}`,
               likes: Math.floor(Math.random() * 100),
-              usedIngredients: Array.isArray(recipe.ingredients)
-                ? recipe.ingredients.map((ing) => {
-                    // Split the ingredient text into parts
-                    const parts = String(ing).split(" ");
-                    return {
-                      name: parts[0],
-                      amount: parts.length > 1 ? parts.slice(1).join(" ") : "",
-                      unit: "",
-                      image: `https://via.placeholder.com/100x100?text=${encodeURIComponent(
-                        parts[0]
-                      )}`,
-                    };
-                  })
-                : [],
-              missedIngredients: [],
+              ingredientsList: recipe.ingredients,
               nutrients: item.nutrients || {},
               instructions: Array.isArray(recipe.instructions)
                 ? recipe.instructions
