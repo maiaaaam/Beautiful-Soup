@@ -8453,3 +8453,22 @@ svg {
 }
 
 /*AUTOCOMPLETE END*/
+.card .details-button {
+  background-color: #ff4533;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 16px;
+  transition: background-color 0.3s;
+  align-items: center;
+}
+
+.card .details-button:hover {
+  background-color: #ff4533;
+}

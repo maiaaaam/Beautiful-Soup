@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="css/style.css" />
     <style>
       /* Custom styles for the new components */
+      .container {
+        max-width: 95vw;
+      }
+
       .card {
         border: 1px solid #eee;
         border-radius: 8px;
@@ -341,24 +345,6 @@
       }
 
       /* CSS for the new elements */
-      .details-button {
-        background-color: #4caf50;
-        border: none;
-        color: white;
-        padding: 10px 15px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 15px 0;
-        cursor: pointer;
-        border-radius: 4px;
-        transition: background-color 0.3s;
-      }
-
-      .details-button:hover {
-        background-color: #45a049;
-      }
 
       .details-container {
         margin-top: 10px;
@@ -1642,6 +1628,7 @@ Results will appear here...</pre
             displayResults(processedData);
           } else if (api === "gemma") {
             processedData = processMmabsData(data);
+
             displayResults(processedData);
             nodes = processedData[0].ingredientsList.map((ing) =>
               ing.replace(/\s*\d.*$/, "").trim()
@@ -1665,7 +1652,6 @@ Results will appear here...</pre
         }
 
         const recipe = data.recipe;
-
         return [
           {
             id: Math.floor(Math.random() * 1000000),
@@ -1678,6 +1664,8 @@ Results will appear here...</pre
             instructions: Array.isArray(recipe.instructions)
               ? recipe.instructions
               : [],
+            nutrients: data.nutrients,
+            workouts: data.workouts,
           },
         ];
       }
