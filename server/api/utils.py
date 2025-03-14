@@ -28,6 +28,7 @@ def parse_spoonacular_response(response):
         ingredients.extend(
             [f"{ing['name']} {ing['amount']} {ing['unit']}" for ing in recipe["missedIngredients"]])
         instructions = get_recipe_instructions(recipe["id"])
+        instructions = [f"{i+1}. {ins}" for i, ins in enumerate(instructions)]
         recipes.append({"name": name, "servings": servings,
                        "ingredients": ingredients, "instructions": instructions})
 
@@ -83,7 +84,6 @@ def get_recipe_nutrition(recipe):
         'Sodium', 'Potassium', 'Calcium', 'Iron',
         'Vitamin A', 'Vitamin C', 'Vitamin D', 'Vitamin B12', 'Calories'
     ]
-
 
     important_macros = {macro: macros[macro]
                         for macro in important_macro_types}

@@ -318,7 +318,7 @@
         color: white;
         border: none;
         padding: 15px 30px;
-        border-radius: 8px;
+        border-radius: 30px;
         font-size: 18px;
         font-weight: 600;
         cursor: pointer;
@@ -443,27 +443,32 @@
               <div class="slider_text text-center">
                 <div class="text">
                   <div class="search-container">
-                    <div
-                      id="ingredient-input-container"
-                      class="input-container"
-                    >
+                    <!-- <input
+                      type="text"
+                      id="bannerIngredientsInput"
+                      class="banner-search-input"
+                      placeholder="Enter ingredients (comma separated)"
+                    /> -->
+                    <div class="input-container">
+                      <div class="tag-container" id="tagContainer"></div>
                       <input
                         type="text"
-                        id="ingredient-input"
-                        class="ingredient-input"
-                        placeholder="Type an ingredient..."
+                        class="banner-search-input"
+                        id="autocompleteInput"
+                        placeholder="Type to search ingredients..."
+                      />
+                      <div
+                        class="autocomplete-list"
+                        id="autocompleteList"
+                      ></div>
+                      <input
+                        type="hidden"
+                        id="bannerIngredientsInput"
+                        value=""
                       />
                     </div>
-                    <div id="suggestions" class="suggestions"></div>
 
-                    <!-- Hidden input that will store comma-separated values -->
-                    <input
-                      type="hidden"
-                      id="bannerIngredientsInput"
-                      name="bannerIngredientsInput"
-                      value=""
-                    />
-                    <div class="api-selection" style="margin-top: 20px">
+                    <div class="api-selection">
                       <button class="api-btn active" data-api="spoonacular">
                         Spoonacular
                       </button>
@@ -1557,6 +1562,9 @@ Results will appear here...</pre
             .querySelector(".recepie_area")
             .scrollIntoView({ behavior: "smooth" });
 
+          if (typeof selectedApi === "undefined") {
+            selectedApi = "spoonacular";
+          }
           // Call the appropriate search function based on the selected API
           searchRecipesBySelectedApi(ingredients, selectedApi);
         });
@@ -1831,35 +1839,6 @@ Results will appear here...</pre
           // Display loading state
           document.getElementById("recipeDisplay").innerHTML =
             "<p>Loading recipes...</p>";
-
-          if (selectedApi === "tasty") {
-            // Call the Tasty API endpoint
-            fetch(`${API_BASE_URL}/search-tasty`, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                ingredients: ingredients,
-                num_recipes: 3,
-              }),
-            })
-              .then((response) => response.json())
-              .then((data) => {
-                displayResults(data.recipes);
-              })
-              .catch((error) => {
-                document.getElementById(
-                  "recipeDisplay"
-                ).innerHTML = `<p>Error: ${error.message}. Make sure the API server is running.</p>`;
-              });
-          } else if (selectedApi === "spoonacular") {
-            // Your existing Spoonacular API call
-            // ...
-          } else if (selectedApi === "gemma") {
-            // Your existing Gemma API call
-            // ...
-          }
         }
 
         // Update your createRecipeCard function to handle Tasty-specific data format
@@ -1908,7 +1887,7 @@ Results will appear here...</pre
         }
       });
     </script>
-    <script src="script.js"></script>
+    <script src="autocomplete.js"></script>
     <script src="graph.js"></script>
   </body>
 </html>
