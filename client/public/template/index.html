@@ -341,8 +341,8 @@
       }
 
       /* CSS for the new elements */
-    .details-button {
-        background-color: #4CAF50;
+      .details-button {
+        background-color: #4caf50;
         border: none;
         color: white;
         padding: 10px 15px;
@@ -354,42 +354,45 @@
         cursor: pointer;
         border-radius: 4px;
         transition: background-color 0.3s;
-    }
+      }
 
-    .details-button:hover {
+      .details-button:hover {
         background-color: #45a049;
-    }
+      }
 
-    .details-container {
+      .details-container {
         margin-top: 10px;
         padding: 15px;
         background-color: #f9f9f9;
         border-radius: 5px;
         border: 1px solid #ddd;
-    }
+      }
 
-    .nutrition-section, .workout-section {
+      .nutrition-section,
+      .workout-section {
         margin-bottom: 20px;
-    }
+      }
 
-    .nutrition-list, .workout-list {
+      .nutrition-list,
+      .workout-list {
         list-style-type: none;
         padding-left: 0;
-    }
+      }
 
-    .nutrition-list li, .workout-list li {
+      .nutrition-list li,
+      .workout-list li {
         padding: 5px 0;
         border-bottom: 1px solid #eee;
-    }
+      }
 
-    .workout-list li {
+      .workout-list li {
         display: flex;
         align-items: center;
-    }
+      }
 
-    .workout-list li strong {
+      .workout-list li strong {
         margin-right: 5px;
-    }
+      }
 
       /* Additional responsive adjustments */
       @media (max-width: 767px) {
@@ -813,13 +816,13 @@ Results will appear here...</pre
 
       function createRecipeCard(recipe) {
         const {
-            id,
-            title,
-            image,
-            likes,
-            ingredientsList = [],
-            instructions = [],
-            nutrition = {}, // Add nutrition from the recipe object
+          id,
+          title,
+          image,
+          likes,
+          ingredientsList = [],
+          instructions = [],
+          nutrition = {}, // Add nutrition from the recipe object
         } = recipe;
 
         // Create card container
@@ -833,49 +836,49 @@ Results will appear here...</pre
 
         // Create and append ingredients section
         if (ingredientsList.length > 0) {
-            const ingredientsListSection = document.createElement("div");
-            ingredientsListSection.className = "ingredients-section";
+          const ingredientsListSection = document.createElement("div");
+          ingredientsListSection.className = "ingredients-section";
 
-            // Add a title for the ingredientsList
-            const ingredientsListTitle = document.createElement("h4");
-            ingredientsListTitle.textContent = "Ingredients:";
-            ingredientsListSection.appendChild(ingredientsListTitle);
+          // Add a title for the ingredientsList
+          const ingredientsListTitle = document.createElement("h4");
+          ingredientsListTitle.textContent = "Ingredients:";
+          ingredientsListSection.appendChild(ingredientsListTitle);
 
-            // Create an ordered list for the ingredientsList
-            const ol = document.createElement("ol");
-            ingredientsList.forEach((step, index) => {
-                const li = document.createElement("li");
-                step = step.charAt(0).toUpperCase() + step.slice(1);
-                li.textContent = `${index + 1}. ${step}`;
-                ol.appendChild(li);
-            });
-            ingredientsListSection.appendChild(ol);
+          // Create an ordered list for the ingredientsList
+          const ol = document.createElement("ol");
+          ingredientsList.forEach((step, index) => {
+            const li = document.createElement("li");
+            step = step.charAt(0).toUpperCase() + step.slice(1);
+            li.textContent = `${index + 1}. ${step}`;
+            ol.appendChild(li);
+          });
+          ingredientsListSection.appendChild(ol);
 
-            // Append the ingredientsList section to the card
-            card.appendChild(ingredientsListSection);
+          // Append the ingredientsList section to the card
+          card.appendChild(ingredientsListSection);
         }
 
         // Add instructions section if available
         if (instructions.length > 0) {
-            const instructionsSection = document.createElement("div");
-            instructionsSection.className = "ingredients-section";
+          const instructionsSection = document.createElement("div");
+          instructionsSection.className = "ingredients-section";
 
-            // Add a title for the instructions
-            const instructionsTitle = document.createElement("h4");
-            instructionsTitle.textContent = "Instructions:";
-            instructionsSection.appendChild(instructionsTitle);
+          // Add a title for the instructions
+          const instructionsTitle = document.createElement("h4");
+          instructionsTitle.textContent = "Instructions:";
+          instructionsSection.appendChild(instructionsTitle);
 
-            // Create an ordered list for the instructions
-            const ol = document.createElement("ol");
-            instructions.forEach((step) => {
-                const li = document.createElement("li");
-                li.textContent = step;
-                ol.appendChild(li);
-            });
-            instructionsSection.appendChild(ol);
+          // Create an ordered list for the instructions
+          const ol = document.createElement("ol");
+          instructions.forEach((step) => {
+            const li = document.createElement("li");
+            li.textContent = step;
+            ol.appendChild(li);
+          });
+          instructionsSection.appendChild(ol);
 
-            // Append the instructions section to the card
-            card.appendChild(instructionsSection);
+          // Append the instructions section to the card
+          card.appendChild(instructionsSection);
         }
 
         // Add button for nutrition and workout info
@@ -894,239 +897,264 @@ Results will appear here...</pre
         // Add event listener to the button
         // Add event listener to the button
         detailsButton.addEventListener("click", () => {
-            // Toggle visibility
-            if (detailsContainer.style.display === "none") {
-                detailsContainer.style.display = "block";
-                detailsButton.textContent = "Hide Nutrition & Workout Details";
-                
-                // Only fetch and display data if container is empty
-                if (detailsContainer.children.length === 0) {
-                    // Display nutrition info
-                    const calories = displayNutritionInfo(recipe, detailsContainer);
-                    
-                    // If we have calories, fetch and display workout information
-                    if (calories) {
-                        // Create a loading message for workouts
-                        const loadingWorkouts = document.createElement("p");
-                        loadingWorkouts.textContent = "Loading workout recommendations...";
-                        detailsContainer.appendChild(loadingWorkouts);
-                        
-                        // Use your backend endpoint to fetch workouts
-                        fetch(`/api/workouts?calories=${calories}`)
-                            .then(response => {
-                                if (!response.ok) {
-                                    throw new Error('Failed to fetch workout data');
-                                }
-                                return response.json();
-                            })
-                            .then(workouts => {
-                                // Remove loading message
-                                detailsContainer.removeChild(loadingWorkouts);
-                                
-                                // Display workouts
-                                displayWorkouts(workouts, detailsContainer);
-                            })
-                            .catch(error => {
-                                console.error("Error fetching workout data:", error);
-                                loadingWorkouts.textContent = "Failed to load workout recommendations. Please try again later.";
-                            });
-                    } else {
-                        // If no calories found, display a message
-                        const noCaloriesMsg = document.createElement("p");
-                        noCaloriesMsg.textContent = "Could not determine calories for workout recommendations.";
-                        detailsContainer.appendChild(noCaloriesMsg);
+          // Toggle visibility
+          if (detailsContainer.style.display === "none") {
+            detailsContainer.style.display = "block";
+            detailsButton.textContent = "Hide Nutrition & Workout Details";
+
+            // Only fetch and display data if container is empty
+            if (detailsContainer.children.length === 0) {
+              // Display nutrition info
+              const calories = displayNutritionInfo(recipe, detailsContainer);
+
+              // If we have calories, fetch and display workout information
+              if (calories) {
+                // Create a loading message for workouts
+                const loadingWorkouts = document.createElement("p");
+                loadingWorkouts.textContent =
+                  "Loading workout recommendations...";
+                detailsContainer.appendChild(loadingWorkouts);
+
+                // Use your backend endpoint to fetch workouts
+                fetch(`/api/workouts?calories=${calories}`)
+                  .then((response) => {
+                    if (!response.ok) {
+                      throw new Error("Failed to fetch workout data");
                     }
-                }
-            } else {
-                detailsContainer.style.display = "none";
-                detailsButton.textContent = "Show Nutrition & Workout Details";
+                    return response.json();
+                  })
+                  .then((workouts) => {
+                    // Remove loading message
+                    detailsContainer.removeChild(loadingWorkouts);
+
+                    // Display workouts
+                    displayWorkouts(workouts, detailsContainer);
+                  })
+                  .catch((error) => {
+                    console.error("Error fetching workout data:", error);
+                    loadingWorkouts.textContent =
+                      "Failed to load workout recommendations. Please try again later.";
+                  });
+              } else {
+                // If no calories found, display a message
+                const noCaloriesMsg = document.createElement("p");
+                noCaloriesMsg.textContent =
+                  "Could not determine calories for workout recommendations.";
+                detailsContainer.appendChild(noCaloriesMsg);
+              }
             }
+          } else {
+            detailsContainer.style.display = "none";
+            detailsButton.textContent = "Show Nutrition & Workout Details";
+          }
         });
 
         return card;
-    }
+      }
 
-    // Function to display nutrition information
-    // Function to display nutrition information
-    function displayNutritionInfo(recipe, container) {
+      // Function to display nutrition information
+      // Function to display nutrition information
+      function displayNutritionInfo(recipe, container) {
         const nutritionSection = document.createElement("div");
         nutritionSection.className = "nutrition-section";
-        
+
         const nutritionTitle = document.createElement("h4");
         nutritionTitle.textContent = "Nutrition Information:";
         nutritionSection.appendChild(nutritionTitle);
-        
+
         // Check if we have nutrition data in the correct format
-        const nutrients = recipe.nutrients || (recipe.nutrition && recipe.nutrition.nutrients);
-        
+        const nutrients =
+          recipe.nutrients || (recipe.nutrition && recipe.nutrition.nutrients);
+
         if (!nutrients || Object.keys(nutrients).length === 0) {
-            const noDataMsg = document.createElement("p");
-            noDataMsg.textContent = "No nutrition data available for this recipe.";
-            nutritionSection.appendChild(noDataMsg);
-            container.appendChild(nutritionSection);
-            return null;
+          const noDataMsg = document.createElement("p");
+          noDataMsg.textContent =
+            "No nutrition data available for this recipe.";
+          nutritionSection.appendChild(noDataMsg);
+          container.appendChild(nutritionSection);
+          return null;
         }
-        
+
         const nutritionList = document.createElement("ul");
         nutritionList.className = "nutrition-list";
-        
+
         // Key nutrients to display
-        const keyNutrients = ["Calories", "Protein", "Carbohydrates", "Fat", "Fiber"];
-        
-        keyNutrients.forEach(nutrientName => {
-            const li = document.createElement("li");
-            
-            // Get the nutrient object - check different possible casing
-            const nutrient = nutrients[nutrientName] || 
-                            nutrients[nutrientName.toLowerCase()] ||
-                            nutrients[nutrientName.charAt(0).toUpperCase() + nutrientName.slice(1).toLowerCase()];
-            
-            if (nutrient && nutrient.amount !== undefined) {
-                // Format the number to 1 decimal place
-                const formattedAmount = parseFloat(nutrient.amount).toFixed(1);
-                li.textContent = `${nutrientName}: ${formattedAmount}${nutrient.unit === 'kcal' ? '' : nutrient.unit}`;
-            } else {
-                li.textContent = `${nutrientName}: N/A`;
-            }
-            
-            nutritionList.appendChild(li);
+        const keyNutrients = [
+          "Calories",
+          "Protein",
+          "Carbohydrates",
+          "Fat",
+          "Fiber",
+        ];
+
+        keyNutrients.forEach((nutrientName) => {
+          const li = document.createElement("li");
+
+          // Get the nutrient object - check different possible casing
+          const nutrient =
+            nutrients[nutrientName] ||
+            nutrients[nutrientName.toLowerCase()] ||
+            nutrients[
+              nutrientName.charAt(0).toUpperCase() +
+                nutrientName.slice(1).toLowerCase()
+            ];
+
+          if (nutrient && nutrient.amount !== undefined) {
+            // Format the number to 1 decimal place
+            const formattedAmount = parseFloat(nutrient.amount).toFixed(1);
+            li.textContent = `${nutrientName}: ${formattedAmount}${
+              nutrient.unit === "kcal" ? "" : nutrient.unit
+            }`;
+          } else {
+            li.textContent = `${nutrientName}: N/A`;
+          }
+
+          nutritionList.appendChild(li);
         });
-        
+
         nutritionSection.appendChild(nutritionList);
         container.appendChild(nutritionSection);
-        
+
         // Return calories for workout calculations if available
         const caloriesNutrient = nutrients["Calories"] || nutrients["calories"];
-        return caloriesNutrient && caloriesNutrient.amount ? Math.round(caloriesNutrient.amount) : null;
-    }
+        return caloriesNutrient && caloriesNutrient.amount
+          ? Math.round(caloriesNutrient.amount)
+          : null;
+      }
 
-    // Function to fetch nutrition info if not already available
-    function fetchNutritionInfo(recipe, container) {
+      // Function to fetch nutrition info if not already available
+      function fetchNutritionInfo(recipe, container) {
         // Create a loading message
         const loadingElement = document.createElement("p");
         loadingElement.textContent = "Loading nutrition information...";
         container.appendChild(loadingElement);
-        
+
         // You would need to implement the API call to get nutrition info
         // This is a placeholder for where you'd make the API call to Spoonacular or other source
-        
-        // Example implementation:
-        fetch(`https://api.spoonacular.com/recipes/${recipe.id}/nutritionWidget.json?apiKey=YOUR_API_KEY`)
-            .then(response => response.json())
-            .then(nutritionData => {
-                // Remove loading message
-                container.removeChild(loadingElement);
-                
-                // Process and display nutrition data
-                const processedNutrition = {
-                    calories: nutritionData.calories,
-                    protein: nutritionData.protein,
-                    carbs: nutritionData.carbs,
-                    fat: nutritionData.fat,
-                    fiber: nutritionData.fiber
-                };
-                
-                displayNutritionInfo(processedNutrition, container);
-                
-                // After getting nutrition data, fetch workout recommendations
-                const estimatedCalories = parseInt(nutritionData.calories);
-                if (!isNaN(estimatedCalories)) {
-                    fetchWorkoutRecommendations(estimatedCalories, container);
-                }
-            })
-            .catch(error => {
-                container.removeChild(loadingElement);
-                const errorElement = document.createElement("p");
-                errorElement.textContent = "Failed to load nutrition information.";
-                container.appendChild(errorElement);
-                console.error("Error fetching nutrition data:", error);
-            });
-    }
 
-    // Function to calculate estimated calories from nutrition object
-    function calculateEstimatedCalories(nutrition) {
+        // Example implementation:
+        fetch(
+          `https://api.spoonacular.com/recipes/${recipe.id}/nutritionWidget.json?apiKey=YOUR_API_KEY`
+        )
+          .then((response) => response.json())
+          .then((nutritionData) => {
+            // Remove loading message
+            container.removeChild(loadingElement);
+
+            // Process and display nutrition data
+            const processedNutrition = {
+              calories: nutritionData.calories,
+              protein: nutritionData.protein,
+              carbs: nutritionData.carbs,
+              fat: nutritionData.fat,
+              fiber: nutritionData.fiber,
+            };
+
+            displayNutritionInfo(processedNutrition, container);
+
+            // After getting nutrition data, fetch workout recommendations
+            const estimatedCalories = parseInt(nutritionData.calories);
+            if (!isNaN(estimatedCalories)) {
+              fetchWorkoutRecommendations(estimatedCalories, container);
+            }
+          })
+          .catch((error) => {
+            container.removeChild(loadingElement);
+            const errorElement = document.createElement("p");
+            errorElement.textContent = "Failed to load nutrition information.";
+            container.appendChild(errorElement);
+            console.error("Error fetching nutrition data:", error);
+          });
+      }
+
+      // Function to calculate estimated calories from nutrition object
+      function calculateEstimatedCalories(nutrition) {
         if (nutrition && nutrition.calories) {
-            return parseInt(nutrition.calories);
+          return parseInt(nutrition.calories);
         }
         return null;
-    }
+      }
 
-    // Function to fetch workout recommendations
-    function fetchWorkoutRecommendations(calories, container) {
+      // Function to fetch workout recommendations
+      function fetchWorkoutRecommendations(calories, container) {
         // Create a loading message
         const loadingElement = document.createElement("p");
         loadingElement.textContent = "Loading workout recommendations...";
         container.appendChild(loadingElement);
-        
-        // Make API call to CaloriesburnedAPI
-        fetch(`https://api.caloriesburned.com/recommendations?calories=${calories}`)
-            .then(response => response.json())
-            .then(workouts => {
-                // Remove loading message
-                container.removeChild(loadingElement);
-                
-                // Display workout recommendations in the container
-                displayWorkoutsInCard(workouts, container);
-            })
-            .catch(error => {
-                container.removeChild(loadingElement);
-                const errorElement = document.createElement("p");
-                errorElement.textContent = "Failed to load workout recommendations.";
-                container.appendChild(errorElement);
-                console.error("Error fetching workout data:", error);
-            });
-    }
 
-    // Function to display workouts within a recipe card
-    function displayWorkoutsInCard(workouts, container) {
+        // Make API call to CaloriesburnedAPI
+        fetch(
+          `https://api.caloriesburned.com/recommendations?calories=${calories}`
+        )
+          .then((response) => response.json())
+          .then((workouts) => {
+            // Remove loading message
+            container.removeChild(loadingElement);
+
+            // Display workout recommendations in the container
+            displayWorkoutsInCard(workouts, container);
+          })
+          .catch((error) => {
+            container.removeChild(loadingElement);
+            const errorElement = document.createElement("p");
+            errorElement.textContent =
+              "Failed to load workout recommendations.";
+            container.appendChild(errorElement);
+            console.error("Error fetching workout data:", error);
+          });
+      }
+
+      // Function to display workouts within a recipe card
+      function displayWorkoutsInCard(workouts, container) {
         if (!workouts || workouts.length === 0) {
-            const noWorkoutsMsg = document.createElement("p");
-            noWorkoutsMsg.textContent = "No workout recommendations available for this recipe.";
-            container.appendChild(noWorkoutsMsg);
-            return;
+          const noWorkoutsMsg = document.createElement("p");
+          noWorkoutsMsg.textContent =
+            "No workout recommendations available for this recipe.";
+          container.appendChild(noWorkoutsMsg);
+          return;
         }
-        
+
         const workoutSection = document.createElement("div");
         workoutSection.className = "workout-section";
-        
+
         const workoutTitle = document.createElement("h4");
         workoutTitle.textContent = "Burn It Off With These Activities:";
         workoutSection.appendChild(workoutTitle);
-        
+
         // Activity icons map (from your existing code)
         const activityIcons = {
-            Run: "🏃",
-            Walk: "🚶",
-            Ride: "🚴",
-            Swim: "🏊",
-            Hike: "🥾",
-            WeightTraining: "🏋️",
-            Yoga: "🧘",
-            Running: "🏃",
-            Cycling: "🚴",
-            Swimming: "🏊",
-            Walking: "🚶",
-            Hiking: "🥾",
-            "Weight Training": "🏋️",
+          Run: "🏃",
+          Walk: "🚶",
+          Ride: "🚴",
+          Swim: "🏊",
+          Hike: "🥾",
+          WeightTraining: "🏋️",
+          Yoga: "🧘",
+          Running: "🏃",
+          Cycling: "🚴",
+          Swimming: "🏊",
+          Walking: "🚶",
+          Hiking: "🥾",
+          "Weight Training": "🏋️",
         };
-        
+
         // Create workout list
         const workoutList = document.createElement("ul");
         workoutList.className = "workout-list";
-        
+
         // Limit to top 5 workouts
         const topWorkouts = workouts.slice(0, 5);
-        
-        topWorkouts.forEach(workout => {
-            const li = document.createElement("li");
-            const icon = activityIcons[workout.activity] || "🏋️";
-            li.innerHTML = `${icon} <strong>${workout.activity}</strong>: ${workout.duration} minutes (${workout.calories} calories)`;
-            workoutList.appendChild(li);
+
+        topWorkouts.forEach((workout) => {
+          const li = document.createElement("li");
+          const icon = activityIcons[workout.activity] || "🏋️";
+          li.innerHTML = `${icon} <strong>${workout.activity}</strong>: ${workout.duration} minutes (${workout.calories} calories)`;
+          workoutList.appendChild(li);
         });
-        
+
         workoutSection.appendChild(workoutList);
         container.appendChild(workoutSection);
-    }
+      }
 
       function createIngredientSection(title, ingredients, className, icon) {
         const section = document.createElement("div");

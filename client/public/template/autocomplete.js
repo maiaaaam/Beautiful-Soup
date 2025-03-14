@@ -1,4 +1,4 @@
-let nodesData = [];
+let nodes = [];
 let selectedNodes = [];
 
 // DOM elements
@@ -14,13 +14,13 @@ const selectedValues = document.getElementById("selectedValues");
 fetch("data/nodes.json")
   .then((response) => response.json())
   .then((data) => {
-    nodesData = data;
-    console.log("Loaded nodes:", nodesData.length);
+    nodes = data;
+    console.log("Loaded nodes:", nodes.length);
   })
   .catch((error) => {
     console.error("Error loading nodes data:", error);
     // Provide sample data for demonstration if fetch fails
-    nodesData = [
+    nodes = [
       { node_id: 51, name: "acorn squash", flavours: "['sweet', 'neutral']" },
       { node_id: 52, name: "apple", flavours: "['sweet', 'tart']" },
       { node_id: 53, name: "asparagus", flavours: "['bitter', 'grassy']" },
@@ -42,7 +42,7 @@ function showSuggestions(input) {
     return;
   }
 
-  const filteredNodes = nodesData.filter(
+  const filteredNodes = nodes.filter(
     (node) =>
       node.name.toLowerCase().includes(inputValue) &&
       !selectedNodes.includes(node.name)
