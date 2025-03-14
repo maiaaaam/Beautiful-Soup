@@ -33,6 +33,7 @@ tasty_scraper = TastyScraper()
 # workout_recommender = WorkoutRecommender()
 
 
+
 try:
     topic_model.load_model()
     print("Topic model loaded successfully")
@@ -44,6 +45,7 @@ try:
     print("Flavor graph loaded successfully")
 except:
     print("No flavor graph found, will initialize empty graph")
+
 
 
 @app.route('/api/recipes/spoonacular', methods=['GET'])

@@ -5,3 +5,7 @@ textblob
 langchain
 langchain-ollama
 liwc
+webdriver-manager
+selenium
+pandas
+numpy

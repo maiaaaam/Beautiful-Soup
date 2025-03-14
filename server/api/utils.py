@@ -84,6 +84,7 @@ def get_recipe_nutrition(recipe):
         'Vitamin A', 'Vitamin C', 'Vitamin D', 'Vitamin B12', 'Calories'
     ]
 
+
     important_macros = {macro: macros[macro]
                         for macro in important_macro_types}
     return important_macros
