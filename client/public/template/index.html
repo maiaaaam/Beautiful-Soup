@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Make me a Beautiful Soup</title>
@@ -436,21 +437,21 @@
     <!-- search_recipe_area_start -->
     <div class="recepie_area">
       <div class="container">
-        <div class="row" style="display: none;">
-            <div class="col-md-4">
-              <div class="card">
-                <h2>Search Recipes by Ingredients</h2>
-                <input
-                  type="text"
-                  id="ingredientsInput"
-                  placeholder="Enter ingredients (comma separated)"
-                  value=""
-                />
-                <button onclick="searchRecipes()" class="line_btn">
-                  Search Recipes
-                </button>
-              </div>
+        <div class="row" style="display: none">
+          <div class="col-md-4">
+            <div class="card">
+              <h2>Search Recipes by Ingredients</h2>
+              <input
+                type="text"
+                id="ingredientsInput"
+                placeholder="Enter ingredients (comma separated)"
+                value=""
+              />
+              <button onclick="searchRecipes()" class="line_btn">
+                Search Recipes
+              </button>
             </div>
+          </div>
         </div>
 
         <div class="row">
@@ -1311,13 +1312,19 @@ Results will appear here...</pre
 
           if (api === "spoonacular") {
             processedData = processSpoonacularData(data);
+            displayResults(processedData);
           } else if (api === "tasty") {
             processedData = processTastyData(data);
+            displayResults(processedData);
           } else if (api === "gemma") {
             processedData = processMmabsData(data);
+            displayResults(processedData);
+            nodes = processedData[0].ingredientsList.map((ing) =>
+              ing.replace(/\s*\d.*$/, "").trim()
+            );
+            const subgraph = createSubgraph(nodes);
+            visualizeSubgraph(subgraph);
           }
-
-          displayResults(processedData);
         } catch (error) {
           document.getElementById(
             "recipeDisplay"
@@ -1614,5 +1621,6 @@ Results will appear here...</pre
       });
     </script>
     <script src="script.js"></script>
+    <script src="graph.js"></script>
   </body>
 </html>
