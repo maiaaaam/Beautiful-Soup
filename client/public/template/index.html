@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Make me a Beautiful Soup</title>
@@ -872,6 +873,12 @@ Results will appear here...</pre
         detailsButton.className = "details-button";
         detailsButton.textContent = "Show Nutrition & Workout Details";
         card.appendChild(detailsButton);
+        let nutritionData =
+          recipe.nutrients || (recipe.nutrition && recipe.nutrition.nutrients);
+        console.log(nutritionData);
+        detailsButton.addEventListener("click", () =>
+          openGraphsModal(nutritionData)
+        );
 
         // Create a container for nutrition and workout details (initially hidden)
         const detailsContainer = document.createElement("div");
@@ -882,58 +889,58 @@ Results will appear here...</pre
         // Add event listener to the button
         // Add event listener to the button
         // Add event listener to the button
-        detailsButton.addEventListener("click", () => {
-          // Toggle visibility
-          if (detailsContainer.style.display === "none") {
-            detailsContainer.style.display = "block";
-            detailsButton.textContent = "Hide Nutrition & Workout Details";
+        // detailsButton.addEventListener("click", () => {
+        //   // Toggle visibility
+        //   if (detailsContainer.style.display === "none") {
+        //     detailsContainer.style.display = "block";
+        //     detailsButton.textContent = "Hide Nutrition & Workout Details";
 
-            // Only fetch and display data if container is empty
-            if (detailsContainer.children.length === 0) {
-              // Display nutrition info
-              const calories = displayNutritionInfo(recipe, detailsContainer);
+        //     // Only fetch and display data if container is empty
+        //     if (detailsContainer.children.length === 0) {
+        //       // Display nutrition info
+        //       const calories = displayNutritionInfo(recipe, detailsContainer);
 
-              // If we have calories, fetch and display workout information
-              if (calories) {
-                // Create a loading message for workouts
-                const loadingWorkouts = document.createElement("p");
-                loadingWorkouts.textContent =
-                  "Loading workout recommendations...";
-                detailsContainer.appendChild(loadingWorkouts);
+        //       // If we have calories, fetch and display workout information
+        //       if (calories) {
+        //         // Create a loading message for workouts
+        //         const loadingWorkouts = document.createElement("p");
+        //         loadingWorkouts.textContent =
+        //           "Loading workout recommendations...";
+        //         detailsContainer.appendChild(loadingWorkouts);
 
-                // Use your backend endpoint to fetch workouts
-                fetch(`/api/workouts?calories=${calories}`)
-                  .then((response) => {
-                    if (!response.ok) {
-                      throw new Error("Failed to fetch workout data");
-                    }
-                    return response.json();
-                  })
-                  .then((workouts) => {
-                    // Remove loading message
-                    detailsContainer.removeChild(loadingWorkouts);
+        //         // Use your backend endpoint to fetch workouts
+        //         fetch(`/api/workouts?calories=${calories}`)
+        //           .then((response) => {
+        //             if (!response.ok) {
+        //               throw new Error("Failed to fetch workout data");
+        //             }
+        //             return response.json();
+        //           })
+        //           .then((workouts) => {
+        //             // Remove loading message
+        //             detailsContainer.removeChild(loadingWorkouts);
 
-                    // Display workouts
-                    displayWorkouts(workouts, detailsContainer);
-                  })
-                  .catch((error) => {
-                    console.error("Error fetching workout data:", error);
-                    loadingWorkouts.textContent =
-                      "Failed to load workout recommendations. Please try again later.";
-                  });
-              } else {
-                // If no calories found, display a message
-                const noCaloriesMsg = document.createElement("p");
-                noCaloriesMsg.textContent =
-                  "Could not determine calories for workout recommendations.";
-                detailsContainer.appendChild(noCaloriesMsg);
-              }
-            }
-          } else {
-            detailsContainer.style.display = "none";
-            detailsButton.textContent = "Show Nutrition & Workout Details";
-          }
-        });
+        //             // Display workouts
+        //             displayWorkouts(workouts, detailsContainer);
+        //           })
+        //           .catch((error) => {
+        //             console.error("Error fetching workout data:", error);
+        //             loadingWorkouts.textContent =
+        //               "Failed to load workout recommendations. Please try again later.";
+        //           });
+        //       } else {
+        //         // If no calories found, display a message
+        //         const noCaloriesMsg = document.createElement("p");
+        //         noCaloriesMsg.textContent =
+        //           "Could not determine calories for workout recommendations.";
+        //         detailsContainer.appendChild(noCaloriesMsg);
+        //       }
+        //     }
+        //   } else {
+        //     detailsContainer.style.display = "none";
+        //     detailsButton.textContent = "Show Nutrition & Workout Details";
+        //   }
+        // });
 
         return card;
       }
@@ -1478,10 +1485,10 @@ Results will appear here...</pre
           (ing) => {
             ingredientsHTML += `
                     <li class="ingredient-item">
-                        <img 
-                            src="${ing.image}" 
-                            alt="${ing.name}" 
-                            onerror="this.src='images/ingredient-default.jpg'" 
+                        <img
+                            src="${ing.image}"
+                            alt="${ing.name}"
+                            onerror="this.src='images/ingredient-default.jpg'"
                             class="ingredient-image"
                         >
                         <span>${ing.amount} ${ing.unit} ${ing.name}</span>
@@ -1504,10 +1511,10 @@ Results will appear here...</pre
                 <span class="close-modal">&times;</span>
                 <h2 class="recipe-title">${recipe.title}</h2>
                 <div class="recipe-modal-image-container">
-                    <img 
-                        src="${recipe.image}" 
-                        alt="${recipe.title}" 
-                        onerror="this.src='images/default-recipe.jpg'" 
+                    <img
+                        src="${recipe.image}"
+                        alt="${recipe.title}"
+                        onerror="this.src='images/default-recipe.jpg'"
                         class="recipe-modal-image"
                     >
                 </div>
@@ -1905,5 +1912,6 @@ Results will appear here...</pre
     </script>
     <script src="autocomplete.js"></script>
     <script src="graph.js"></script>
+    <script src="macros.js"></script>
   </body>
 </html>
