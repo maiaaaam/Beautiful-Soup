@@ -1,4 +1,4 @@
-let nodesData = [];
+// let nodesData = [];
 let edgesData = [];
 
 document.addEventListener("DOMContentLoaded", () => {
