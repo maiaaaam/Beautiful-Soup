@@ -50,6 +50,7 @@ except:
 @app.route('/api/recipes/spoonacular', methods=['GET'])
 def get_recipes_spoonacular():
     """Get recipes based on ingredients"""
+    print("Fetching recipes from spoonacular")
     ingredients = request.args.get('ingredients', '')
     if not ingredients:
         return jsonify({"error": "No ingredients provided"}), 400

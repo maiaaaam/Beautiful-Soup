@@ -8261,3 +8261,99 @@ h6 {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.autocomplete-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* Styled container that looks like an input box */
+.input-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 44px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  cursor: text;
+  position: relative;
+}
+
+.input-container:focus-within {
+  border-color: #4d90fe;
+  box-shadow: 0 0 0 2px rgba(77, 144, 254, 0.2);
+}
+
+/* Style for ingredient tags */
+/* Style for ingredient tags */
+.ingredient-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e74c3c; /* Solid reddish color */
+  color: white; /* White text */
+  border-radius: 16px; /* Capsule shape */
+  margin: 2px 4px 2px 0;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+.remove-tag {
+  display: inline-block;
+  margin-left: 6px;
+  cursor: pointer;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+}
+
+.remove-tag:hover {
+  color: white;
+}
+
+/* Actual input element styling */
+.ingredient-input {
+  flex: 1;
+  min-width: 60px;
+  border: none;
+  padding: 6px;
+  margin: 2px;
+  font-size: 14px;
+  outline: none;
+  background: transparent;
+}
+
+/* Suggestions dropdown styling */
+.suggestions {
+  position: absolute;
+  border: 1px solid #ddd;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.suggestion-item:hover,
+.suggestion-item.active {
+  background-color: #f0f0f0;
+}
+
+/* Instructions styling */
+.instructions {
+  margin-top: 20px;
+  font-size: 6px;
+  color: #666;
+}

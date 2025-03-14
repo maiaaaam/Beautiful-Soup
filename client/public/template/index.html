@@ -1,663 +1,720 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Make me a Beautiful Soup</title>
-    <link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link
+      href="https://unpkg.com/vis-network/styles/vis-network.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <style>
-        /* Custom styles for the new components */
-        .card {
-            border: 1px solid #eee;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            padding: 20px;
-            margin-bottom: 30px;
-            background-color: #fff;
-        }
-        
-        .card h2 {
-            color: #2c3e50;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        
-        .card input[type="text"],
-        .card input[type="number"] {
-            width: 100%;
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-        
-        .card button {
-            background-color: #FF4533;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-        
-        .card button:hover {
-            background-color: #e63e2e;
-        }
-        
-        /* Recipe grid styles */
-        .recipe-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 20px; 
-            width: 100%;
-        }
-        
-        .recipe-card {
-            border: 1px solid #eee;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .recipe-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .recipe-image-container {
-            position: relative;
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .recipe-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .recipe-likes {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: rgba(255,255,255,0.9);
-            border-radius: 20px;
-            padding: 5px 10px;
-            display: flex;
-            align-items: center;
-            color: #e74c3c;
-        }
-        
-        .recipe-likes svg {
-            margin-right: 5px;
-        }
-        
-        .recipe-title {
-            padding: 15px;
-            margin: 0;
-            color: #2c3e50;
-            font-size: 18px;
-            font-weight: 700;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .ingredients-section {
-            padding: 15px;
-        }
-        
-        .ingredient-section {
-            margin-bottom: 15px;
-        }
-        
-        .ingredient-heading {
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .ingredient-heading svg {
-            margin-right: 5px;
-        }
-        
-        .used-ingredients .ingredient-heading {
-            color: #27ae60;
-        }
-        
-        .missed-ingredients .ingredient-heading {
-            color: #e74c3c;
-        }
-        
-        .unused-ingredients .ingredient-heading {
-            color: #3498db;
-        }
-        
-        .ingredient-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .ingredient-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-        
-        .ingredient-image {
-            width: 30px;
-            height: 30px;
-            border-radius: 15px;
-            margin-right: 10px;
-            object-fit: cover;
-        }
-        
-        .button-container {
-            padding: 15px;
-            text-align: center;
-        }
-        
-        .view-recipe-button {
-            display: inline-block;
-            padding: 8px 20px;
-            background-color: #FF4533;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 500;
-            transition: background-color 0.3s;
-        }
-        
-        .view-recipe-button:hover {
-            background-color: #e63e2e;
-            color: white;
-            text-decoration: none;
-        }
-        
-        /* Workout grid styles */
+      /* Custom styles for the new components */
+      .card {
+        border: 1px solid #eee;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        padding: 20px;
+        margin-bottom: 30px;
+        background-color: #fff;
+      }
+
+      .card h2 {
+        color: #2c3e50;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .card input[type="text"],
+      .card input[type="number"] {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+
+      .card button {
+        background-color: #ff4533;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+
+      .card button:hover {
+        background-color: #e63e2e;
+      }
+
+      /* Recipe grid styles */
+      .recipe-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 100%;
+      }
+
+      .recipe-card {
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .recipe-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .recipe-image-container {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .recipe-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .recipe-likes {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 20px;
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        color: #e74c3c;
+      }
+
+      .recipe-likes svg {
+        margin-right: 5px;
+      }
+
+      .recipe-title {
+        padding: 15px;
+        margin: 0;
+        color: #2c3e50;
+        font-size: 18px;
+        font-weight: 700;
+        border-bottom: 1px solid #eee;
+      }
+
+      .ingredients-section {
+        padding: 15px;
+      }
+
+      .ingredient-section {
+        margin-bottom: 15px;
+      }
+
+      .ingredient-heading {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .ingredient-heading svg {
+        margin-right: 5px;
+      }
+
+      .used-ingredients .ingredient-heading {
+        color: #27ae60;
+      }
+
+      .missed-ingredients .ingredient-heading {
+        color: #e74c3c;
+      }
+
+      .unused-ingredients .ingredient-heading {
+        color: #3498db;
+      }
+
+      .ingredient-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .ingredient-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        font-size: 14px;
+      }
+
+      .ingredient-image {
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        margin-right: 10px;
+        object-fit: cover;
+      }
+
+      .button-container {
+        padding: 15px;
+        text-align: center;
+      }
+
+      .view-recipe-button {
+        display: inline-block;
+        padding: 8px 20px;
+        background-color: #ff4533;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+
+      .view-recipe-button:hover {
+        background-color: #e63e2e;
+        color: white;
+        text-decoration: none;
+      }
+
+      /* Workout grid styles */
+      .workout-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      .workout-card {
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .workout-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .workout-header {
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #eee;
+      }
+
+      .workout-title {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 600;
+        color: #2c3e50;
+        display: flex;
+        align-items: center;
+      }
+
+      .workout-icon {
+        font-size: 24px;
+        margin-right: 10px;
+      }
+
+      .workout-content {
+        padding: 15px;
+      }
+
+      .workout-details {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .workout-detail {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed #eee;
+      }
+
+      .detail-label {
+        font-weight: 500;
+        color: #7f8c8d;
+      }
+
+      .detail-value {
+        color: #2c3e50;
+        font-weight: 600;
+      }
+
+      .workout-calories {
+        margin-top: 15px;
+        border-bottom: none;
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 4px;
+      }
+
+      .workout-calories .detail-label {
+        color: #e74c3c;
+      }
+
+      .workout-calories .detail-value {
+        color: #e74c3c;
+        font-weight: 700;
+      }
+
+      /* Custom alignment for title */
+      .align_head {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #2c3e50;
+      }
+
+      /* Banner search styles */
+      .banner-search-input {
+        width: 100%;
+        padding: 15px;
+        border-radius: 8px;
+        border: none;
+        font-size: 18px;
+        margin-bottom: 15px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .api-selection {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+      }
+
+      .api-btn {
+        background-color: white;
+        color: #333;
+        border: 2px solid #ddd;
+        padding: 10px 20px;
+        margin: 0 5px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .api-btn.active {
+        background-color: #ff4533;
+        color: white;
+        border-color: #ff4533;
+      }
+
+      .banner-search-btn {
+        background-color: #ff4533;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .banner-search-btn:hover {
+        background-color: #e63e2e;
+      }
+
+      .search-container {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Additional responsive adjustments */
+      @media (max-width: 767px) {
+        .recipe-grid,
         .workout-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+          grid-template-columns: 1fr;
         }
-        
-        .workout-card {
-            border: 1px solid #eee;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .workout-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .workout-header {
-            padding: 15px;
-            background-color: #f8f9fa;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .workout-title {
-            margin: 0;
-            font-size: 20px;
-            font-weight: 600;
-            color: #2c3e50;
-            display: flex;
-            align-items: center;
-        }
-        
-        .workout-icon {
-            font-size: 24px;
-            margin-right: 10px;
-        }
-        
-        .workout-content {
-            padding: 15px;
-        }
-        
-        .workout-details {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .workout-detail {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            padding-bottom: 10px;
-            border-bottom: 1px dashed #eee;
-        }
-        
-        .detail-label {
-            font-weight: 500;
-            color: #7f8c8d;
-        }
-        
-        .detail-value {
-            color: #2c3e50;
-            font-weight: 600;
-        }
-        
-        .workout-calories {
-            margin-top: 15px;
-            border-bottom: none;
-            background-color: #f8f9fa;
-            padding: 10px;
-            border-radius: 4px;
-        }
-        
-        .workout-calories .detail-label {
-            color: #e74c3c;
-        }
-        
-        .workout-calories .detail-value {
-            color: #e74c3c;
-            font-weight: 700;
-        }
-        
-        /* Custom alignment for title */
-        .align_head {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #2c3e50;
-        }
-
-        /* Banner search styles */
-        .banner-search-input {
-            width: 100%;
-            padding: 15px;
-            border-radius: 8px;
-            border: none;
-            font-size: 18px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .api-selection {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 15px;
-        }
-
-        .api-btn {
-            background-color: white;
-            color: #333;
-            border: 2px solid #ddd;
-            padding: 10px 20px;
-            margin: 0 5px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .api-btn.active {
-            background-color: #FF4533;
-            color: white;
-            border-color: #FF4533;
-        }
-
-        .banner-search-btn {
-            background-color: #FF4533;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            width: 100%;
-            max-width: 300px;
-            margin: 0 auto;
-            display: block;
-        }
-
-        .banner-search-btn:hover {
-            background-color: #e63e2e;
-        }
-
-        .search-container {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        
-        /* Additional responsive adjustments */
-        @media (max-width: 767px) {
-            .recipe-grid, .workout-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!--[if lte IE 9]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
     <![endif]-->
 
     <!-- header-start -->
     <header>
-        <div class="header-area ">
-            <div id="sticky-header" class="main-header-area ">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-3 col-lg-2">
-                            <div class="logo">
-                                <a href="index.html">
-                                    <img src="img/logo.png" alt="" width = "300">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-7">
-                            
-                        </div>
-                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                           
-                        </div>
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
-                    </div>
+      <div class="header-area">
+        <div id="sticky-header" class="main-header-area">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-xl-3 col-lg-2">
+                <div class="logo">
+                  <a href="index.html">
+                    <img src="img/logo.png" alt="" width="300" />
+                  </a>
                 </div>
+              </div>
+              <div class="col-xl-6 col-lg-7"></div>
+              <div class="col-xl-3 col-lg-3 d-none d-lg-block"></div>
+              <div class="col-12">
+                <div class="mobile_menu d-block d-lg-none"></div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </header>
     <!-- header-end -->
 
     <!-- slider_area_start -->
     <div class="slider_area">
-        <div class="single_slider d-flex align-items-center slider_bg_1">
-            <div class="container">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-xl-8">
-                        <div class="slider_text text-center">
-                            <div class="text">
-                                <div class="search-container">
-                                    <input type="text" id="bannerIngredientsInput" class="banner-search-input" placeholder="Enter ingredients (comma separated)">
-                                    <div class="api-selection">
-                                        <button class="api-btn active" data-api="spoonacular">Spoonacular</button>
-                                        <button class="api-btn" data-api="tasty">Tasty</button>
-                                        <button class="api-btn" data-api="gemma">Our Secret Sauce</button>
-                                    </div>
-                                    <button id="bannerSearchButton" class="banner-search-btn">Search Recipes</button>
-                                </div>
-                            </div>
-                        </div>
+      <div class="single_slider d-flex align-items-center slider_bg_1">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-xl-8">
+              <div class="slider_text text-center">
+                <div class="text">
+                  <div class="search-container">
+                    <div
+                      id="ingredient-input-container"
+                      class="input-container"
+                    >
+                      <input
+                        type="text"
+                        id="ingredient-input"
+                        class="ingredient-input"
+                        placeholder="Type an ingredient..."
+                      />
                     </div>
+                    <div id="suggestions" class="suggestions"></div>
+
+                    <!-- Hidden input that will store comma-separated values -->
+                    <input
+                      type="hidden"
+                      id="bannerIngredientsInput"
+                      name="bannerIngredientsInput"
+                      value=""
+                    />
+                    <div class="api-selection" style="margin-top: 20px">
+                      <button class="api-btn active" data-api="spoonacular">
+                        Spoonacular
+                      </button>
+                      <button class="api-btn" data-api="tasty">Tasty</button>
+                      <button class="api-btn" data-api="gemma">
+                        Our Secret Sauce
+                      </button>
+                    </div>
+                    <button id="bannerSearchButton" class="banner-search-btn">
+                      Search Recipes
+                    </button>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
     <!-- slider_area_end -->
 
     <!-- search_recipe_area_start -->
     <div class="recepie_area">
-        <h1 class="align_head">Find the Perfect Recipe and Workout Plan</h1>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <h2>Search Recipes by Ingredients</h2>
-                        <input type="text" id="ingredientsInput" placeholder="Enter ingredients (comma separated)" value="">
-                        <button onclick="searchRecipes()" class="line_btn">Search Recipes</button>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="card">
-                        <h2>Get Recipe Details</h2>
-                        <input type="text" id="recipeNameInput" placeholder="Enter recipe name">
-                        <button onclick="getRecipeDetails()" class="line_btn">Get Recipe Details</button>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="card">
-                        <h2>Get Workout Suggestions</h2>
-                        <input type="number" id="caloriesInput" placeholder="Enter calories to burn" value="300">
-                        <button onclick="getWorkoutSuggestions()" class="line_btn">Get Workouts</button>
-                    </div>
-                </div>
+      <h1 class="align_head">Find the Perfect Recipe and Workout Plan</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <h2>Search Recipes by Ingredients</h2>
+              <input
+                type="text"
+                id="ingredientsInput"
+                placeholder="Enter ingredients (comma separated)"
+                value=""
+              />
+              <button onclick="searchRecipes()" class="line_btn">
+                Search Recipes
+              </button>
             </div>
-            
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div id="recipeDisplay"></div>
-                        <div id="workoutDisplay"></div>
-                        <pre id="results" style="display: none;">Results will appear here...</pre>
-                    </div>
-                </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card">
+              <h2>Get Recipe Details</h2>
+              <input
+                type="text"
+                id="recipeNameInput"
+                placeholder="Enter recipe name"
+              />
+              <button onclick="getRecipeDetails()" class="line_btn">
+                Get Recipe Details
+              </button>
             </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card">
+              <h2>Get Workout Suggestions</h2>
+              <input
+                type="number"
+                id="caloriesInput"
+                placeholder="Enter calories to burn"
+                value="300"
+              />
+              <button onclick="getWorkoutSuggestions()" class="line_btn">
+                Get Workouts
+              </button>
+            </div>
+          </div>
         </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div id="recipeDisplay"></div>
+              <div id="workoutDisplay"></div>
+              <pre id="results" style="display: none">
+Results will appear here...</pre
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- search_recipe_area_end -->
 
     <!-- recepie_area_start  -->
     <div class="recepie_area">
-        <h1 class="align_head">Don't know what to cook? Get inspired by some of our curated recipes</h1>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single_recepie text-center">
-                        <div class="recepie_thumb">
-                            <img src="img/recepie/recpie_1.png" alt="">
-                        </div>
-                        <h3>Egg Manchurian</h3>
-                        <span>Appetizer</span>
-                        <p>Time Needs: 30 Mins</p>
-                        <a href="#" class="line_btn">View Full Recipe</a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single_recepie text-center">
-                        <div class="recepie_thumb">
-                            <img src="img/recepie/recpie_2.png" alt="">
-                        </div>
-                        <h3>Pure Vegetable Bowl</h3>
-                        <span>Appetizer</span>
-                        <p>Time Needs: 30 Mins</p>
-                        <a href="#" class="line_btn">View Full Recipe</a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single_recepie text-center">
-                        <div class="recepie_thumb">
-                            <img src="img/recepie/recpie_3.png" alt="">
-                        </div>
-                        <h3>Egg Masala Ramen</h3>
-                        <span>Appetizer</span>
-                        <p>Time Needs: 30 Mins</p>
-                        <a href="#" class="line_btn">View Full Recipe</a>
-                    </div>
-                </div>
+      <h1 class="align_head">
+        Don't know what to cook? Get inspired by some of our curated recipes
+      </h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="single_recepie text-center">
+              <div class="recepie_thumb">
+                <img src="img/recepie/recpie_1.png" alt="" />
+              </div>
+              <h3>Egg Manchurian</h3>
+              <span>Appetizer</span>
+              <p>Time Needs: 30 Mins</p>
+              <a href="#" class="line_btn">View Full Recipe</a>
             </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="single_recepie text-center">
+              <div class="recepie_thumb">
+                <img src="img/recepie/recpie_2.png" alt="" />
+              </div>
+              <h3>Pure Vegetable Bowl</h3>
+              <span>Appetizer</span>
+              <p>Time Needs: 30 Mins</p>
+              <a href="#" class="line_btn">View Full Recipe</a>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="single_recepie text-center">
+              <div class="recepie_thumb">
+                <img src="img/recepie/recpie_3.png" alt="" />
+              </div>
+              <h3>Egg Masala Ramen</h3>
+              <span>Appetizer</span>
+              <p>Time Needs: 30 Mins</p>
+              <a href="#" class="line_btn">View Full Recipe</a>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <!-- /recepie_area_end  -->
 
     <!-- recepie_videos   -->
     <div class="recepie_videoes_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="recepie_info">
-                        <h3>Know what to cook but don't know how? check out recipe videos</h3>
-                        <p>inappropriate behavior is often laughed off as "boys will be boys," women face higher conduct standards especially in the workplace. That's why it's crucial that, as women.</p>
-                        <div class="video_watch d-flex align-items-center">
-                            <a class="popup-video" href="https://www.youtube.com/watch?v=lr6AMBsjxrY"> <i class="ti-control-play"></i> </a>
-                            <div class="watch_text">
-                                <h4>Watch Video</h4>
-                                <p>You will love our execution</p>
-                            </div>
-                        </div>
-                    </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-6 col-lg-6 col-md-6">
+            <div class="recepie_info">
+              <h3>
+                Know what to cook but don't know how? check out recipe videos
+              </h3>
+              <p>
+                inappropriate behavior is often laughed off as "boys will be
+                boys," women face higher conduct standards especially in the
+                workplace. That's why it's crucial that, as women.
+              </p>
+              <div class="video_watch d-flex align-items-center">
+                <a
+                  class="popup-video"
+                  href="https://www.youtube.com/watch?v=lr6AMBsjxrY"
+                >
+                  <i class="ti-control-play"></i>
+                </a>
+                <div class="watch_text">
+                  <h4>Watch Video</h4>
+                  <p>You will love our execution</p>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="videos_thumb">
-                        <div class="big_img">
-                            <img src="img/video/big.png" alt="">
-                        </div>
-                        <div class="small_thumb">
-                            <img src="img/video/small_1.png" alt="">
-                        </div>
-                        <div class="small_thumb_2">
-                            <img src="img/video/2.png" alt="">
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="videos_thumb">
+              <div class="big_img">
+                <img src="img/video/big.png" alt="" />
+              </div>
+              <div class="small_thumb">
+                <img src="img/video/small_1.png" alt="" />
+              </div>
+              <div class="small_thumb_2">
+                <img src="img/video/2.png" alt="" />
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <!--/ recepie_videos   -->
 
     <!-- latest_trand     -->
     <div class="latest_trand_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="trand_info text-center">
-                        <p>Thousands of recipes are waiting to be cooked</p>
-                        <h3>Find out how to burn those calories and stay healthy</h3>
-                        <a href="#" class="boxed-btn3">View all Recipes</a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12">
+            <div class="trand_info text-center">
+              <p>Thousands of recipes are waiting to be cooked</p>
+              <h3>Find out how to burn those calories and stay healthy</h3>
+              <a href="#" class="boxed-btn3">View all Recipes</a>
             </div>
+          </div>
         </div>
+      </div>
     </div>
     <!--/ latest_trand     -->
 
     <!-- footer  -->
     <footer class="footer">
-        <div class="footer_top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-2 col-md-6 col-lg-2">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Top Products
-                            </h3>
-                            <ul>
-                                <li><a href="#">Managed Website</a></li>
-                                <li><a href="#"> Manage Reputation</a></li>
-                                <li><a href="#">Power Tools</a></li>
-                                <li><a href="#">Marketing Service</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-2">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Quick Links
-                            </h3>
-                            <ul>
-                                <li><a href="#">Jobs</a></li>
-                                <li><a href="#">Brand Assets</a></li>
-                                <li><a href="#">Investor Relations</a></li>
-                                <li><a href="#">Terms of Service</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-2">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Features
-                            </h3>
-                            <ul>
-                                <li><a href="#">Jobs</a></li>
-                                <li><a href="#">Brand Assets</a></li>
-                                <li><a href="#">Investor Relations</a></li>
-                                <li><a href="#">Terms of Service</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-2">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Resources
-                            </h3>
-                            <ul>
-                                <li><a href="#">Guides</a></li>
-                                <li><a href="#">Research</a></li>
-                                <li><a href="#">Experts</a></li>
-                                <li><a href="#">Agencies</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6 col-lg-4">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Subscribe
-                            </h3>
-                            <p class="newsletter_text">You can trust us. we only send promo offers,</p>
-                            <form action="#" class="newsletter_form">
-                                <input type="text" placeholder="Enter your mail">
-                                <button type="submit"> <i class="ti-arrow-right"></i> </button>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
+      <div class="footer_top">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-2 col-md-6 col-lg-2">
+              <div class="footer_widget">
+                <h3 class="footer_title">Top Products</h3>
+                <ul>
+                  <li><a href="#">Managed Website</a></li>
+                  <li><a href="#"> Manage Reputation</a></li>
+                  <li><a href="#">Power Tools</a></li>
+                  <li><a href="#">Marketing Service</a></li>
+                </ul>
+              </div>
             </div>
-        </div>
-        <div class="copy-right_text">
-            <div class="container">
-                <div class="footer_border"></div>
-                <div class="row align-items-center">
-                    <div class="col-xl-8 col-md-8">
-                        <p class="copy_right">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
-                    </div>
-                    <div class="col-xl-4 col-md-4">
-                        <div class="socail_links">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <i class="ti-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="ti-twitter-alt"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-dribbble"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-behance"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-xl-2 col-md-6 col-lg-2">
+              <div class="footer_widget">
+                <h3 class="footer_title">Quick Links</h3>
+                <ul>
+                  <li><a href="#">Jobs</a></li>
+                  <li><a href="#">Brand Assets</a></li>
+                  <li><a href="#">Investor Relations</a></li>
+                  <li><a href="#">Terms of Service</a></li>
+                </ul>
+              </div>
             </div>
+            <div class="col-xl-2 col-md-6 col-lg-2">
+              <div class="footer_widget">
+                <h3 class="footer_title">Features</h3>
+                <ul>
+                  <li><a href="#">Jobs</a></li>
+                  <li><a href="#">Brand Assets</a></li>
+                  <li><a href="#">Investor Relations</a></li>
+                  <li><a href="#">Terms of Service</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-2 col-md-6 col-lg-2">
+              <div class="footer_widget">
+                <h3 class="footer_title">Resources</h3>
+                <ul>
+                  <li><a href="#">Guides</a></li>
+                  <li><a href="#">Research</a></li>
+                  <li><a href="#">Experts</a></li>
+                  <li><a href="#">Agencies</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-lg-4">
+              <div class="footer_widget">
+                <h3 class="footer_title">Subscribe</h3>
+                <p class="newsletter_text">
+                  You can trust us. we only send promo offers,
+                </p>
+                <form action="#" class="newsletter_form">
+                  <input type="text" placeholder="Enter your mail" />
+                  <button type="submit"><i class="ti-arrow-right"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="copy-right_text">
+        <div class="container">
+          <div class="footer_border"></div>
+          <div class="row align-items-center">
+            <div class="col-xl-8 col-md-8">
+              <p class="copy_right">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                All rights reserved | This template is made with
+                <i class="fa fa-heart-o" aria-hidden="true"></i> by
+                <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              </p>
+            </div>
+            <div class="col-xl-4 col-md-4">
+              <div class="socail_links">
+                <ul>
+                  <li>
+                    <a href="#">
+                      <i class="ti-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="ti-twitter-alt"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-dribbble"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-behance"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
     <!--/ footer  -->
 
@@ -681,7 +738,6 @@
     <script src="js/plugins.js"></script>
     <script src="js/gijgo.min.js"></script>
 
-
     <!--contact js-->
     <script src="js/contact.js"></script>
     <script src="js/jquery.ajaxchimp.min.js"></script>
@@ -690,59 +746,60 @@
     <script src="js/mail-script.js"></script>
 
     <script src="js/main.js"></script>
-    
+
     <!-- API functionality -->
     <script>
-        // Helper function to display results
-        function displayResults(data) {
-            // Store the raw JSON in the hidden pre element
-            const resultsElement = document.getElementById('results');
-            resultsElement.textContent = JSON.stringify(data, null, 2);
-            
-            // Generate the beautiful UI
-            createRecipeCards(data);
+      // Helper function to display results
+      function displayResults(data) {
+        // Store the raw JSON in the hidden pre element
+        const resultsElement = document.getElementById("results");
+        resultsElement.textContent = JSON.stringify(data, null, 2);
+
+        // Generate the beautiful UI
+        createRecipeCards(data);
+      }
+
+      function createRecipeCards(recipes) {
+        const displayElement = document.getElementById("recipeDisplay");
+
+        // Clear previous results
+        displayElement.innerHTML = "";
+
+        if (!recipes || recipes.length === 0) {
+          displayElement.innerHTML =
+            "<p>No recipes found. Try different ingredients.</p>";
+          return;
         }
-        
-        function createRecipeCards(recipes) {
-            const displayElement = document.getElementById('recipeDisplay');
-            
-            // Clear previous results
-            displayElement.innerHTML = '';
-            
-            if (!recipes || recipes.length === 0) {
-                displayElement.innerHTML = '<p>No recipes found. Try different ingredients.</p>';
-                return;
-            }
-            
-            // Create recipe grid
-            const recipeGrid = document.createElement('div');
-            recipeGrid.className = 'recipe-grid';
-            
-            // Add each recipe as a card
-            recipes.forEach(recipe => {
-                const card = createRecipeCard(recipe);
-                recipeGrid.appendChild(card);
-            });
-            
-            displayElement.appendChild(recipeGrid);
-        }
-        
-        function createRecipeCard(recipe) {
+
+        // Create recipe grid
+        const recipeGrid = document.createElement("div");
+        recipeGrid.className = "recipe-grid";
+
+        // Add each recipe as a card
+        recipes.forEach((recipe) => {
+          const card = createRecipeCard(recipe);
+          recipeGrid.appendChild(card);
+        });
+
+        displayElement.appendChild(recipeGrid);
+      }
+
+      function createRecipeCard(recipe) {
         const {
-            id,
-            title,
-            image,
-            likes,
-            usedIngredients = [],
-            missedIngredients = [],
-            unusedIngredients = [],
-            instructions = []  // Ensure instructions is destructured from the recipe object
+          id,
+          title,
+          image,
+          likes,
+          usedIngredients = [],
+          missedIngredients = [],
+          unusedIngredients = [],
+          instructions = [], // Ensure instructions is destructured from the recipe object
         } = recipe;
-        
+
         // Create card container
-        const card = document.createElement('div');
-        card.className = 'recipe-card';
-        
+        const card = document.createElement("div");
+        card.className = "recipe-card";
+
         // Add recipe image and likes
         card.innerHTML = `
             <div class="recipe-image-container">
@@ -756,49 +813,49 @@
             </div>
             <h3 class="recipe-title">${title}</h3>
         `;
-        
+
         // Create ingredients section
-        const ingredientsSection = document.createElement('div');
-        ingredientsSection.className = 'ingredients-section';
-        
+        const ingredientsSection = document.createElement("div");
+        ingredientsSection.className = "ingredients-section";
+
         // Used ingredients
         if (usedIngredients.length > 0) {
-            const usedSection = createIngredientSection(
-                'Ingredients You Have', 
-                usedIngredients,
-                'used-ingredients',
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>'
-            );
-            ingredientsSection.appendChild(usedSection);
+          const usedSection = createIngredientSection(
+            "Ingredients You Have",
+            usedIngredients,
+            "used-ingredients",
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>'
+          );
+          ingredientsSection.appendChild(usedSection);
         }
-        
+
         // Missed ingredients
         if (missedIngredients.length > 0) {
-            const missedSection = createIngredientSection(
-                'Ingredients You Need', 
-                missedIngredients,
-                'missed-ingredients',
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>'
-            );
-            ingredientsSection.appendChild(missedSection);
+          const missedSection = createIngredientSection(
+            "Ingredients You Need",
+            missedIngredients,
+            "missed-ingredients",
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>'
+          );
+          ingredientsSection.appendChild(missedSection);
         }
-        
+
         // Unused ingredients
         if (unusedIngredients.length > 0) {
-            const unusedSection = createIngredientSection(
-                'Unused Ingredients', 
-                unusedIngredients,
-                'unused-ingredients',
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>'
-            );
-            ingredientsSection.appendChild(unusedSection);
+          const unusedSection = createIngredientSection(
+            "Unused Ingredients",
+            unusedIngredients,
+            "unused-ingredients",
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>'
+          );
+          ingredientsSection.appendChild(unusedSection);
         }
-        
+
         card.appendChild(ingredientsSection);
-        
+
         // Add view recipe button
-        const buttonContainer = document.createElement('div');
-        buttonContainer.className = 'button-container';
+        const buttonContainer = document.createElement("div");
+        buttonContainer.className = "button-container";
         // buttonContainer.innerHTML = `
         //     <a href="https://spoonacular.com/recipes/${title ? title.toLowerCase().replace(/\s+/g, '-') : 'recipe'}-${id}"
         //     target="_blank" class="view-recipe-button">
@@ -806,344 +863,376 @@
         //     </a>
         // `;
         card.appendChild(buttonContainer);
-        
+
         // Add instructions section if available
         if (instructions.length > 0) {
-            const instructionsSection = document.createElement('div');
-            instructionsSection.className = 'instructions-section';
-            
-            // Add a title for the instructions
-            const instructionsTitle = document.createElement('h4');
-            instructionsTitle.textContent = 'Instructions';
-            instructionsSection.appendChild(instructionsTitle);
-            
-            // Create an ordered list for the instructions
-            const ol = document.createElement('ol');
-            instructions.forEach(step => {
-                const li = document.createElement('li');
-                li.textContent = step;
-                ol.appendChild(li);
-            });
-            instructionsSection.appendChild(ol);
-            
-            // Append the instructions section to the card
-            card.appendChild(instructionsSection);
-        }
-        
-        return card;
-    }
+          const instructionsSection = document.createElement("div");
+          instructionsSection.className = "instructions-section";
 
-        
-        function createIngredientSection(title, ingredients, className, icon) {
-            const section = document.createElement('div');
-            section.className = `ingredient-section ${className}`;
-            
-            const heading = document.createElement('h4');
-            heading.className = 'ingredient-heading';
-            heading.innerHTML = `${icon} ${title}`;
-            section.appendChild(heading);
-            
-            const list = document.createElement('ul');
-            list.className = 'ingredient-list';
-            
-            ingredients.forEach(ingredient => {
-                const listItem = document.createElement('li');
-                listItem.className = 'ingredient-item';
-                
-                // Get the image filename from the URL
-                const imageName = ingredient.image.split('/').pop();
-                const imageUrl = `https://img.spoonacular.com/ingredients_100x100/${imageName}`;
-                
-                listItem.innerHTML = `
-                    <img src="${imageUrl}" alt="${ingredient.name}" class="ingredient-image">
-                    <span>${ingredient.amount || ''} ${ingredient.unit || ''} ${ingredient.name}</span>
-                `;
-                list.appendChild(listItem);
-            });
-            
-            section.appendChild(list);
-            return section;
+          // Add a title for the instructions
+          const instructionsTitle = document.createElement("h4");
+          instructionsTitle.textContent = "Instructions";
+          instructionsSection.appendChild(instructionsTitle);
+
+          // Create an ordered list for the instructions
+          const ol = document.createElement("ol");
+          instructions.forEach((step) => {
+            const li = document.createElement("li");
+            li.textContent = step;
+            ol.appendChild(li);
+          });
+          instructionsSection.appendChild(ol);
+
+          // Append the instructions section to the card
+          card.appendChild(instructionsSection);
         }
-        
-        function displayWorkouts(workouts) {
-            // Store the raw JSON in the hidden pre element
-            const resultsElement = document.getElementById('results');
-            resultsElement.textContent = JSON.stringify(workouts, null, 2);
-            
-            const displayElement = document.getElementById('workoutDisplay');
-            const recipeDisplay = document.getElementById('recipeDisplay');
-            
-            // Clear previous results
-            displayElement.innerHTML = '';
-            recipeDisplay.innerHTML = '';
-            
-            if (!workouts || workouts.length === 0) {
-                displayElement.innerHTML = '<p>No workout recommendations found. Try a different calorie target.</p>';
-                return;
-            }
-            
-            // Create workout grid
-            const workoutGrid = document.createElement('div');
-            workoutGrid.className = 'workout-grid';
-            
-            // Activity icons map
-            const activityIcons = {
-                Run: '🏃',
-                Walk: '🚶',
-                Ride: '🚴',
-                Swim: '🏊',
-                Hike: '🥾',
-                WeightTraining: '🏋️',
-                Yoga: '🧘',
-                Running: '🏃',
-                Cycling: '🚴',
-                Swimming: '🏊',
-                Walking: '🚶',
-                Hiking: '🥾',
-                'Weight Training': '🏋️'
-            };
-            
-            // Add each workout as a card
-            workouts.forEach(workout => {
-                const card = document.createElement('div');
-                card.className = 'workout-card';
-                
-                // Create header with icon and activity title
-                const header = document.createElement('div');
-                header.className = 'workout-header';
-                
-                const title = document.createElement('h3');
-                title.className = 'workout-title';
-                title.innerHTML = `
-                    <span class="workout-icon">${activityIcons[workout.activity] || '💪'}</span>
+
+        return card;
+      }
+
+      function createIngredientSection(title, ingredients, className, icon) {
+        const section = document.createElement("div");
+        section.className = `ingredient-section ${className}`;
+
+        const heading = document.createElement("h4");
+        heading.className = "ingredient-heading";
+        heading.innerHTML = `${icon} ${title}`;
+        section.appendChild(heading);
+
+        const list = document.createElement("ul");
+        list.className = "ingredient-list";
+
+        ingredients.forEach((ingredient) => {
+          const listItem = document.createElement("li");
+          listItem.className = "ingredient-item";
+
+          // Get the image filename from the URL
+          const imageName = ingredient.image.split("/").pop();
+          const imageUrl = `https://img.spoonacular.com/ingredients_100x100/${imageName}`;
+
+          listItem.innerHTML = `
+                    <img src="${imageUrl}" alt="${
+            ingredient.name
+          }" class="ingredient-image">
+                    <span>${ingredient.amount || ""} ${ingredient.unit || ""} ${
+            ingredient.name
+          }</span>
+                `;
+          list.appendChild(listItem);
+        });
+
+        section.appendChild(list);
+        return section;
+      }
+
+      function displayWorkouts(workouts) {
+        // Store the raw JSON in the hidden pre element
+        const resultsElement = document.getElementById("results");
+        resultsElement.textContent = JSON.stringify(workouts, null, 2);
+
+        const displayElement = document.getElementById("workoutDisplay");
+        const recipeDisplay = document.getElementById("recipeDisplay");
+
+        // Clear previous results
+        displayElement.innerHTML = "";
+        recipeDisplay.innerHTML = "";
+
+        if (!workouts || workouts.length === 0) {
+          displayElement.innerHTML =
+            "<p>No workout recommendations found. Try a different calorie target.</p>";
+          return;
+        }
+
+        // Create workout grid
+        const workoutGrid = document.createElement("div");
+        workoutGrid.className = "workout-grid";
+
+        // Activity icons map
+        const activityIcons = {
+          Run: "🏃",
+          Walk: "🚶",
+          Ride: "🚴",
+          Swim: "🏊",
+          Hike: "🥾",
+          WeightTraining: "🏋️",
+          Yoga: "🧘",
+          Running: "🏃",
+          Cycling: "🚴",
+          Swimming: "🏊",
+          Walking: "🚶",
+          Hiking: "🥾",
+          "Weight Training": "🏋️",
+        };
+
+        // Add each workout as a card
+        workouts.forEach((workout) => {
+          const card = document.createElement("div");
+          card.className = "workout-card";
+
+          // Create header with icon and activity title
+          const header = document.createElement("div");
+          header.className = "workout-header";
+
+          const title = document.createElement("h3");
+          title.className = "workout-title";
+          title.innerHTML = `
+                    <span class="workout-icon">${
+                      activityIcons[workout.activity] || "💪"
+                    }</span>
                     ${workout.activity}
                 `;
-                header.appendChild(title);
-                card.appendChild(header);
-                
-                // Create workout details content
-                const content = document.createElement('div');
-                content.className = 'workout-content';
-                
-                const detailsList = document.createElement('ul');
-                detailsList.className = 'workout-details';
-                
-                // Duration detail
-                const durationItem = document.createElement('li');
-                durationItem.className = 'workout-detail';
-                durationItem.innerHTML = `
+          header.appendChild(title);
+          card.appendChild(header);
+
+          // Create workout details content
+          const content = document.createElement("div");
+          content.className = "workout-content";
+
+          const detailsList = document.createElement("ul");
+          detailsList.className = "workout-details";
+
+          // Duration detail
+          const durationItem = document.createElement("li");
+          durationItem.className = "workout-detail";
+          durationItem.innerHTML = `
                     <span class="detail-label">Duration:</span>
                     <span class="detail-value">${workout.duration_minutes} minutes</span>
                 `;
-                detailsList.appendChild(durationItem);
-                
-                // Distance detail (if available)
-                if (workout.distance_km !== undefined) {
-                    const distanceItem = document.createElement('li');
-                    distanceItem.className = 'workout-detail';
-                    distanceItem.innerHTML = `
+          detailsList.appendChild(durationItem);
+
+          // Distance detail (if available)
+          if (workout.distance_km !== undefined) {
+            const distanceItem = document.createElement("li");
+            distanceItem.className = "workout-detail";
+            distanceItem.innerHTML = `
                         <span class="detail-label">Distance:</span>
                         <span class="detail-value">${workout.distance_km} km</span>
                     `;
-                    detailsList.appendChild(distanceItem);
-                }
-                
-                // Pace detail (if available)
-                if (workout.pace) {
-                    const paceItem = document.createElement('li');
-                    paceItem.className = 'workout-detail';
-                    paceItem.innerHTML = `
+            detailsList.appendChild(distanceItem);
+          }
+
+          // Pace detail (if available)
+          if (workout.pace) {
+            const paceItem = document.createElement("li");
+            paceItem.className = "workout-detail";
+            paceItem.innerHTML = `
                         <span class="detail-label">Pace:</span>
                         <span class="detail-value">${workout.pace}</span>
                     `;
-                    detailsList.appendChild(paceItem);
-                }
-                
-                // Steps detail (if available)
-                if (workout.steps) {
-                    const stepsItem = document.createElement('li');
-                    stepsItem.className = 'workout-detail';
-                    stepsItem.innerHTML = `
+            detailsList.appendChild(paceItem);
+          }
+
+          // Steps detail (if available)
+          if (workout.steps) {
+            const stepsItem = document.createElement("li");
+            stepsItem.className = "workout-detail";
+            stepsItem.innerHTML = `
                         <span class="detail-label">Steps:</span>
                         <span class="detail-value">${workout.steps.toLocaleString()}</span>
                     `;
-                    detailsList.appendChild(stepsItem);
-                }
-                
-                // Calories detail
-                const caloriesItem = document.createElement('li');
-                caloriesItem.className = 'workout-detail workout-calories';
-                caloriesItem.innerHTML = `
+            detailsList.appendChild(stepsItem);
+          }
+
+          // Calories detail
+          const caloriesItem = document.createElement("li");
+          caloriesItem.className = "workout-detail workout-calories";
+          caloriesItem.innerHTML = `
                     <span class="detail-label">Calories:</span>
                     <span class="detail-value">${workout.estimated_calories} cal</span>
                 `;
-                detailsList.appendChild(caloriesItem);
-                
-                content.appendChild(detailsList);
-                card.appendChild(content);
-                
-                workoutGrid.appendChild(card);
-            });
-            
-            displayElement.appendChild(workoutGrid);
+          detailsList.appendChild(caloriesItem);
+
+          content.appendChild(detailsList);
+          card.appendChild(content);
+
+          workoutGrid.appendChild(card);
+        });
+
+        displayElement.appendChild(workoutGrid);
+      }
+
+      // Helper function for API calls
+      async function callApi(endpoint, params = {}) {
+        try {
+          // Build query string from params
+          const queryString = Object.keys(params)
+            .map(
+              (key) =>
+                `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`
+            )
+            .join("&");
+
+          const url = queryString
+            ? `${API_BASE_URL}${endpoint}?${queryString}`
+            : `${API_BASE_URL}${endpoint}`;
+
+          // Display loading message
+          document.getElementById("results").textContent = "Loading...";
+          document.getElementById("recipeDisplay").innerHTML =
+            "<p>Loading...</p>";
+          document.getElementById("workoutDisplay").innerHTML = "";
+
+          const response = await fetch(url);
+          const data = await response.json();
+
+          return data;
+        } catch (error) {
+          document.getElementById(
+            "results"
+          ).textContent = `Error: ${error.message}`;
+          document.getElementById(
+            "recipeDisplay"
+          ).innerHTML = `<p>Error: ${error.message}</p>`;
+          document.getElementById("workoutDisplay").innerHTML = "";
+          console.error("API call failed:", error);
         }
-        
-        // Helper function for API calls
-        async function callApi(endpoint, params = {}) {
-            try {
-                // Build query string from params
-                const queryString = Object.keys(params)
-                    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
-                    .join('&');
-                
-                const url = queryString ? `${API_BASE_URL}${endpoint}?${queryString}` : `${API_BASE_URL}${endpoint}`;
-                
-                // Display loading message
-                document.getElementById('results').textContent = 'Loading...';
-                document.getElementById('recipeDisplay').innerHTML = '<p>Loading...</p>';
-                document.getElementById('workoutDisplay').innerHTML = '';
-                
-                const response = await fetch(url);
-                const data = await response.json();
-                
-                return data;
-            } catch (error) {
-                document.getElementById('results').textContent = `Error: ${error.message}`;
-                document.getElementById('recipeDisplay').innerHTML = `<p>Error: ${error.message}</p>`;
-                document.getElementById('workoutDisplay').innerHTML = '';
-                console.error('API call failed:', error);
-            }
-        }
-        
-        // Function to search recipes by ingredients
-        // Function to search recipes by ingredients
-        async function searchRecipes() {
-            const ingredients = document.getElementById('ingredientsInput').value;
-            const data = await callApi('/recipes/spoonacular', { ingredients });
-            console.log("Response data:", data);
-            
-            // Extract just the recipes from the complex data structure
-            const processedRecipes = data.map(item => {
-                const recipe = item.recipe;
-                const nutrients = item.nutrients; // Store nutrients for later use
-                
-                // Get the first recipe from the API response
-                if (recipe) {
-                    // Generate a recipe ID to use for Spoonacular image URL
-                    const recipeId = Math.floor(Math.random() * 1000000);
-                    
-                    // Return a structure that matches what the displayResults function expects
+      }
+
+      // Function to search recipes by ingredients
+      // Function to search recipes by ingredients
+      async function searchRecipes() {
+        const ingredients = document.getElementById("ingredientsInput").value;
+        const data = await callApi("/recipes/spoonacular", { ingredients });
+        console.log("Response data:", data);
+
+        // Extract just the recipes from the complex data structure
+        const processedRecipes = data
+          .map((item) => {
+            const recipe = item.recipe;
+            const nutrients = item.nutrients; // Store nutrients for later use
+
+            // Get the first recipe from the API response
+            if (recipe) {
+              // Generate a recipe ID to use for Spoonacular image URL
+              const recipeId = Math.floor(Math.random() * 1000000);
+
+              // Return a structure that matches what the displayResults function expects
+              return {
+                id: recipeId, // Use the same ID for consistency
+                title: recipe.name,
+                // Use Spoonacular image URL pattern
+                image: `https://spoonacular.com/recipeImages/${recipeId}-556x370.jpg`,
+                likes: Math.floor(Math.random() * 100), // Random likes count
+                usedIngredients: recipe.ingredients
+                  .slice(0, Math.floor(recipe.ingredients.length / 2))
+                  .map((ing) => {
+                    const parts = ing.split(" ");
                     return {
-                        id: recipeId, // Use the same ID for consistency
-                        title: recipe.name,
-                        // Use Spoonacular image URL pattern
-                        image: `https://spoonacular.com/recipeImages/${recipeId}-556x370.jpg`,
-                        likes: Math.floor(Math.random() * 100), // Random likes count
-                        usedIngredients: recipe.ingredients.slice(0, Math.floor(recipe.ingredients.length/2)).map(ing => {
-                            const parts = ing.split(' ');
-                            return {
-                                name: parts[0],
-                                amount: parts.length > 1 ? parts[1] : '',
-                                unit: parts.length > 2 ? parts[2] : '',
-                                // Use Spoonacular ingredient image URL pattern
-                                image: `https://spoonacular.com/cdn/ingredients_100x100/${parts[0].toLowerCase()}.jpg`
-                            };
-                        }),
-                        missedIngredients: recipe.ingredients.slice(Math.floor(recipe.ingredients.length/2)).map(ing => {
-                            const parts = ing.split(' ');
-                            return {
-                                name: parts[0],
-                                amount: parts.length > 1 ? parts[1] : '',
-                                unit: parts.length > 2 ? parts[2] : '',
-                                // Use Spoonacular ingredient image URL pattern
-                                image: `https://spoonacular.com/cdn/ingredients_100x100/${parts[0].toLowerCase()}.jpg`
-                            };
-                        }),
-                        nutrients: nutrients, // Add nutrients to recipe object
-                        instructions: recipe.instructions // Make sure instructions are included
+                      name: parts[0],
+                      amount: parts.length > 1 ? parts[1] : "",
+                      unit: parts.length > 2 ? parts[2] : "",
+                      // Use Spoonacular ingredient image URL pattern
+                      image: `https://spoonacular.com/cdn/ingredients_100x100/${parts[0].toLowerCase()}.jpg`,
                     };
-                }
-                return null;
-            }).filter(recipe => recipe !== null);
-            
-            displayResults(processedRecipes);
+                  }),
+                missedIngredients: recipe.ingredients
+                  .slice(Math.floor(recipe.ingredients.length / 2))
+                  .map((ing) => {
+                    const parts = ing.split(" ");
+                    return {
+                      name: parts[0],
+                      amount: parts.length > 1 ? parts[1] : "",
+                      unit: parts.length > 2 ? parts[2] : "",
+                      // Use Spoonacular ingredient image URL pattern
+                      image: `https://spoonacular.com/cdn/ingredients_100x100/${parts[0].toLowerCase()}.jpg`,
+                    };
+                  }),
+                nutrients: nutrients, // Add nutrients to recipe object
+                instructions: recipe.instructions, // Make sure instructions are included
+              };
+            }
+            return null;
+          })
+          .filter((recipe) => recipe !== null);
+
+        displayResults(processedRecipes);
+      }
+
+      // Update the displayResults function to include the "View full details" button
+      // function displayResults(recipes) {
+      //     const resultsContainer = document.getElementById('results');
+      //     resultsContainer.innerHTML = '';
+
+      //     recipes.forEach(recipe => {
+      //         const recipeCard = document.createElement('div');
+      //         recipeCard.className = 'recipe-card';
+
+      //         // Create recipe card content
+      //         recipeCard.innerHTML = `
+      //             <div class="recipe-image-container">
+      //                 <img
+      //                     src="${recipe.image}"
+      //                     alt="${recipe.title}"
+      //                     onerror="this.src='images/default-recipe.jpg'"
+      //                     class="recipe-image"
+      //                 >
+      //             </div>
+      //             <h3>${recipe.title}</h3>
+      //             <p>You have ${recipe.usedIngredients.length} of ${recipe.usedIngredients.length + recipe.missedIngredients.length} ingredients</p>
+      //             <button class="details-btn" data-recipe-id="${recipe.id}">View full details</button>
+      //         `;
+
+      //         resultsContainer.appendChild(recipeCard);
+
+      //         // Add event listener to the details button
+      //         const detailsBtn = recipeCard.querySelector('.details-btn');
+      //         detailsBtn.addEventListener('click', () => showRecipeDetails(recipe));
+      //     });
+      // }
+
+      // Function to display recipe details including nutrients
+      function showRecipeDetails(recipe) {
+        const modalContainer =
+          document.getElementById("recipeModal") || createRecipeModal();
+        const modalContent = modalContainer.querySelector(".modal-content");
+
+        // Generate nutrients HTML
+        let nutrientsHTML =
+          '<h3>Nutritional Information (per serving)</h3><div class="nutrients-grid">';
+
+        // First show important macros
+        const priorityNutrients = [
+          "Calories",
+          "Protein",
+          "Carbohydrates",
+          "Fat",
+          "Fiber",
+          "Sugar",
+        ];
+
+        // Add priority nutrients first
+        priorityNutrients.forEach((key) => {
+          if (recipe.nutrients[key]) {
+            const nutrient = recipe.nutrients[key];
+            nutrientsHTML += `
+                        <div class="nutrient-item">
+                            <div class="nutrient-name">${nutrient.name}</div>
+                            <div class="nutrient-value">${nutrient.amount} ${nutrient.unit}</div>
+                        </div>
+                    `;
+          }
+        });
+
+        // Add remaining nutrients
+        for (const [key, nutrient] of Object.entries(recipe.nutrients)) {
+          if (!priorityNutrients.includes(key)) {
+            nutrientsHTML += `
+                        <div class="nutrient-item">
+                            <div class="nutrient-name">${nutrient.name}</div>
+                            <div class="nutrient-value">${nutrient.amount} ${nutrient.unit}</div>
+                        </div>
+                    `;
+          }
         }
 
+        nutrientsHTML += "</div>";
 
-        // Update the displayResults function to include the "View full details" button
-        // function displayResults(recipes) {
-        //     const resultsContainer = document.getElementById('results');
-        //     resultsContainer.innerHTML = '';
-            
-        //     recipes.forEach(recipe => {
-        //         const recipeCard = document.createElement('div');
-        //         recipeCard.className = 'recipe-card';
-                
-        //         // Create recipe card content
-        //         recipeCard.innerHTML = `
-        //             <div class="recipe-image-container">
-        //                 <img 
-        //                     src="${recipe.image}" 
-        //                     alt="${recipe.title}" 
-        //                     onerror="this.src='images/default-recipe.jpg'" 
-        //                     class="recipe-image"
-        //                 >
-        //             </div>
-        //             <h3>${recipe.title}</h3>
-        //             <p>You have ${recipe.usedIngredients.length} of ${recipe.usedIngredients.length + recipe.missedIngredients.length} ingredients</p>
-        //             <button class="details-btn" data-recipe-id="${recipe.id}">View full details</button>
-        //         `;
-                
-        //         resultsContainer.appendChild(recipeCard);
-                
-        //         // Add event listener to the details button
-        //         const detailsBtn = recipeCard.querySelector('.details-btn');
-        //         detailsBtn.addEventListener('click', () => showRecipeDetails(recipe));
-        //     });
-        // }
-
-        // Function to display recipe details including nutrients
-        function showRecipeDetails(recipe) {
-            const modalContainer = document.getElementById('recipeModal') || createRecipeModal();
-            const modalContent = modalContainer.querySelector('.modal-content');
-            
-            // Generate nutrients HTML
-            let nutrientsHTML = '<h3>Nutritional Information (per serving)</h3><div class="nutrients-grid">';
-            
-            // First show important macros
-            const priorityNutrients = ['Calories', 'Protein', 'Carbohydrates', 'Fat', 'Fiber', 'Sugar'];
-            
-            // Add priority nutrients first
-            priorityNutrients.forEach(key => {
-                if (recipe.nutrients[key]) {
-                    const nutrient = recipe.nutrients[key];
-                    nutrientsHTML += `
-                        <div class="nutrient-item">
-                            <div class="nutrient-name">${nutrient.name}</div>
-                            <div class="nutrient-value">${nutrient.amount} ${nutrient.unit}</div>
-                        </div>
-                    `;
-                }
-            });
-            
-            // Add remaining nutrients
-            for (const [key, nutrient] of Object.entries(recipe.nutrients)) {
-                if (!priorityNutrients.includes(key)) {
-                    nutrientsHTML += `
-                        <div class="nutrient-item">
-                            <div class="nutrient-name">${nutrient.name}</div>
-                            <div class="nutrient-value">${nutrient.amount} ${nutrient.unit}</div>
-                        </div>
-                    `;
-                }
-            }
-            
-            nutrientsHTML += '</div>';
-            
-            // Generate ingredients HTML
-            let ingredientsHTML = '<h3>Ingredients</h3><ul class="ingredients-list">';
-            [...recipe.usedIngredients, ...recipe.missedIngredients].forEach(ing => {
-                ingredientsHTML += `
+        // Generate ingredients HTML
+        let ingredientsHTML =
+          '<h3>Ingredients</h3><ul class="ingredients-list">';
+        [...recipe.usedIngredients, ...recipe.missedIngredients].forEach(
+          (ing) => {
+            ingredientsHTML += `
                     <li class="ingredient-item">
                         <img 
                             src="${ing.image}" 
@@ -1154,18 +1243,20 @@
                         <span>${ing.amount} ${ing.unit} ${ing.name}</span>
                     </li>
                 `;
-            });
-            ingredientsHTML += '</ul>';
-            
-            // Generate instructions HTML
-            let instructionsHTML = '<h3>Instructions</h3><ol class="instructions-list">';
-            recipe.instructions.forEach(step => {
-                instructionsHTML += `<li>${step}</li>`;
-            });
-            instructionsHTML += '</ol>';
-            
-            // Set modal content
-            modalContent.innerHTML = `
+          }
+        );
+        ingredientsHTML += "</ul>";
+
+        // Generate instructions HTML
+        let instructionsHTML =
+          '<h3>Instructions</h3><ol class="instructions-list">';
+        recipe.instructions.forEach((step) => {
+          instructionsHTML += `<li>${step}</li>`;
+        });
+        instructionsHTML += "</ol>";
+
+        // Set modal content
+        modalContent.innerHTML = `
                 <span class="close-modal">&times;</span>
                 <h2 class="recipe-title">${recipe.title}</h2>
                 <div class="recipe-modal-image-container">
@@ -1182,408 +1273,460 @@
                     ${instructionsHTML}
                 </div>
             `;
-            
-            // Show the modal
-            modalContainer.style.display = 'block';
-            
-            // Add event listener to close button
-            const closeBtn = modalContent.querySelector('.close-modal');
-            closeBtn.addEventListener('click', () => {
-                modalContainer.style.display = 'none';
-            });
-            
-            // Close modal when clicking outside of it
-            window.addEventListener('click', (event) => {
-                if (event.target === modalContainer) {
-                    modalContainer.style.display = 'none';
-                }
-            });
-        }
 
-        // Initialize the banner search functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get references to the banner elements
-            const apiButtons = document.querySelectorAll('.api-btn');
-            const bannerSearchButton = document.getElementById('bannerSearchButton');
-            const bannerIngredientsInput = document.getElementById('bannerIngredientsInput');
-            
-            // Add click event listeners to API buttons
-            apiButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    apiButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    // Update the selected API
-                    selectedApi = this.getAttribute('data-api');
-                });
-            });
-            
-            // Add click event listener to the search button
-            bannerSearchButton.addEventListener('click', function() {
-                const ingredients = bannerIngredientsInput.value.trim();
-                
-                if (!ingredients) {
-                    alert('Please enter at least one ingredient');
-                    return;
-                }
-                
-                // Transfer the ingredients to the appropriate input field in the main form
-                document.getElementById('ingredientsInput').value = ingredients;
-                
-                // Scroll to the results section
-                document.querySelector('.recepie_area').scrollIntoView({ behavior: 'smooth' });
-                
-                // Call the appropriate search function based on the selected API
-                searchRecipesBySelectedApi(ingredients, selectedApi);
-            });
+        // Show the modal
+        modalContainer.style.display = "block";
+
+        // Add event listener to close button
+        const closeBtn = modalContent.querySelector(".close-modal");
+        closeBtn.addEventListener("click", () => {
+          modalContainer.style.display = "none";
         });
 
+        // Close modal when clicking outside of it
+        window.addEventListener("click", (event) => {
+          if (event.target === modalContainer) {
+            modalContainer.style.display = "none";
+          }
+        });
+      }
 
+      // Initialize the banner search functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get references to the banner elements
+        const apiButtons = document.querySelectorAll(".api-btn");
+        const bannerSearchButton =
+          document.getElementById("bannerSearchButton");
+        const bannerIngredientsInput = document.getElementById(
+          "bannerIngredientsInput"
+        );
 
-        // Function to search recipes based on the selected API
-        async function searchRecipesBySelectedApi(ingredients, api) {
-            // Clear previous results
-            document.getElementById('recipeDisplay').innerHTML = '<p>Searching recipes...</p>';
-            document.getElementById('workoutDisplay').innerHTML = '';
-            
-            let endpoint = '';
-            let params = {};
-            
-            // Determine which API to use
-            switch(api) {
-                case 'spoonacular':
-                    endpoint = '/recipes/spoonacular';
-                    params = { ingredients };
-                    break;
-                case 'tasty':
-                    endpoint = '/recipes/tasty';
-                    params = { ingredients };
-                    break;
-                case 'gemma':
-                    endpoint = '/recipes/mmabs';
-                    params = { ingredients };
-                    break;
-                default:
-                    endpoint = '/recipes/spoonacular';
-                    params = { ingredients };
-            }
-            
-            try {
-                const data = await callApi(endpoint, params);
-                console.log(`${api} API response:`, data);
-                
-                // Process the data based on the API
-                let processedData;
-                
-                if (api === 'spoonacular') {
-                    processedData = processSpoonacularData(data);
-                } else if (api === 'tasty') {
-                    processedData = processTastyData(data);
-                } else if (api === 'gemma') {
-                    processedData = processMmabsData(data); 
-                }
+        // Add click event listeners to API buttons
+        apiButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Remove active class from all buttons
+            apiButtons.forEach((btn) => btn.classList.remove("active"));
 
-            displayResults(processedData);
+            // Add active class to clicked button
+            this.classList.add("active");
 
-                
-                
-            } catch (error) {
-                document.getElementById('recipeDisplay').innerHTML = `<p>Error searching recipes: ${error.message}</p>`;
-            }
+            // Update the selected API
+            selectedApi = this.getAttribute("data-api");
+          });
+        });
+
+        // Add click event listener to the search button
+        bannerSearchButton.addEventListener("click", function () {
+          const ingredients = bannerIngredientsInput.value.trim();
+
+          if (!ingredients) {
+            alert("Please enter at least one ingredient");
+            return;
+          }
+
+          // Transfer the ingredients to the appropriate input field in the main form
+          document.getElementById("ingredientsInput").value = ingredients;
+
+          // Scroll to the results section
+          document
+            .querySelector(".recepie_area")
+            .scrollIntoView({ behavior: "smooth" });
+
+          // Call the appropriate search function based on the selected API
+          searchRecipesBySelectedApi(ingredients, selectedApi);
+        });
+      });
+
+      // Function to search recipes based on the selected API
+      async function searchRecipesBySelectedApi(ingredients, api) {
+        // Clear previous results
+        document.getElementById("recipeDisplay").innerHTML =
+          "<p>Searching recipes...</p>";
+        document.getElementById("workoutDisplay").innerHTML = "";
+
+        let endpoint = "";
+        let params = {};
+
+        // Determine which API to use
+        switch (api) {
+          case "spoonacular":
+            endpoint = "/recipes/spoonacular";
+            params = { ingredients };
+            break;
+          case "tasty":
+            endpoint = "/recipes/tasty";
+            params = { ingredients };
+            break;
+          case "gemma":
+            endpoint = "/recipes/mmabs";
+            params = { ingredients };
+            break;
+          default:
+            endpoint = "/recipes/spoonacular";
+            params = { ingredients };
         }
 
-        function processMmabsData(data) {
-            // Since MMABS returns a single recipe object rather than an array
-            // We'll create an array with this single recipe for consistency
-            if (!data || !data.recipe) {
-                console.error("Invalid MMABS data:", data);
-                return [];
-            }
-            
-            const recipe = data.recipe;
-            
-            return [{
-                id: Math.floor(Math.random() * 1000000),
-                title: recipe.recipe_name,
-                image: `https://via.placeholder.com/556x370?text=${encodeURIComponent(recipe.name || 'Recipe')}`,
+        try {
+          const data = await callApi(endpoint, params);
+          console.log(`${api} API response:`, data);
+
+          // Process the data based on the API
+          let processedData;
+
+          if (api === "spoonacular") {
+            processedData = processSpoonacularData(data);
+          } else if (api === "tasty") {
+            processedData = processTastyData(data);
+          } else if (api === "gemma") {
+            processedData = processMmabsData(data);
+          }
+
+          displayResults(processedData);
+        } catch (error) {
+          document.getElementById(
+            "recipeDisplay"
+          ).innerHTML = `<p>Error searching recipes: ${error.message}</p>`;
+        }
+      }
+
+      function processMmabsData(data) {
+        // Since MMABS returns a single recipe object rather than an array
+        // We'll create an array with this single recipe for consistency
+        if (!data || !data.recipe) {
+          console.error("Invalid MMABS data:", data);
+          return [];
+        }
+
+        const recipe = data.recipe;
+
+        return [
+          {
+            id: Math.floor(Math.random() * 1000000),
+            title: recipe.recipe_name,
+            image: `https://via.placeholder.com/556x370?text=${encodeURIComponent(
+              recipe.name || "Recipe"
+            )}`,
+            likes: Math.floor(Math.random() * 100),
+            usedIngredients: Array.isArray(recipe.ingredients)
+              ? recipe.ingredients.map((ing) => {
+                  // Split the ingredient text into parts
+                  const parts = String(ing).split(" ");
+                  return {
+                    name: parts[0],
+                    amount: parts.length > 1 ? parts.slice(1).join(" ") : "",
+                    unit: "",
+                    image: `https://via.placeholder.com/100x100?text=${encodeURIComponent(
+                      parts[0]
+                    )}`,
+                  };
+                })
+              : [],
+            missedIngredients: [],
+            nutrients: data.nutrients || {},
+            instructions: Array.isArray(recipe.instructions)
+              ? recipe.instructions
+              : [],
+          },
+        ];
+      }
+
+      // Process Spoonacular API data
+      function processSpoonacularData(data) {
+        // This should match the existing processing you already have
+        return data
+          .map((item) => {
+            const recipe = item.recipe;
+            const nutrients = item.nutrients;
+
+            if (recipe) {
+              const recipeId = Math.floor(Math.random() * 1000000);
+              return {
+                id: recipeId,
+                title: recipe.name,
+                image: `https://spoonacular.com/recipeImages/${recipeId}-556x370.jpg`,
                 likes: Math.floor(Math.random() * 100),
-                usedIngredients: Array.isArray(recipe.ingredients) ? recipe.ingredients.map(ing => {
+                usedIngredients: recipe.ingredients
+                  .slice(0, Math.floor(recipe.ingredients.length / 2))
+                  .map((ing) => {
+                    const parts = ing.split(" ");
+                    return {
+                      name: parts[0],
+                      amount: parts.length > 1 ? parts[1] : "",
+                      unit: parts.length > 2 ? parts[2] : "",
+                      image: `https://spoonacular.com/cdn/ingredients_100x100/${parts[0].toLowerCase()}.jpg`,
+                    };
+                  }),
+                missedIngredients: recipe.ingredients
+                  .slice(Math.floor(recipe.ingredients.length / 2))
+                  .map((ing) => {
+                    const parts = ing.split(" ");
+                    return {
+                      name: parts[0],
+                      amount: parts.length > 1 ? parts[1] : "",
+                      unit: parts.length > 2 ? parts[2] : "",
+                      image: `https://spoonacular.com/cdn/ingredients_100x100/${parts[0].toLowerCase()}.jpg`,
+                    };
+                  }),
+                nutrients: nutrients,
+                instructions: recipe.instructions,
+              };
+            }
+            return null;
+          })
+          .filter((recipe) => recipe !== null);
+      }
+
+      // Process Tasty API data (adjust based on your actual API response)
+      function processTastyData(data) {
+        // Debugging - log the data structure
+        console.log("Raw API response:", data);
+
+        // Check if data exists and has the expected structure
+        if (!data) {
+          console.error("No data received from API");
+          return [];
+        }
+
+        if (!data.recipes || !Array.isArray(data.recipes)) {
+          console.error("Data does not contain recipes array:", data);
+          return [];
+        }
+
+        // Process the data with the correct structure
+        return data.recipes
+          .map((item) => {
+            if (!item || !item.recipe) {
+              console.error("Invalid recipe item:", item);
+              return null;
+            }
+
+            const recipe = item.recipe;
+
+            return {
+              id: Math.floor(Math.random() * 1000000),
+              title: recipe.name,
+              image: `https://via.placeholder.com/556x370?text=${encodeURIComponent(
+                recipe.name || "Recipe"
+              )}`,
+              likes: Math.floor(Math.random() * 100),
+              usedIngredients: Array.isArray(recipe.ingredients)
+                ? recipe.ingredients.map((ing) => {
                     // Split the ingredient text into parts
-                    const parts = String(ing).split(' ');
+                    const parts = String(ing).split(" ");
                     return {
-                        name: parts[0],
-                        amount: parts.length > 1 ? parts.slice(1).join(' ') : '',
-                        unit: '',
-                        image: `https://via.placeholder.com/100x100?text=${encodeURIComponent(parts[0])}`
+                      name: parts[0],
+                      amount: parts.length > 1 ? parts.slice(1).join(" ") : "",
+                      unit: "",
+                      image: `https://via.placeholder.com/100x100?text=${encodeURIComponent(
+                        parts[0]
+                      )}`,
                     };
-                }) : [],
-                missedIngredients: [],
-                nutrients: data.nutrients || {},
-                instructions: Array.isArray(recipe.instructions) ? recipe.instructions : []
-            }];
+                  })
+                : [],
+              missedIngredients: [],
+              nutrients: item.nutrients || {},
+              instructions: Array.isArray(recipe.instructions)
+                ? recipe.instructions
+                : [],
+            };
+          })
+          .filter((item) => item !== null);
+      }
+
+      // Process Gemma API data (adjust based on your actual API response)
+      function processGemmaData(data) {
+        // Process Gemma API data to match the expected format
+        return data.map((recipe) => {
+          // Assuming Gemma returns a different format, adapt accordingly
+          return {
+            id: recipe.id || Math.floor(Math.random() * 1000000),
+            title: recipe.title,
+            image:
+              recipe.image ||
+              `https://via.placeholder.com/556x370?text=${encodeURIComponent(
+                recipe.title
+              )}`,
+            likes: recipe.likes || Math.floor(Math.random() * 100),
+            usedIngredients: (recipe.ingredients || []).map((ing) => ({
+              name: ing.name,
+              amount: ing.amount || "",
+              unit: ing.unit || "",
+              image:
+                ing.image ||
+                `https://spoonacular.com/cdn/ingredients_100x100/unknown.jpg`,
+            })),
+            missedIngredients: [],
+            instructions: recipe.instructions || [],
+          };
+        });
+      }
+
+      // Update the original searchRecipes function to use the new search infrastructure
+      async function searchRecipes() {
+        const ingredients = document.getElementById("ingredientsInput").value;
+        searchRecipesBySelectedApi(ingredients, selectedApi);
+      }
+
+      // Helper function to create the modal if it doesn't exist
+      function createRecipeModal() {
+        const modal = document.createElement("div");
+        modal.id = "recipeModal";
+        modal.className = "modal";
+        modal.innerHTML = '<div class="modal-content"></div>';
+        document.body.appendChild(modal);
+        return modal;
+      }
+
+      // Function to get recipe details
+      async function getRecipeDetails() {
+        const recipeName = document.getElementById("recipeNameInput").value;
+        if (!recipeName) {
+          alert("Please enter a recipe name");
+          return;
+        }
+        const data = await callApi(
+          `/recipes/search?query=${encodeURIComponent(recipeName)}`
+        );
+        displayResults(data);
+      }
+
+      // Function to get workout suggestions
+      async function getWorkoutSuggestions() {
+        const calories = document.getElementById("caloriesInput").value;
+        const data = await callApi("/workout", { calories });
+        displayWorkouts(data);
+      }
+
+      // Function to search Tasty recipes
+      async function searchTastyRecipes() {
+        const ingredients = document.getElementById(
+          "tastyIngredientsInput"
+        ).value;
+        const data = await callApi("/tasty/search", { ingredients });
+        displayResults(data);
+      }
+      const API_BASE_URL = "http://localhost:5000/api";
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get API selection buttons
+        const apiButtons = document.querySelectorAll(".api-btn");
+        let selectedApi = "spoonacular"; // Default API
+
+        // Add click event to API selection buttons
+        apiButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Remove active class from all buttons
+            apiButtons.forEach((btn) => btn.classList.remove("active"));
+            // Add active class to clicked button
+            this.classList.add("active");
+            // Update selected API
+            selectedApi = this.getAttribute("data-api");
+          });
+        });
+
+        // Add event listener to the banner search button
+        document
+          .getElementById("bannerSearchButton")
+          .addEventListener("click", function () {
+            const ingredients = document
+              .getElementById("bannerIngredientsInput")
+              .value.split(",")
+              .map((item) => item.trim());
+            searchWithSelectedApi(ingredients);
+          });
+
+        // Add event listener to the main search button
+        document
+          .querySelector("button.line_btn")
+          .addEventListener("click", function () {
+            const ingredients = document
+              .getElementById("ingredientsInput")
+              .value.split(",")
+              .map((item) => item.trim());
+            searchWithSelectedApi(ingredients);
+          });
+
+        function searchWithSelectedApi(ingredients) {
+          // Display loading state
+          document.getElementById("recipeDisplay").innerHTML =
+            "<p>Loading recipes...</p>";
+
+          if (selectedApi === "tasty") {
+            // Call the Tasty API endpoint
+            fetch(`${API_BASE_URL}/search-tasty`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                ingredients: ingredients,
+                num_recipes: 3,
+              }),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                displayResults(data.recipes);
+              })
+              .catch((error) => {
+                document.getElementById(
+                  "recipeDisplay"
+                ).innerHTML = `<p>Error: ${error.message}. Make sure the API server is running.</p>`;
+              });
+          } else if (selectedApi === "spoonacular") {
+            // Your existing Spoonacular API call
+            // ...
+          } else if (selectedApi === "gemma") {
+            // Your existing Gemma API call
+            // ...
+          }
         }
 
-        // Process Spoonacular API data
-        function processSpoonacularData(data) {
-            // This should match the existing processing you already have
-            return data.map(item => {
-                const recipe = item.recipe;
-                const nutrients = item.nutrients;
-                
-                if (recipe) {
-                    const recipeId = Math.floor(Math.random() * 1000000);
-                    return {
-                        id: recipeId,
-                        title: recipe.name,
-                        image: `https://spoonacular.com/recipeImages/${recipeId}-556x370.jpg`,
-                        likes: Math.floor(Math.random() * 100),
-                        usedIngredients: recipe.ingredients.slice(0, Math.floor(recipe.ingredients.length/2)).map(ing => {
-                            const parts = ing.split(' ');
-                            return {
-                                name: parts[0],
-                                amount: parts.length > 1 ? parts[1] : '',
-                                unit: parts.length > 2 ? parts[2] : '',
-                                image: `https://spoonacular.com/cdn/ingredients_100x100/${parts[0].toLowerCase()}.jpg`
-                            };
-                        }),
-                        missedIngredients: recipe.ingredients.slice(Math.floor(recipe.ingredients.length/2)).map(ing => {
-                            const parts = ing.split(' ');
-                            return {
-                                name: parts[0],
-                                amount: parts.length > 1 ? parts[1] : '',
-                                unit: parts.length > 2 ? parts[2] : '',
-                                image: `https://spoonacular.com/cdn/ingredients_100x100/${parts[0].toLowerCase()}.jpg`
-                            };
-                        }),
-                        nutrients: nutrients,
-                        instructions: recipe.instructions
-                    };
-                }
-                return null;
-            }).filter(recipe => recipe !== null);
-        }
+        // Update your createRecipeCard function to handle Tasty-specific data format
+        function createRecipeCard(recipe) {
+          const card = document.createElement("div");
+          card.className = "recipe-card";
 
-        // Process Tasty API data (adjust based on your actual API response)
-        function processTastyData(data) {
-            // Debugging - log the data structure
-            console.log("Raw API response:", data);
-            
-            // Check if data exists and has the expected structure
-            if (!data) {
-                console.error("No data received from API");
-                return [];
-            }
-            
-            if (!data.recipes || !Array.isArray(data.recipes)) {
-                console.error("Data does not contain recipes array:", data);
-                return [];
-            }
-            
-            // Process the data with the correct structure
-            return data.recipes.map(item => {
-                if (!item || !item.recipe) {
-                    console.error("Invalid recipe item:", item);
-                    return null;
-                }
-                
-                const recipe = item.recipe;
-                
-                return {
-                    id: Math.floor(Math.random() * 1000000),
-                    title: recipe.name,
-                    image: `https://via.placeholder.com/556x370?text=${encodeURIComponent(recipe.name || 'Recipe')}`,
-                    likes: Math.floor(Math.random() * 100),
-                    usedIngredients: Array.isArray(recipe.ingredients) ? recipe.ingredients.map(ing => {
-                        // Split the ingredient text into parts
-                        const parts = String(ing).split(' ');
-                        return {
-                            name: parts[0],
-                            amount: parts.length > 1 ? parts.slice(1).join(' ') : '',
-                            unit: '',
-                            image: `https://via.placeholder.com/100x100?text=${encodeURIComponent(parts[0])}`
-                        };
-                    }) : [],
-                    missedIngredients: [],
-                    nutrients: item.nutrients || {},
-                    instructions: Array.isArray(recipe.instructions) ? recipe.instructions : []
-                };
-            }).filter(item => item !== null);
-        }
+          // Handle different API formats
+          let recipeName = "";
+          let ingredients = [];
+          let instructions = [];
 
-        // Process Gemma API data (adjust based on your actual API response)
-        function processGemmaData(data) {
-            // Process Gemma API data to match the expected format
-            return data.map(recipe => {
-                // Assuming Gemma returns a different format, adapt accordingly
-                return {
-                    id: recipe.id || Math.floor(Math.random() * 1000000),
-                    title: recipe.title,
-                    image: recipe.image || `https://via.placeholder.com/556x370?text=${encodeURIComponent(recipe.title)}`,
-                    likes: recipe.likes || Math.floor(Math.random() * 100),
-                    usedIngredients: (recipe.ingredients || []).map(ing => ({
-                        name: ing.name,
-                        amount: ing.amount || '',
-                        unit: ing.unit || '',
-                        image: ing.image || `https://spoonacular.com/cdn/ingredients_100x100/unknown.jpg`
-                    })),
-                    missedIngredients: [],
-                    instructions: recipe.instructions || []
-                };
-            });
-        }
+          if (selectedApi === "tasty") {
+            recipeName = recipe.name || "Unnamed Recipe";
+            ingredients = recipe.ingredients || [];
+            instructions = recipe.instructions || [];
+          } else {
+            // Your existing format parsing
+            // ...
+          }
 
-        // Update the original searchRecipes function to use the new search infrastructure
-        async function searchRecipes() {
-            const ingredients = document.getElementById('ingredientsInput').value;
-            searchRecipesBySelectedApi(ingredients, selectedApi);
-        }
-
-        // Helper function to create the modal if it doesn't exist
-        function createRecipeModal() {
-            const modal = document.createElement('div');
-            modal.id = 'recipeModal';
-            modal.className = 'modal';
-            modal.innerHTML = '<div class="modal-content"></div>';
-            document.body.appendChild(modal);
-            return modal;
-        }
-        
-        // Function to get recipe details
-        async function getRecipeDetails() {
-            const recipeName = document.getElementById('recipeNameInput').value;
-            if (!recipeName) {
-                alert('Please enter a recipe name');
-                return;
-            }
-            const data = await callApi(`/recipes/search?query=${encodeURIComponent(recipeName)}`);
-            displayResults(data);
-        }
-
-        // Function to get workout suggestions
-        async function getWorkoutSuggestions() {
-            const calories = document.getElementById('caloriesInput').value;
-            const data = await callApi('/workout', { calories });
-            displayWorkouts(data);
-        }
-        
-        // Function to search Tasty recipes
-        async function searchTastyRecipes() {
-            const ingredients = document.getElementById('tastyIngredientsInput').value;
-            const data = await callApi('/tasty/search', { ingredients });
-            displayResults(data);
-        }
-        const API_BASE_URL = 'http://localhost:5000/api';
-
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get API selection buttons
-            const apiButtons = document.querySelectorAll('.api-btn');
-            let selectedApi = 'spoonacular'; // Default API
-            
-            // Add click event to API selection buttons
-            apiButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    apiButtons.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    // Update selected API
-                    selectedApi = this.getAttribute('data-api');
-                });
-            });
-            
-            // Add event listener to the banner search button
-            document.getElementById('bannerSearchButton').addEventListener('click', function() {
-                const ingredients = document.getElementById('bannerIngredientsInput').value.split(',').map(item => item.trim());
-                searchWithSelectedApi(ingredients);
-            });
-            
-            // Add event listener to the main search button
-            document.querySelector('button.line_btn').addEventListener('click', function() {
-                const ingredients = document.getElementById('ingredientsInput').value.split(',').map(item => item.trim());
-                searchWithSelectedApi(ingredients);
-            });
-            
-            function searchWithSelectedApi(ingredients) {
-                // Display loading state
-                document.getElementById('recipeDisplay').innerHTML = '<p>Loading recipes...</p>';
-                
-                if (selectedApi === 'tasty') {
-                    // Call the Tasty API endpoint
-                    fetch(`${API_BASE_URL}/search-tasty`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            ingredients: ingredients,
-                            num_recipes: 3
-                        }),
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        displayResults(data.recipes);
-                    })
-                    .catch(error => {
-                        document.getElementById('recipeDisplay').innerHTML = 
-                            `<p>Error: ${error.message}. Make sure the API server is running.</p>`;
-                    });
-                } else if (selectedApi === 'spoonacular') {
-                    // Your existing Spoonacular API call
-                    // ...
-                } else if (selectedApi === 'gemma') {
-                    // Your existing Gemma API call
-                    // ...
-                }
-            }
-            
-            // Update your createRecipeCard function to handle Tasty-specific data format
-            function createRecipeCard(recipe) {
-                const card = document.createElement('div');
-                card.className = 'recipe-card';
-                
-                // Handle different API formats
-                let recipeName = '';
-                let ingredients = [];
-                let instructions = [];
-                
-                if (selectedApi === 'tasty') {
-                    recipeName = recipe.name || 'Unnamed Recipe';
-                    ingredients = recipe.ingredients || [];
-                    instructions = recipe.instructions || [];
-                } else {
-                    // Your existing format parsing
-                    // ...
-                }
-                
-                // Create card HTML
-                card.innerHTML = `
+          // Create card HTML
+          card.innerHTML = `
                     <h3>${recipeName}</h3>
                     <div class="recipe-details">
                         <div class="ingredients">
                             <h4>Ingredients</h4>
                             <ul>
-                                ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+                                ${ingredients
+                                  .map((ingredient) => `<li>${ingredient}</li>`)
+                                  .join("")}
                             </ul>
                         </div>
                         <div class="instructions">
                             <h4>Instructions</h4>
                             <ol>
-                                ${instructions.map(step => `<li>${step}</li>`).join('')}
+                                ${instructions
+                                  .map((step) => `<li>${step}</li>`)
+                                  .join("")}
                             </ol>
                         </div>
                     </div>
                 `;
-                
-                return card;
-            }
 
-
-            
-
-        });
+          return card;
+        }
+      });
     </script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
