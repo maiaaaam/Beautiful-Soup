@@ -192,8 +192,6 @@ def get_workout_suggestions():
     # Return top results
     return jsonify(all_workouts[:12])
 
-# Endpoint to integrate with your recipe search/details flow
-
 
 @app.route('/api/recipes/with-workouts', methods=['GET'])
 def get_recipes_with_workouts():
@@ -225,18 +223,20 @@ def get_recipes_with_workouts():
 
 
 @app.route('/api/workout', methods=['GET'])
-def workout_suggestions():
+def workout_suggestions_endpoint():
     """API endpoint to get workout suggestions based on calorie target"""
     try:
-        calories = request.args.get('calories', 300)
-
-        suggestions = get_workout_suggestions(calories)
-
+        # Get calories from query parameters, default to 300 if not provided
+        calories = request.args.get('calories', default=300, type=int)
+        tolerance = request.args.get('tolerance', default=50, type=int)
+        
+        # Call your utility function that handles the API request to caloriesburned API
+        suggestions = get_workout_suggestions(calories, tolerance)
+        
         return jsonify(suggestions)
     except Exception as e:
         print(f"Error getting workout suggestions: {str(e)}")
         return jsonify({"error": str(e)}), 500
-
 
 @app.route('/api/recipes/similar', methods=['GET'])
 def get_similar_recipes():

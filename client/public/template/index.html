@@ -515,6 +515,35 @@ Results will appear here...</pre
     </div>
     <!-- search_recipe_area_end -->
 
+    <div class="latest_trand_area">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12">
+            <div class="trand_info text-center">
+              <h3>Find out how to burn those calories and stay healthy</h3>
+              <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-3">
+                  <div class="card">
+                    <h2>Get Workout Suggestions</h2>
+                    <label for="caloriesInput">Calories to Burn</label> <!-- Added a label for accessibility -->
+                    <input
+                      type="number"
+                      id="caloriesInput"
+                      placeholder="Enter calories to burn"
+                      value="300"
+                    />
+                    <button onclick="getWorkoutSuggestions()" class="line_btn">
+                      Get Workout recommendations
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- recepie_area_start  -->
     <div class="recepie_area">
       <h1 class="align_head">
@@ -607,19 +636,7 @@ Results will appear here...</pre
     <!--/ recepie_videos   -->
 
     <!-- latest_trand     -->
-    <div class="latest_trand_area">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-12">
-            <div class="trand_info text-center">
-              <p>Thousands of recipes are waiting to be cooked</p>
-              <h3>Find out how to burn those calories and stay healthy</h3>
-              <a href="#" class="boxed-btn3">View all Recipes</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+ 
     <!--/ latest_trand     -->
 
     <!-- footer  -->
@@ -871,7 +888,7 @@ Results will appear here...</pre
         // Add button for nutrition and workout info
         const detailsButton = document.createElement("button");
         detailsButton.className = "details-button";
-        detailsButton.textContent = "Show Nutrition & Workout Details";
+        detailsButton.textContent = "Show Nutrition Details";
         card.appendChild(detailsButton);
         let nutritionData =
           recipe.nutrients || (recipe.nutrition && recipe.nutrition.nutrients);
